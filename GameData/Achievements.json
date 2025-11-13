@@ -1,0 +1,862 @@
+{
+  "achievements": [
+    {
+      "achievementId": "progress_001",
+      "achievementName": "첫 걸음",
+      "achievementNameEN": "First Steps",
+      "description": "레벨 10 달성",
+      "descriptionEN": "Reach Level 10",
+      "category": "Progress",
+      "iconName": "achievement_level_10",
+      "hidden": false,
+      "requirementType": "PlayerLevel",
+      "requirementValue": 10,
+      "rewards": [
+        {"type": "Gold", "amount": 5000},
+        {"type": "Gem", "amount": 10}
+      ]
+    },
+    {
+      "achievementId": "progress_002",
+      "achievementName": "성장하는 영웅",
+      "achievementNameEN": "Growing Hero",
+      "description": "레벨 25 달성",
+      "descriptionEN": "Reach Level 25",
+      "category": "Progress",
+      "iconName": "achievement_level_25",
+      "hidden": false,
+      "requirementType": "PlayerLevel",
+      "requirementValue": 25,
+      "rewards": [
+        {"type": "Gold", "amount": 20000},
+        {"type": "Gem", "amount": 25}
+      ]
+    },
+    {
+      "achievementId": "progress_003",
+      "achievementName": "중급 모험가",
+      "achievementNameEN": "Intermediate Adventurer",
+      "description": "레벨 50 달성",
+      "descriptionEN": "Reach Level 50",
+      "category": "Progress",
+      "iconName": "achievement_level_50",
+      "hidden": false,
+      "requirementType": "PlayerLevel",
+      "requirementValue": 50,
+      "rewards": [
+        {"type": "Gold", "amount": 100000},
+        {"type": "Gem", "amount": 50},
+        {"type": "SkillPoint", "amount": 10}
+      ],
+      "unlockDialogueId": "achievement_level_50"
+    },
+    {
+      "achievementId": "progress_004",
+      "achievementName": "고급 전사",
+      "achievementNameEN": "Advanced Warrior",
+      "description": "레벨 75 달성",
+      "descriptionEN": "Reach Level 75",
+      "category": "Progress",
+      "iconName": "achievement_level_75",
+      "hidden": false,
+      "requirementType": "PlayerLevel",
+      "requirementValue": 75,
+      "rewards": [
+        {"type": "Gold", "amount": 500000},
+        {"type": "Gem", "amount": 100}
+      ]
+    },
+    {
+      "achievementId": "progress_005",
+      "achievementName": "전설의 영웅",
+      "achievementNameEN": "Legendary Hero",
+      "description": "레벨 100 달성",
+      "descriptionEN": "Reach Level 100",
+      "category": "Progress",
+      "iconName": "achievement_level_100",
+      "hidden": false,
+      "requirementType": "PlayerLevel",
+      "requirementValue": 100,
+      "rewards": [
+        {"type": "Gold", "amount": 2000000},
+        {"type": "Gem", "amount": 200},
+        {"type": "Item", "itemId": "special_rebirth_token", "count": 1}
+      ]
+    },
+    {
+      "achievementId": "rebirth_001",
+      "achievementName": "새로운 시작",
+      "achievementNameEN": "New Beginning",
+      "description": "첫 환생 완료",
+      "descriptionEN": "Complete First Rebirth",
+      "category": "Progress",
+      "iconName": "achievement_rebirth_1",
+      "hidden": false,
+      "requirementType": "RebirthCount",
+      "requirementValue": 1,
+      "rewards": [
+        {"type": "Gold", "amount": 1000000},
+        {"type": "Gem", "amount": 100},
+        {"type": "SkillPoint", "amount": 20}
+      ],
+      "unlockDialogueId": "achievement_first_rebirth"
+    },
+    {
+      "achievementId": "rebirth_002",
+      "achievementName": "환생의 달인",
+      "achievementNameEN": "Rebirth Master",
+      "description": "5회 환생 완료",
+      "descriptionEN": "Complete 5 Rebirths",
+      "category": "Progress",
+      "iconName": "achievement_rebirth_5",
+      "hidden": false,
+      "requirementType": "RebirthCount",
+      "requirementValue": 5,
+      "rewards": [
+        {"type": "Gold", "amount": 10000000},
+        {"type": "Gem", "amount": 500}
+      ]
+    },
+    {
+      "achievementId": "rebirth_003",
+      "achievementName": "윤회의 주인",
+      "achievementNameEN": "Master of Reincarnation",
+      "description": "10회 환생 완료",
+      "descriptionEN": "Complete 10 Rebirths",
+      "category": "Progress",
+      "iconName": "achievement_rebirth_10",
+      "hidden": false,
+      "requirementType": "RebirthCount",
+      "requirementValue": 10,
+      "rewards": [
+        {"type": "Gold", "amount": 50000000},
+        {"type": "Gem", "amount": 1000}
+      ]
+    },
+    {
+      "achievementId": "combat_001",
+      "achievementName": "몬스터 사냥꾼",
+      "achievementNameEN": "Monster Hunter",
+      "description": "몬스터 100마리 처치",
+      "descriptionEN": "Defeat 100 Monsters",
+      "category": "Combat",
+      "iconName": "achievement_kill_100",
+      "hidden": false,
+      "requirementType": "TotalKills",
+      "requirementValue": 100,
+      "rewards": [
+        {"type": "Gold", "amount": 10000},
+        {"type": "Gem", "amount": 5}
+      ]
+    },
+    {
+      "achievementId": "combat_002",
+      "achievementName": "몬스터 학살자",
+      "achievementNameEN": "Monster Slayer",
+      "description": "몬스터 1,000마리 처치",
+      "descriptionEN": "Defeat 1,000 Monsters",
+      "category": "Combat",
+      "iconName": "achievement_kill_1000",
+      "hidden": false,
+      "requirementType": "TotalKills",
+      "requirementValue": 1000,
+      "rewards": [
+        {"type": "Gold", "amount": 100000},
+        {"type": "Gem", "amount": 50}
+      ]
+    },
+    {
+      "achievementId": "combat_003",
+      "achievementName": "몬스터 전멸자",
+      "achievementNameEN": "Monster Exterminator",
+      "description": "몬스터 10,000마리 처치",
+      "descriptionEN": "Defeat 10,000 Monsters",
+      "category": "Combat",
+      "iconName": "achievement_kill_10000",
+      "hidden": false,
+      "requirementType": "TotalKills",
+      "requirementValue": 10000,
+      "rewards": [
+        {"type": "Gold", "amount": 1000000},
+        {"type": "Gem", "amount": 200}
+      ]
+    },
+    {
+      "achievementId": "combat_004",
+      "achievementName": "보스 헌터",
+      "achievementNameEN": "Boss Hunter",
+      "description": "보스 몬스터 10마리 처치",
+      "descriptionEN": "Defeat 10 Boss Monsters",
+      "category": "Combat",
+      "iconName": "achievement_boss_10",
+      "hidden": false,
+      "requirementType": "BossKills",
+      "requirementValue": 10,
+      "rewards": [
+        {"type": "Gold", "amount": 50000},
+        {"type": "Gem", "amount": 30}
+      ]
+    },
+    {
+      "achievementId": "combat_005",
+      "achievementName": "드래곤 슬레이어",
+      "achievementNameEN": "Dragon Slayer",
+      "description": "드래곤 킹 처치",
+      "descriptionEN": "Defeat Dragon King",
+      "category": "Combat",
+      "iconName": "achievement_dragon_king",
+      "hidden": false,
+      "requirementType": "BossDefeat",
+      "requirementValue": "dragon_king_ss_001",
+      "rewards": [
+        {"type": "Gold", "amount": 200000},
+        {"type": "Gem", "amount": 100},
+        {"type": "Item", "itemId": "material_dragon_scale", "count": 50}
+      ],
+      "unlockDialogueId": "achievement_defeat_dragon_king"
+    },
+    {
+      "achievementId": "combat_006",
+      "achievementName": "마왕 처단자",
+      "achievementNameEN": "Demon Lord Vanquisher",
+      "description": "마제 처치",
+      "descriptionEN": "Defeat Demon Emperor",
+      "category": "Combat",
+      "iconName": "achievement_demon_emperor",
+      "hidden": false,
+      "requirementType": "BossDefeat",
+      "requirementValue": "demon_emperor_ss_001",
+      "rewards": [
+        {"type": "Gold", "amount": 300000},
+        {"type": "Gem", "amount": 150}
+      ]
+    },
+    {
+      "achievementId": "combat_007",
+      "achievementName": "크리티컬 마스터",
+      "achievementNameEN": "Critical Master",
+      "description": "크리티컬 공격 100회 성공",
+      "descriptionEN": "Land 100 Critical Hits",
+      "category": "Combat",
+      "iconName": "achievement_critical_100",
+      "hidden": false,
+      "requirementType": "CriticalHits",
+      "requirementValue": 100,
+      "rewards": [
+        {"type": "Gold", "amount": 50000},
+        {"type": "Gem", "amount": 25}
+      ]
+    },
+    {
+      "achievementId": "combat_008",
+      "achievementName": "원샷 원킬",
+      "achievementNameEN": "One Shot One Kill",
+      "description": "한 번의 공격으로 보스 처치",
+      "descriptionEN": "Defeat a Boss in One Hit",
+      "category": "Combat",
+      "iconName": "achievement_one_shot",
+      "hidden": true,
+      "requirementType": "OneShotBoss",
+      "requirementValue": 1,
+      "rewards": [
+        {"type": "Gold", "amount": 500000},
+        {"type": "Gem", "amount": 200}
+      ]
+    },
+    {
+      "achievementId": "collection_001",
+      "achievementName": "수집가의 시작",
+      "achievementNameEN": "Collector's Beginning",
+      "description": "아이템 10종류 획득",
+      "descriptionEN": "Collect 10 Different Items",
+      "category": "Collection",
+      "iconName": "achievement_collect_10",
+      "hidden": false,
+      "requirementType": "UniqueItemsCollected",
+      "requirementValue": 10,
+      "rewards": [
+        {"type": "Gold", "amount": 10000},
+        {"type": "Gem", "amount": 5}
+      ]
+    },
+    {
+      "achievementId": "collection_002",
+      "achievementName": "열정적인 수집가",
+      "achievementNameEN": "Passionate Collector",
+      "description": "아이템 30종류 획득",
+      "descriptionEN": "Collect 30 Different Items",
+      "category": "Collection",
+      "iconName": "achievement_collect_30",
+      "hidden": false,
+      "requirementType": "UniqueItemsCollected",
+      "requirementValue": 30,
+      "rewards": [
+        {"type": "Gold", "amount": 50000},
+        {"type": "Gem", "amount": 30}
+      ]
+    },
+    {
+      "achievementId": "collection_003",
+      "achievementName": "완벽한 컬렉션",
+      "achievementNameEN": "Perfect Collection",
+      "description": "모든 아이템 획득",
+      "descriptionEN": "Collect All Items",
+      "category": "Collection",
+      "iconName": "achievement_collect_all",
+      "hidden": false,
+      "requirementType": "UniqueItemsCollected",
+      "requirementValue": 48,
+      "rewards": [
+        {"type": "Gold", "amount": 1000000},
+        {"type": "Gem", "amount": 500}
+      ]
+    },
+    {
+      "achievementId": "collection_004",
+      "achievementName": "강화의 달인",
+      "achievementNameEN": "Enhancement Master",
+      "description": "아이템을 +10까지 강화",
+      "descriptionEN": "Enhance an Item to +10",
+      "category": "Collection",
+      "iconName": "achievement_enhance_10",
+      "hidden": false,
+      "requirementType": "ItemEnhanceLevel",
+      "requirementValue": 10,
+      "rewards": [
+        {"type": "Gold", "amount": 100000},
+        {"type": "Gem", "amount": 50}
+      ]
+    },
+    {
+      "achievementId": "collection_005",
+      "achievementName": "신의 장비",
+      "achievementNameEN": "Divine Equipment",
+      "description": "아이템을 +20까지 강화",
+      "descriptionEN": "Enhance an Item to +20",
+      "category": "Collection",
+      "iconName": "achievement_enhance_20",
+      "hidden": false,
+      "requirementType": "ItemEnhanceLevel",
+      "requirementValue": 20,
+      "rewards": [
+        {"type": "Gold", "amount": 5000000},
+        {"type": "Gem", "amount": 500}
+      ]
+    },
+    {
+      "achievementId": "skill_001",
+      "achievementName": "스킬 배우기",
+      "achievementNameEN": "Learning Skills",
+      "description": "스킬 5개 습득",
+      "descriptionEN": "Learn 5 Skills",
+      "category": "Skill",
+      "iconName": "achievement_skill_5",
+      "hidden": false,
+      "requirementType": "SkillsLearned",
+      "requirementValue": 5,
+      "rewards": [
+        {"type": "Gold", "amount": 20000},
+        {"type": "SkillPoint", "amount": 5}
+      ]
+    },
+    {
+      "achievementId": "skill_002",
+      "achievementName": "스킬 마스터",
+      "achievementNameEN": "Skill Master",
+      "description": "스킬 20개 습득",
+      "descriptionEN": "Learn 20 Skills",
+      "category": "Skill",
+      "iconName": "achievement_skill_20",
+      "hidden": false,
+      "requirementType": "SkillsLearned",
+      "requirementValue": 20,
+      "rewards": [
+        {"type": "Gold", "amount": 200000},
+        {"type": "SkillPoint", "amount": 20}
+      ]
+    },
+    {
+      "achievementId": "skill_003",
+      "achievementName": "전지전능",
+      "achievementNameEN": "Omnipotent",
+      "description": "모든 스킬 습득",
+      "descriptionEN": "Learn All Skills",
+      "category": "Skill",
+      "iconName": "achievement_skill_all",
+      "hidden": false,
+      "requirementType": "SkillsLearned",
+      "requirementValue": 48,
+      "rewards": [
+        {"type": "Gold", "amount": 5000000},
+        {"type": "Gem", "amount": 500}
+      ]
+    },
+    {
+      "achievementId": "skill_004",
+      "achievementName": "최대 강화",
+      "achievementNameEN": "Maximum Power",
+      "description": "스킬 하나를 최대 레벨까지 강화",
+      "descriptionEN": "Max Level One Skill",
+      "category": "Skill",
+      "iconName": "achievement_skill_max",
+      "hidden": false,
+      "requirementType": "SkillMaxLevel",
+      "requirementValue": 1,
+      "rewards": [
+        {"type": "Gold", "amount": 500000},
+        {"type": "Gem", "amount": 100}
+      ]
+    },
+    {
+      "achievementId": "story_001",
+      "achievementName": "모험의 시작",
+      "achievementNameEN": "Adventure Begins",
+      "description": "첫 던전 클리어",
+      "descriptionEN": "Clear First Dungeon",
+      "category": "Story",
+      "iconName": "achievement_dungeon_1",
+      "hidden": false,
+      "requirementType": "DungeonClear",
+      "requirementValue": "story_001",
+      "rewards": [
+        {"type": "Gold", "amount": 5000},
+        {"type": "Gem", "amount": 5}
+      ]
+    },
+    {
+      "achievementId": "story_002",
+      "achievementName": "마왕성 돌파",
+      "achievementNameEN": "Demon Castle Breakthrough",
+      "description": "마왕성 본관 클리어",
+      "descriptionEN": "Clear Demon Castle Main Hall",
+      "category": "Story",
+      "iconName": "achievement_demon_castle",
+      "hidden": false,
+      "requirementType": "DungeonClear",
+      "requirementValue": "story_009",
+      "rewards": [
+        {"type": "Gold", "amount": 200000},
+        {"type": "Gem", "amount": 100}
+      ]
+    },
+    {
+      "achievementId": "challenge_001",
+      "achievementName": "탑의 정복자 I",
+      "achievementNameEN": "Tower Conqueror I",
+      "description": "무한의 탑 10층 클리어",
+      "descriptionEN": "Clear Infinite Tower Floor 10",
+      "category": "Challenge",
+      "iconName": "achievement_tower_10",
+      "hidden": false,
+      "requirementType": "DungeonClear",
+      "requirementValue": "challenge_002",
+      "rewards": [
+        {"type": "Gold", "amount": 100000},
+        {"type": "Gem", "amount": 50}
+      ]
+    },
+    {
+      "achievementId": "challenge_002",
+      "achievementName": "탑의 정복자 II",
+      "achievementNameEN": "Tower Conqueror II",
+      "description": "무한의 탑 30층 클리어",
+      "descriptionEN": "Clear Infinite Tower Floor 30",
+      "category": "Challenge",
+      "iconName": "achievement_tower_30",
+      "hidden": false,
+      "requirementType": "DungeonClear",
+      "requirementValue": "challenge_004",
+      "rewards": [
+        {"type": "Gold", "amount": 500000},
+        {"type": "Gem", "amount": 200}
+      ]
+    },
+    {
+      "achievementId": "challenge_003",
+      "achievementName": "탑의 정복자 III",
+      "achievementNameEN": "Tower Conqueror III",
+      "description": "무한의 탑 50층 클리어",
+      "descriptionEN": "Clear Infinite Tower Floor 50",
+      "category": "Challenge",
+      "iconName": "achievement_tower_50",
+      "hidden": false,
+      "requirementType": "DungeonClear",
+      "requirementValue": "challenge_005",
+      "rewards": [
+        {"type": "Gold", "amount": 2000000},
+        {"type": "Gem", "amount": 500}
+      ]
+    },
+    {
+      "achievementId": "challenge_004",
+      "achievementName": "파괴신 처단",
+      "achievementNameEN": "God of Destruction Defeated",
+      "description": "무한의 탑 100층 클리어",
+      "descriptionEN": "Clear Infinite Tower Floor 100",
+      "category": "Challenge",
+      "iconName": "achievement_tower_100",
+      "hidden": false,
+      "requirementType": "DungeonClear",
+      "requirementValue": "challenge_006",
+      "rewards": [
+        {"type": "Gold", "amount": 10000000},
+        {"type": "Gem", "amount": 1000},
+        {"type": "Item", "itemId": "weapon_sword_009", "count": 1}
+      ]
+    },
+    {
+      "achievementId": "hidden_001",
+      "achievementName": "진정한 은둔자",
+      "achievementNameEN": "True Hermit",
+      "description": "은둔의 성역 클리어",
+      "descriptionEN": "Clear Hermit's Sanctuary",
+      "category": "Hidden",
+      "iconName": "achievement_hermit",
+      "hidden": true,
+      "requirementType": "DungeonClear",
+      "requirementValue": "hidden_001",
+      "rewards": [
+        {"type": "Gold", "amount": 5000000},
+        {"type": "Gem", "amount": 500},
+        {"type": "Item", "itemId": "weapon_sword_010", "count": 1}
+      ]
+    },
+    {
+      "achievementId": "hidden_002",
+      "achievementName": "차원 정복자",
+      "achievementNameEN": "Dimension Conqueror",
+      "description": "차원의 틈 클리어",
+      "descriptionEN": "Clear Dimensional Rift",
+      "category": "Hidden",
+      "iconName": "achievement_dimension",
+      "hidden": true,
+      "requirementType": "DungeonClear",
+      "requirementValue": "hidden_002",
+      "rewards": [
+        {"type": "Gold", "amount": 8000000},
+        {"type": "Gem", "amount": 800}
+      ]
+    },
+    {
+      "achievementId": "hidden_003",
+      "achievementName": "슬라임 학살자",
+      "achievementNameEN": "Slime Annihilator",
+      "description": "무한 슬라임 처치",
+      "descriptionEN": "Defeat Infinite Slime",
+      "category": "Hidden",
+      "iconName": "achievement_infinite_slime",
+      "hidden": true,
+      "requirementType": "BossDefeat",
+      "requirementValue": "infinite_slime_ex_001",
+      "rewards": [
+        {"type": "Gold", "amount": 10000000},
+        {"type": "Gem", "amount": 1000}
+      ]
+    },
+    {
+      "achievementId": "hidden_004",
+      "achievementName": "정체 발각?!",
+      "achievementNameEN": "Identity Exposed?!",
+      "description": "여동생의 의심 이벤트 클리어",
+      "descriptionEN": "Clear Sister's Suspicion Event",
+      "category": "Hidden",
+      "iconName": "achievement_sister",
+      "hidden": true,
+      "requirementType": "EventComplete",
+      "requirementValue": "event_002",
+      "rewards": [
+        {"type": "Gold", "amount": 3000000},
+        {"type": "Gem", "amount": 300}
+      ]
+    },
+    {
+      "achievementId": "time_001",
+      "achievementName": "첫 날",
+      "achievementNameEN": "First Day",
+      "description": "게임 첫 로그인",
+      "descriptionEN": "First Game Login",
+      "category": "Time",
+      "iconName": "achievement_login_1",
+      "hidden": false,
+      "requirementType": "LoginDays",
+      "requirementValue": 1,
+      "rewards": [
+        {"type": "Gold", "amount": 1000},
+        {"type": "Gem", "amount": 10}
+      ]
+    },
+    {
+      "achievementId": "time_002",
+      "achievementName": "일주일 플레이",
+      "achievementNameEN": "One Week Play",
+      "description": "7일 연속 로그인",
+      "descriptionEN": "Login for 7 Consecutive Days",
+      "category": "Time",
+      "iconName": "achievement_login_7",
+      "hidden": false,
+      "requirementType": "ConsecutiveLoginDays",
+      "requirementValue": 7,
+      "rewards": [
+        {"type": "Gold", "amount": 50000},
+        {"type": "Gem", "amount": 50}
+      ]
+    },
+    {
+      "achievementId": "time_003",
+      "achievementName": "한 달의 모험",
+      "achievementNameEN": "One Month Adventure",
+      "description": "30일 연속 로그인",
+      "descriptionEN": "Login for 30 Consecutive Days",
+      "category": "Time",
+      "iconName": "achievement_login_30",
+      "hidden": false,
+      "requirementType": "ConsecutiveLoginDays",
+      "requirementValue": 30,
+      "rewards": [
+        {"type": "Gold", "amount": 500000},
+        {"type": "Gem", "amount": 300}
+      ]
+    },
+    {
+      "achievementId": "time_004",
+      "achievementName": "1년의 헌신",
+      "achievementNameEN": "One Year Dedication",
+      "description": "365일 누적 로그인",
+      "descriptionEN": "Total 365 Days Login",
+      "category": "Time",
+      "iconName": "achievement_login_365",
+      "hidden": false,
+      "requirementType": "TotalLoginDays",
+      "requirementValue": 365,
+      "rewards": [
+        {"type": "Gold", "amount": 10000000},
+        {"type": "Gem", "amount": 2000}
+      ]
+    },
+    {
+      "achievementId": "time_005",
+      "achievementName": "야행성 인간",
+      "achievementNameEN": "Nocturnal Human",
+      "description": "밤 시간대에 100회 플레이",
+      "descriptionEN": "Play 100 Times During Night Time",
+      "category": "Time",
+      "iconName": "achievement_night_100",
+      "hidden": false,
+      "requirementType": "NightPlayCount",
+      "requirementValue": 100,
+      "rewards": [
+        {"type": "Gold", "amount": 100000},
+        {"type": "Gem", "amount": 50}
+      ]
+    },
+    {
+      "achievementId": "wealth_001",
+      "achievementName": "백만장자",
+      "achievementNameEN": "Millionaire",
+      "description": "골드 1,000,000 보유",
+      "descriptionEN": "Own 1,000,000 Gold",
+      "category": "Wealth",
+      "iconName": "achievement_gold_1m",
+      "hidden": false,
+      "requirementType": "GoldOwned",
+      "requirementValue": 1000000,
+      "rewards": [
+        {"type": "Gem", "amount": 100}
+      ]
+    },
+    {
+      "achievementId": "wealth_002",
+      "achievementName": "억만장자",
+      "achievementNameEN": "Billionaire",
+      "description": "골드 100,000,000 보유",
+      "descriptionEN": "Own 100,000,000 Gold",
+      "category": "Wealth",
+      "iconName": "achievement_gold_100m",
+      "hidden": false,
+      "requirementType": "GoldOwned",
+      "requirementValue": 100000000,
+      "rewards": [
+        {"type": "Gem", "amount": 500}
+      ]
+    },
+    {
+      "achievementId": "wealth_003",
+      "achievementName": "골드 파밍 마스터",
+      "achievementNameEN": "Gold Farming Master",
+      "description": "누적 골드 획득량 1억",
+      "descriptionEN": "Total Gold Earned 100,000,000",
+      "category": "Wealth",
+      "iconName": "achievement_gold_earned",
+      "hidden": false,
+      "requirementType": "TotalGoldEarned",
+      "requirementValue": 100000000,
+      "rewards": [
+        {"type": "Gold", "amount": 5000000},
+        {"type": "Gem", "amount": 200}
+      ]
+    },
+    {
+      "achievementId": "special_001",
+      "achievementName": "의심도 0%",
+      "achievementNameEN": "0% Suspicion",
+      "description": "의심도를 0%로 유지한 채 레벨 30 달성",
+      "descriptionEN": "Reach Level 30 While Maintaining 0% Suspicion",
+      "category": "Special",
+      "iconName": "achievement_no_suspicion",
+      "hidden": true,
+      "requirementType": "LevelWithZeroSuspicion",
+      "requirementValue": 30,
+      "rewards": [
+        {"type": "Gold", "amount": 1000000},
+        {"type": "Gem", "amount": 500}
+      ]
+    },
+    {
+      "achievementId": "special_002",
+      "achievementName": "완벽한 은둔",
+      "achievementNameEN": "Perfect Hermit",
+      "description": "의심도가 한 번도 50%를 넘기지 않고 레벨 50 달성",
+      "descriptionEN": "Reach Level 50 Without Suspicion Ever Exceeding 50%",
+      "category": "Special",
+      "iconName": "achievement_perfect_hermit",
+      "hidden": true,
+      "requirementType": "LevelWithLowSuspicion",
+      "requirementValue": 50,
+      "rewards": [
+        {"type": "Gold", "amount": 5000000},
+        {"type": "Gem", "amount": 1000}
+      ]
+    },
+    {
+      "achievementId": "special_003",
+      "achievementName": "속도광",
+      "achievementNameEN": "Speed Demon",
+      "description": "환생까지 1시간 내에 도달",
+      "descriptionEN": "Reach Rebirth Within 1 Hour",
+      "category": "Special",
+      "iconName": "achievement_speedrun",
+      "hidden": true,
+      "requirementType": "TimeToRebirth",
+      "requirementValue": 3600,
+      "rewards": [
+        {"type": "Gold", "amount": 2000000},
+        {"type": "Gem", "amount": 500}
+      ]
+    },
+    {
+      "achievementId": "mythic_001",
+      "achievementName": "기원과의 대면",
+      "achievementNameEN": "Meeting with Origin",
+      "description": "기원 처치",
+      "descriptionEN": "Defeat Origin",
+      "category": "Mythic",
+      "iconName": "achievement_origin",
+      "hidden": false,
+      "requirementType": "BossDefeat",
+      "requirementValue": "origin_mythic_001",
+      "rewards": [
+        {"type": "Gold", "amount": 50000000},
+        {"type": "Gem", "amount": 5000}
+      ]
+    },
+    {
+      "achievementId": "mythic_002",
+      "achievementName": "신을 넘어서",
+      "achievementNameEN": "Beyond God",
+      "description": "절대신 처치",
+      "descriptionEN": "Defeat Absolute God",
+      "category": "Mythic",
+      "iconName": "achievement_absolute_god",
+      "hidden": false,
+      "requirementType": "BossDefeat",
+      "requirementValue": "absolute_god_mythic_001",
+      "rewards": [
+        {"type": "Gold", "amount": 100000000},
+        {"type": "Gem", "amount": 10000}
+      ]
+    },
+    {
+      "achievementId": "mythic_003",
+      "achievementName": "카오스 정복",
+      "achievementNameEN": "Chaos Conquest",
+      "description": "카오스의 화신 처치",
+      "descriptionEN": "Defeat Chaos Incarnate",
+      "category": "Mythic",
+      "iconName": "achievement_chaos",
+      "hidden": false,
+      "requirementType": "BossDefeat",
+      "requirementValue": "chaos_incarnate_mythic_001",
+      "rewards": [
+        {"type": "Gold", "amount": 200000000},
+        {"type": "Gem", "amount": 20000}
+      ]
+    },
+    {
+      "achievementId": "mythic_004",
+      "achievementName": "영원의 순간",
+      "achievementNameEN": "Moment of Eternity",
+      "description": "영원 처치",
+      "descriptionEN": "Defeat Eternity",
+      "category": "Mythic",
+      "iconName": "achievement_eternity",
+      "hidden": true,
+      "requirementType": "BossDefeat",
+      "requirementValue": "eternity_mythic_001",
+      "rewards": [
+        {"type": "Gold", "amount": 500000000},
+        {"type": "Gem", "amount": 50000}
+      ]
+    },
+    {
+      "achievementId": "ultimate_001",
+      "achievementName": "무한의 끝",
+      "achievementNameEN": "End of Infinity",
+      "description": "무한 처치",
+      "descriptionEN": "Defeat Infinity",
+      "category": "Ultimate",
+      "iconName": "achievement_infinity",
+      "hidden": true,
+      "requirementType": "BossDefeat",
+      "requirementValue": "infinity_mythic_001",
+      "rewards": [
+        {"type": "Gold", "amount": 999999999},
+        {"type": "Gem", "amount": 99999},
+        {"type": "Item", "itemId": "weapon_sword_010", "count": 1}
+      ],
+      "unlockDialogueId": "endgame_infinity_defeat"
+    },
+    {
+      "achievementId": "ultimate_002",
+      "achievementName": "진정한 은둔형 영웅",
+      "achievementNameEN": "True Hermit Hero",
+      "description": "모든 메인 스토리 클리어",
+      "descriptionEN": "Complete All Main Story",
+      "category": "Ultimate",
+      "iconName": "achievement_true_hero",
+      "hidden": false,
+      "requirementType": "StoryComplete",
+      "requirementValue": 100,
+      "rewards": [
+        {"type": "Gold", "amount": 999999999},
+        {"type": "Gem", "amount": 99999}
+      ],
+      "unlockDialogueId": "true_ending"
+    },
+    {
+      "achievementId": "ultimate_003",
+      "achievementName": "완전 정복",
+      "achievementNameEN": "Perfect Completion",
+      "description": "모든 업적 달성",
+      "descriptionEN": "Achieve All Achievements",
+      "category": "Ultimate",
+      "iconName": "achievement_platinum",
+      "hidden": false,
+      "requirementType": "AllAchievements",
+      "requirementValue": 1,
+      "rewards": [
+        {"type": "Title", "titleId": "title_perfect_hermit"},
+        {"type": "Gem", "amount": 100000}
+      ]
+    }
+  ]
+}

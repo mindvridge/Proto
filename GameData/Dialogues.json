@@ -1,0 +1,510 @@
+{
+  "dialogues": [
+    {
+      "dialogueId": "tutorial_001",
+      "dialogueType": "Tutorial",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "환영합니다! 당신은 겉으로는 백수 은둔형 외톨이지만, 실은 세계를 구하는 숨겨진 영웅입니다.",
+      "textEN": "Welcome! You appear to be a NEET hermit, but you're actually a hidden hero saving the world.",
+      "nextDialogueId": "tutorial_002"
+    },
+    {
+      "dialogueId": "tutorial_002",
+      "dialogueType": "Tutorial",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "화면을 탭하여 몬스터를 공격하세요. 골드와 경험치를 얻을 수 있습니다.",
+      "textEN": "Tap the screen to attack monsters. You can earn gold and experience points.",
+      "nextDialogueId": "tutorial_003"
+    },
+    {
+      "dialogueId": "tutorial_003",
+      "dialogueType": "Tutorial",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "중요한 것은 정체를 들키지 않는 것입니다. 의심 게이지가 100%가 되면 게임 오버!",
+      "textEN": "The important thing is not to get caught. If the suspicion gauge reaches 100%, it's game over!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "story_001",
+      "dialogueType": "Story",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "평범한 백수의 삶을 살던 당신. 어느 날 갑자기 이상한 힘에 눈뜨게 됩니다.",
+      "textEN": "You were living an ordinary NEET life. One day, you suddenly awakened to a strange power.",
+      "nextDialogueId": "story_002"
+    },
+    {
+      "dialogueId": "story_002",
+      "dialogueType": "Story",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "세계는 몬스터의 침략을 받고 있었고, 당신만이 그들을 막을 수 있었습니다.",
+      "textEN": "The world was being invaded by monsters, and only you could stop them.",
+      "nextDialogueId": "story_003"
+    },
+    {
+      "dialogueId": "story_003",
+      "dialogueType": "Story",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "하지만 가족과 주변 사람들에게는 비밀로 해야 합니다. 겉으로는 여전히 백수처럼 보여야 하니까요.",
+      "textEN": "But you must keep it secret from your family and those around you. You still need to appear as a NEET on the outside.",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "npc_sister_001",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_normal",
+      "text": "오빠, 오늘도 집에만 있을 거야? 취업 준비는 안 해?",
+      "textEN": "Brother, are you staying home again today? Aren't you preparing for job interviews?",
+      "choices": [
+        {"choiceText": "오늘은 좀 쉴게...", "nextDialogueId": "npc_sister_001_a"},
+        {"choiceText": "준비하고 있어!", "nextDialogueId": "npc_sister_001_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_sister_001_a",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_disappointed",
+      "text": "휴... 맨날 쉰다더니. 그래도 건강은 챙기세요.",
+      "textEN": "Sigh... You always say you're resting. But at least take care of your health.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 5}
+    },
+    {
+      "dialogueId": "npc_sister_001_b",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_happy",
+      "text": "정말? 화이팅! 오빠라면 잘 할 수 있을 거야!",
+      "textEN": "Really? Fighting! I'm sure you can do it!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -5}
+    },
+    {
+      "dialogueId": "npc_mom_001",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_normal",
+      "text": "우리 아들, 밥은 먹었니? 엄마가 냉장고에 반찬 넣어뒀어.",
+      "textEN": "My son, have you eaten? Mom put some side dishes in the fridge.",
+      "choices": [
+        {"choiceText": "감사합니다!", "nextDialogueId": "npc_mom_001_a"},
+        {"choiceText": "나중에 먹을게요.", "nextDialogueId": "npc_mom_001_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_mom_001_a",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_happy",
+      "text": "그래, 잘 먹어야 힘이 나지. 천천히 취업 준비해도 괜찮아.",
+      "textEN": "Yes, you need to eat well to have energy. It's okay to take your time preparing for employment.",
+      "nextDialogueId": null,
+      "reward": {"type": "HP", "amount": 500}
+    },
+    {
+      "dialogueId": "npc_mom_001_b",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_worried",
+      "text": "요즘 얼굴이 안 좋아 보이는데... 건강 챙겨야 해.",
+      "textEN": "You don't look well lately... You need to take care of your health.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 3}
+    },
+    {
+      "dialogueId": "npc_shop_001",
+      "dialogueType": "NPC",
+      "characterName": "상점 주인",
+      "characterSprite": "merchant",
+      "text": "어서 오세요! 오늘은 특별 세일입니다. 무엇을 찾으시나요?",
+      "textEN": "Welcome! There's a special sale today. What are you looking for?",
+      "choices": [
+        {"choiceText": "장비를 보여주세요.", "nextDialogueId": "npc_shop_001_a"},
+        {"choiceText": "소비 아이템이 필요해요.", "nextDialogueId": "npc_shop_001_b"},
+        {"choiceText": "그냥 구경할게요.", "nextDialogueId": "npc_shop_001_c"}
+      ]
+    },
+    {
+      "dialogueId": "npc_shop_001_a",
+      "dialogueType": "NPC",
+      "characterName": "상점 주인",
+      "characterSprite": "merchant",
+      "text": "좋은 선택입니다! 최고급 장비를 준비했습니다.",
+      "textEN": "Good choice! I've prepared the finest equipment.",
+      "nextDialogueId": null,
+      "action": "OpenShop",
+      "actionParam": "Equipment"
+    },
+    {
+      "dialogueId": "npc_shop_001_b",
+      "dialogueType": "NPC",
+      "characterName": "상점 주인",
+      "characterSprite": "merchant",
+      "text": "회복 물약과 버프 아이템이 준비되어 있습니다!",
+      "textEN": "Recovery potions and buff items are ready!",
+      "nextDialogueId": null,
+      "action": "OpenShop",
+      "actionParam": "Consumables"
+    },
+    {
+      "dialogueId": "npc_shop_001_c",
+      "dialogueType": "NPC",
+      "characterName": "상점 주인",
+      "characterSprite": "merchant",
+      "text": "언제든 필요하시면 말씀해주세요!",
+      "textEN": "Feel free to let me know if you need anything!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "boss_dragon_001",
+      "dialogueType": "Boss",
+      "characterName": "드래곤 킹",
+      "characterSprite": "dragon_king",
+      "text": "크하하하! 인간 주제에 내 영역에 발을 들였구나!",
+      "textEN": "Kahahaha! A mere human dares to step into my domain!",
+      "nextDialogueId": "boss_dragon_002"
+    },
+    {
+      "dialogueId": "boss_dragon_002",
+      "dialogueType": "Boss",
+      "characterName": "드래곤 킹",
+      "characterSprite": "dragon_king",
+      "text": "하지만 너는 다른 인간들과는 다른 느낌이군. 재미있겠어!",
+      "textEN": "But you feel different from other humans. This will be interesting!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "boss_dragon_defeat",
+      "dialogueType": "Boss",
+      "characterName": "드래곤 킹",
+      "characterSprite": "dragon_king_defeated",
+      "text": "크윽... 이럴 수가... 인간에게 패배하다니...",
+      "textEN": "Grrr... This can't be... Defeated by a human...",
+      "nextDialogueId": null,
+      "reward": {"type": "Gold", "amount": 100000}
+    },
+    {
+      "dialogueId": "boss_demon_001",
+      "dialogueType": "Boss",
+      "characterName": "마왕",
+      "characterSprite": "demon_lord",
+      "text": "호오? 인간이 여기까지 왔단 말인가. 제법이군.",
+      "textEN": "Oh? A human has made it this far. Not bad.",
+      "nextDialogueId": "boss_demon_002"
+    },
+    {
+      "dialogueId": "boss_demon_002",
+      "dialogueType": "Boss",
+      "characterName": "마왕",
+      "characterSprite": "demon_lord",
+      "text": "하지만 여기가 너의 무덤이 될 것이다!",
+      "textEN": "But this will be your grave!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "boss_demon_defeat",
+      "dialogueType": "Boss",
+      "characterName": "마왕",
+      "characterSprite": "demon_lord_defeated",
+      "text": "이것이... 인간의 힘인가... 인정하지... 않는다...",
+      "textEN": "Is this... human power... I won't... acknowledge...",
+      "nextDialogueId": null,
+      "reward": {"type": "Gold", "amount": 200000}
+    },
+    {
+      "dialogueId": "boss_hermit_hunter_001",
+      "dialogueType": "Boss",
+      "characterName": "은둔형 헌터",
+      "characterSprite": "hermit_hunter",
+      "text": "드디어 만났군. 나와 같은 은둔형 외톨이여.",
+      "textEN": "We finally meet. A fellow hermit like me.",
+      "nextDialogueId": "boss_hermit_hunter_002"
+    },
+    {
+      "dialogueId": "boss_hermit_hunter_002",
+      "dialogueType": "Boss",
+      "characterName": "은둔형 헌터",
+      "characterSprite": "hermit_hunter",
+      "text": "하지만 은둔의 세계에는 오직 하나의 정점만이 존재할 수 있지!",
+      "textEN": "But there can only be one apex in the world of hermits!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "boss_hermit_hunter_defeat",
+      "dialogueType": "Boss",
+      "characterName": "은둔형 헌터",
+      "characterSprite": "hermit_hunter_defeated",
+      "text": "이것이... 내 진정한 힘이다! ...라고 말하고 싶었지만, 너가 더 강했군.",
+      "textEN": "This is... my true power! ...I wanted to say, but you were stronger.",
+      "nextDialogueId": null,
+      "reward": {"type": "Item", "itemId": "weapon_sword_010", "count": 1}
+    },
+    {
+      "dialogueId": "event_sister_suspicious_001",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_suspicious",
+      "text": "오빠... 요즘 좀 이상해. 밤에 몰래 나가는 것 같던데?",
+      "textEN": "Brother... you've been acting strange lately. It seems like you sneak out at night?",
+      "nextDialogueId": "event_sister_suspicious_002"
+    },
+    {
+      "dialogueId": "event_sister_suspicious_002",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_suspicious",
+      "text": "혹시... 이상한 일에 연루된 거 아니야?",
+      "textEN": "Could it be... you're involved in something strange?",
+      "choices": [
+        {"choiceText": "아니야, 그냥 산책할 뿐이야.", "nextDialogueId": "event_sister_suspicious_002_a"},
+        {"choiceText": "...비밀이야.", "nextDialogueId": "event_sister_suspicious_002_b"},
+        {"choiceText": "사실은...", "nextDialogueId": "event_sister_suspicious_002_c"}
+      ]
+    },
+    {
+      "dialogueId": "event_sister_suspicious_002_a",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_normal",
+      "text": "그래? 건강에 좋긴 하지만... 밤 산책은 위험하니까 조심해.",
+      "textEN": "Really? It's good for your health, but... night walks are dangerous, so be careful.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -10}
+    },
+    {
+      "dialogueId": "event_sister_suspicious_002_b",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_angry",
+      "text": "비밀? 뭔가 숨기는 게 있구나! 더 의심스러워졌어!",
+      "textEN": "A secret? You're hiding something! Now I'm even more suspicious!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 20}
+    },
+    {
+      "dialogueId": "event_sister_suspicious_002_c",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_surprised",
+      "text": "어? 정말로 말해줄 거야? 잠깐... 진지한 건가?",
+      "textEN": "Huh? Are you really going to tell me? Wait... are you serious?",
+      "nextDialogueId": "event_sister_suspicious_003",
+      "effect": {"suspicion": 50}
+    },
+    {
+      "dialogueId": "event_sister_suspicious_003",
+      "dialogueType": "Event",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "경고! 정체를 밝히면 게임이 종료됩니다! 정말 진실을 말하시겠습니까?",
+      "textEN": "Warning! Revealing your identity will end the game! Do you really want to tell the truth?",
+      "choices": [
+        {"choiceText": "아니야, 농담이야!", "nextDialogueId": "event_sister_suspicious_003_a"},
+        {"choiceText": "응, 말할게.", "nextDialogueId": "event_sister_suspicious_003_b"}
+      ]
+    },
+    {
+      "dialogueId": "event_sister_suspicious_003_a",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_disappointed",
+      "text": "하... 장난치지 마. 진지하게 물어본 건데.",
+      "textEN": "Hah... Don't joke around. I was asking seriously.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 5}
+    },
+    {
+      "dialogueId": "event_sister_suspicious_003_b",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_shocked",
+      "text": "뭐... 뭐라고?! 오빠가 세계를 구하는 영웅이라고?!",
+      "textEN": "Wha... what?! You're a hero saving the world?!",
+      "nextDialogueId": "game_over_revealed",
+      "action": "GameOver",
+      "actionParam": "IdentityRevealed"
+    },
+    {
+      "dialogueId": "achievement_first_rebirth",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "축하합니다! 첫 환생을 완료했습니다. 더 강해진 모습으로 다시 시작하세요!",
+      "textEN": "Congratulations! You've completed your first rebirth. Start again with a stronger form!",
+      "nextDialogueId": null,
+      "reward": {"type": "SkillPoint", "amount": 10}
+    },
+    {
+      "dialogueId": "achievement_level_50",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "레벨 50 달성! 이제 진정한 영웅의 길을 걷기 시작했습니다.",
+      "textEN": "Level 50 achieved! You've now begun to walk the true path of a hero.",
+      "nextDialogueId": null,
+      "reward": {"type": "Gold", "amount": 100000}
+    },
+    {
+      "dialogueId": "achievement_defeat_dragon_king",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "드래곤 킹을 처치했습니다! 당신의 이름이 전설이 되었습니다.",
+      "textEN": "You've defeated the Dragon King! Your name has become a legend.",
+      "nextDialogueId": null,
+      "reward": {"type": "Item", "itemId": "material_dragon_scale", "count": 50}
+    },
+    {
+      "dialogueId": "random_night_001",
+      "dialogueType": "Event",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "밤이 되었습니다. 은둔형 외톨이에게는 밤이야말로 진정한 활동 시간!",
+      "textEN": "Night has fallen. For a hermit, night is the true time for activity!",
+      "nextDialogueId": null,
+      "effect": {"nightBonus": 0.5}
+    },
+    {
+      "dialogueId": "random_day_001",
+      "dialogueType": "Event",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "낮입니다. 가족들이 깨어 있어 눈치를 봐야 합니다. 의심도가 더 빨리 증가합니다.",
+      "textEN": "It's daytime. Your family is awake, so you need to be careful. Suspicion increases faster.",
+      "nextDialogueId": null,
+      "effect": {"suspicionMultiplier": 1.5}
+    },
+    {
+      "dialogueId": "special_infinite_slime_001",
+      "dialogueType": "Boss",
+      "characterName": "무한 슬라임",
+      "characterSprite": "infinite_slime",
+      "text": "뿌뿌뿌! 나는 무한히 분열한다! 나를 이길 수 있겠나?",
+      "textEN": "Bloop bloop! I divide infinitely! Can you defeat me?",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "special_infinite_slime_defeat",
+      "dialogueType": "Boss",
+      "characterName": "무한 슬라임",
+      "characterSprite": "infinite_slime_defeated",
+      "text": "뿌뿌... 무한이라고 했지만... 한계가 있었구나...",
+      "textEN": "Bloop... I said infinite, but... there was a limit after all...",
+      "nextDialogueId": null,
+      "reward": {"type": "Gold", "amount": 10000000}
+    },
+    {
+      "dialogueId": "npc_neighbor_001",
+      "dialogueType": "NPC",
+      "characterName": "이웃 아저씨",
+      "characterSprite": "neighbor",
+      "text": "오, 자네! 요즘 뭐하고 지내나? 취업은 됐나?",
+      "textEN": "Oh, you! What have you been up to lately? Did you get a job?",
+      "choices": [
+        {"choiceText": "아직 준비 중입니다.", "nextDialogueId": "npc_neighbor_001_a"},
+        {"choiceText": "곧 좋은 소식 있을 겁니다.", "nextDialogueId": "npc_neighbor_001_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_neighbor_001_a",
+      "dialogueType": "NPC",
+      "characterName": "이웃 아저씨",
+      "characterSprite": "neighbor",
+      "text": "그래, 천천히 해도 괜찮네. 젊은이가 너무 조급해하지 말고.",
+      "textEN": "I see, it's okay to take it slow. Young people shouldn't be too hasty.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -3}
+    },
+    {
+      "dialogueId": "npc_neighbor_001_b",
+      "dialogueType": "NPC",
+      "characterName": "이웃 아저씨",
+      "characterSprite": "neighbor",
+      "text": "오, 정말? 그거 좋은 소식이군! 기대하고 있겠네!",
+      "textEN": "Oh, really? That's good news! I'll look forward to it!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -5}
+    },
+    {
+      "dialogueId": "endgame_origin_001",
+      "dialogueType": "Boss",
+      "characterName": "기원",
+      "characterSprite": "origin",
+      "text": "...",
+      "textEN": "...",
+      "nextDialogueId": "endgame_origin_002"
+    },
+    {
+      "dialogueId": "endgame_origin_002",
+      "dialogueType": "Boss",
+      "characterName": "기원",
+      "characterSprite": "origin",
+      "text": "여기까지 왔구나... 인간이여. 너는 선택받은 자다.",
+      "textEN": "You've come this far... human. You are the chosen one.",
+      "nextDialogueId": "endgame_origin_003"
+    },
+    {
+      "dialogueId": "endgame_origin_003",
+      "dialogueType": "Boss",
+      "characterName": "기원",
+      "characterSprite": "origin",
+      "text": "하지만 모든 것의 시작인 나를 넘어설 수 있겠는가?",
+      "textEN": "But can you surpass me, the origin of all things?",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "endgame_infinity_001",
+      "dialogueType": "Boss",
+      "characterName": "무한",
+      "characterSprite": "infinity",
+      "text": "무한의 끝을 보여주마.",
+      "textEN": "I shall show you the end of infinity.",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "endgame_infinity_defeat",
+      "dialogueType": "Boss",
+      "characterName": "무한",
+      "characterSprite": "infinity_defeated",
+      "text": "무한조차 끝이 있었구나... 축하한다, 진정한 은둔형 영웅이여.",
+      "textEN": "Even infinity had an end... Congratulations, true hermit hero.",
+      "nextDialogueId": "true_ending",
+      "reward": {"type": "Item", "itemId": "weapon_sword_010", "count": 1}
+    },
+    {
+      "dialogueId": "true_ending",
+      "dialogueType": "Story",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "당신은 모든 것을 극복하고 진정한 은둔형 영웅이 되었습니다. 하지만 일상은 여전합니다...",
+      "textEN": "You have overcome everything and become a true hermit hero. But daily life continues as usual...",
+      "nextDialogueId": "true_ending_02"
+    },
+    {
+      "dialogueId": "true_ending_02",
+      "dialogueType": "Story",
+      "characterName": "여동생",
+      "characterSprite": "sister_normal",
+      "text": "오빠, 저녁 먹어! 엄마가 맛있는 거 해주셨어!",
+      "textEN": "Brother, come eat dinner! Mom made something delicious!",
+      "nextDialogueId": "true_ending_03"
+    },
+    {
+      "dialogueId": "true_ending_03",
+      "dialogueType": "Story",
+      "characterName": "주인공",
+      "characterSprite": "hero_smile",
+      "text": "응, 지금 갈게!",
+      "textEN": "Okay, I'm coming!",
+      "nextDialogueId": null,
+      "action": "ShowCredits"
+    }
+  ]
+}
