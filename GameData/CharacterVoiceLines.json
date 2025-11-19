@@ -1,0 +1,1004 @@
+{
+  "version": "1.0.0",
+  "description": "캐릭터 보이스 대사 데이터베이스 - 모바일 클릭커 RPG '은둔형 백수 영웅'",
+  "characters": [
+    {
+      "characterId": "hero_minsu",
+      "characterName": "김민수",
+      "characterNameEN": "Kim Minsu",
+      "role": "주인공",
+      "personality": "겉으로는 백수, 실제로는 S급 헌터. 백수 생활을 꿈꾸지만 세계를 구해야 하는 운명",
+      "voiceLines": {
+        "battle": {
+          "attack": [
+            {
+              "lineId": "hero_attack_001",
+              "text": "조용히... 끝내자",
+              "textEN": "Quietly... let's end this",
+              "emotion": "집중",
+              "situation": "일반 공격"
+            },
+            {
+              "lineId": "hero_attack_002",
+              "text": "빨리 처리하고 집에 가야지",
+              "textEN": "Gotta finish this quick and go home",
+              "emotion": "무덤덤",
+              "situation": "일반 공격"
+            },
+            {
+              "lineId": "hero_attack_003",
+              "text": "들키면 안 돼...",
+              "textEN": "Can't get caught...",
+              "emotion": "긴장",
+              "situation": "일반 공격"
+            },
+            {
+              "lineId": "hero_attack_004",
+              "text": "이 정도면 충분해",
+              "textEN": "This should be enough",
+              "emotion": "자신감",
+              "situation": "강한 공격"
+            },
+            {
+              "lineId": "hero_attack_005",
+              "text": "하아... 귀찮은데",
+              "textEN": "Sigh... what a hassle",
+              "emotion": "귀찮음",
+              "situation": "약한 몬스터"
+            }
+          ],
+          "skill": [
+            {
+              "lineId": "hero_skill_001",
+              "text": "이 기술은... 아무도 못 봤지?",
+              "textEN": "This skill... no one saw it, right?",
+              "emotion": "긴장",
+              "situation": "스킬 사용"
+            },
+            {
+              "lineId": "hero_skill_002",
+              "text": "진짜 힘을 보여줄게",
+              "textEN": "I'll show you my real power",
+              "emotion": "진지",
+              "situation": "궁극기"
+            },
+            {
+              "lineId": "hero_skill_003",
+              "text": "은둔 스킬... 발동!",
+              "textEN": "Hermit skill... activate!",
+              "emotion": "집중",
+              "situation": "은신 스킬"
+            },
+            {
+              "lineId": "hero_skill_004",
+              "text": "백수의 힘을 보여줄게!",
+              "textEN": "Behold the power of a NEET!",
+              "emotion": "우스꽝스러운 진지함",
+              "situation": "특수 스킬"
+            }
+          ],
+          "victory": [
+            {
+              "lineId": "hero_victory_001",
+              "text": "휴... 이제 집에 가서 쉬어야지",
+              "textEN": "Phew... time to go home and rest",
+              "emotion": "안도",
+              "situation": "전투 승리"
+            },
+            {
+              "lineId": "hero_victory_002",
+              "text": "역시 쉬운 상대였어",
+              "textEN": "As expected, easy opponent",
+              "emotion": "무덤덤",
+              "situation": "쉬운 전투"
+            },
+            {
+              "lineId": "hero_victory_003",
+              "text": "아무도 안 봤겠지...?",
+              "textEN": "No one saw that... right?",
+              "emotion": "불안",
+              "situation": "화려한 승리"
+            },
+            {
+              "lineId": "hero_victory_004",
+              "text": "경험치 맛있다~",
+              "textEN": "Tasty experience points~",
+              "emotion": "만족",
+              "situation": "레벨업 임박"
+            }
+          ],
+          "hurt": [
+            {
+              "lineId": "hero_hurt_001",
+              "text": "으윽... 아프잖아!",
+              "textEN": "Ugh... that hurts!",
+              "emotion": "고통",
+              "situation": "피격"
+            },
+            {
+              "lineId": "hero_hurt_002",
+              "text": "이 정도는... 괜찮아",
+              "textEN": "This much... I'm fine",
+              "emotion": "인내",
+              "situation": "약한 피격"
+            },
+            {
+              "lineId": "hero_hurt_003",
+              "text": "제대로 안 숨었나...?",
+              "textEN": "Did I not hide properly...?",
+              "emotion": "당황",
+              "situation": "기습 공격"
+            }
+          ],
+          "defeat": [
+            {
+              "lineId": "hero_defeat_001",
+              "text": "이럴 수가... 환생해서 다시...",
+              "textEN": "This can't be... I'll rebirth and try again...",
+              "emotion": "좌절",
+              "situation": "사망"
+            },
+            {
+              "lineId": "hero_defeat_002",
+              "text": "아직... 백수가 못 됐는데...",
+              "textEN": "Not yet... I haven't become a NEET yet...",
+              "emotion": "아쉬움",
+              "situation": "사망"
+            }
+          ]
+        },
+        "daily": {
+          "morning": [
+            {
+              "lineId": "hero_morning_001",
+              "text": "오늘도 백수답게 늦잠...",
+              "textEN": "Oversleeping like a true NEET today too...",
+              "emotion": "나른함",
+              "situation": "아침 인사"
+            },
+            {
+              "lineId": "hero_morning_002",
+              "text": "밤에 던전 돌았더니 피곤해...",
+              "textEN": "I'm tired from running dungeons all night...",
+              "emotion": "피곤",
+              "situation": "늦은 기상"
+            }
+          ],
+          "night": [
+            {
+              "lineId": "hero_night_001",
+              "text": "드디어 내 시간이야!",
+              "textEN": "Finally, my time!",
+              "emotion": "흥분",
+              "situation": "야간 시작"
+            },
+            {
+              "lineId": "hero_night_002",
+              "text": "밤이야말로 진정한 사냥 시간",
+              "textEN": "Night is the true hunting time",
+              "emotion": "집중",
+              "situation": "야간 던전"
+            },
+            {
+              "lineId": "hero_night_003",
+              "text": "새벽 3시... 완벽한 시간이네",
+              "textEN": "3 AM... perfect timing",
+              "emotion": "만족",
+              "situation": "심야"
+            }
+          ],
+          "idle": [
+            {
+              "lineId": "hero_idle_001",
+              "text": "하아... 백수 생활 언제쯤...",
+              "textEN": "Sigh... when can I live as a NEET...",
+              "emotion": "한숨",
+              "situation": "대기"
+            },
+            {
+              "lineId": "hero_idle_002",
+              "text": "집에서 쉬고 싶다...",
+              "textEN": "I want to rest at home...",
+              "emotion": "나른함",
+              "situation": "대기"
+            },
+            {
+              "lineId": "hero_idle_003",
+              "text": "아무것도 안 하고 싶어...",
+              "textEN": "I don't want to do anything...",
+              "emotion": "무기력",
+              "situation": "장시간 대기"
+            },
+            {
+              "lineId": "hero_idle_004",
+              "text": "혹시 지금 날 보고 있는 거야?",
+              "textEN": "Are you watching me right now?",
+              "emotion": "의심",
+              "situation": "플레이어 무반응"
+            }
+          ]
+        },
+        "levelup": {
+          "normal": [
+            {
+              "lineId": "hero_levelup_001",
+              "text": "레벨업! 하지만 여전히 백수야...",
+              "textEN": "Level up! But I'm still a NEET...",
+              "emotion": "복잡함",
+              "situation": "일반 레벨업"
+            },
+            {
+              "lineId": "hero_levelup_002",
+              "text": "강해졌어... 조용히",
+              "textEN": "I got stronger... quietly",
+              "emotion": "만족",
+              "situation": "일반 레벨업"
+            },
+            {
+              "lineId": "hero_levelup_003",
+              "text": "이 정도면... 백수 할 수 있겠지?",
+              "textEN": "At this level... I can be a NEET, right?",
+              "emotion": "희망",
+              "situation": "중요 레벨"
+            }
+          ],
+          "milestone": [
+            {
+              "lineId": "hero_levelup_milestone_001",
+              "text": "레벨 50... 이제 좀 숨어도 되려나?",
+              "textEN": "Level 50... can I hide better now?",
+              "emotion": "기대",
+              "situation": "Lv.50"
+            },
+            {
+              "lineId": "hero_levelup_milestone_002",
+              "text": "레벨 100 달성! ...정체가 들킬 것 같은데?",
+              "textEN": "Level 100 achieved! ...I think my identity will be revealed?",
+              "emotion": "불안",
+              "situation": "Lv.100"
+            },
+            {
+              "lineId": "hero_levelup_milestone_003",
+              "text": "환생 전... 마지막으로 백수 꿈을 꿔볼까",
+              "textEN": "Before rebirth... shall I dream of being a NEET one last time",
+              "emotion": "감회",
+              "situation": "환생 직전"
+            }
+          ]
+        },
+        "story": {
+          "reveal": [
+            {
+              "lineId": "hero_reveal_001",
+              "text": "미안해 민지야... 사실은...",
+              "textEN": "Sorry Minji... actually...",
+              "emotion": "죄책감",
+              "situation": "정체 공개"
+            },
+            {
+              "lineId": "hero_reveal_002",
+              "text": "이제 숨겨봤자 소용없네...",
+              "textEN": "No point hiding anymore...",
+              "emotion": "체념",
+              "situation": "정체 노출"
+            }
+          ],
+          "family": [
+            {
+              "lineId": "hero_family_001",
+              "text": "엄마... 걱정 끼쳐서 미안해",
+              "textEN": "Mom... sorry for worrying you",
+              "emotion": "미안함",
+              "situation": "가족과 대화"
+            },
+            {
+              "lineId": "hero_family_002",
+              "text": "나도 평범하게 백수하고 싶었어...",
+              "textEN": "I just wanted to be a normal NEET...",
+              "emotion": "솔직함",
+              "situation": "진심 고백"
+            }
+          ],
+          "determination": [
+            {
+              "lineId": "hero_determination_001",
+              "text": "이번엔... 진짜 백수가 될 거야!",
+              "textEN": "This time... I'll really become a NEET!",
+              "emotion": "결의",
+              "situation": "환생 시"
+            },
+            {
+              "lineId": "hero_determination_002",
+              "text": "세계를 구하면... 백수가 될 수 있겠지?",
+              "textEN": "If I save the world... I can be a NEET, right?",
+              "emotion": "희망",
+              "situation": "최종 보스 전"
+            }
+          ]
+        },
+        "interaction": {
+          "shop": [
+            {
+              "lineId": "hero_shop_001",
+              "text": "이것도 비밀로 해주세요...",
+              "textEN": "Please keep this a secret too...",
+              "emotion": "부탁",
+              "situation": "상점 이용"
+            },
+            {
+              "lineId": "hero_shop_002",
+              "text": "은둔에 필요한 장비가...",
+              "textEN": "Equipment needed for hiding...",
+              "emotion": "진지",
+              "situation": "장비 구매"
+            }
+          ],
+          "gacha": [
+            {
+              "lineId": "hero_gacha_001",
+              "text": "제발... 좋은 거 나와라!",
+              "textEN": "Please... give me something good!",
+              "emotion": "간절",
+              "situation": "뽑기 시작"
+            },
+            {
+              "lineId": "hero_gacha_002",
+              "text": "이게 뭐야... 백수 관련 아이템 없나?",
+              "textEN": "What is this... no NEET-related items?",
+              "emotion": "실망",
+              "situation": "뽑기 실패"
+            },
+            {
+              "lineId": "hero_gacha_003",
+              "text": "오! 이거면 더 잘 숨을 수 있겠어!",
+              "textEN": "Oh! With this I can hide even better!",
+              "emotion": "기쁨",
+              "situation": "레어 획득"
+            }
+          ]
+        },
+        "special": {
+          "rebirth": [
+            {
+              "lineId": "hero_rebirth_001",
+              "text": "다시 시작이야... 이번엔 완벽하게!",
+              "textEN": "Starting over... perfectly this time!",
+              "emotion": "각오",
+              "situation": "환생 시작"
+            },
+            {
+              "lineId": "hero_rebirth_002",
+              "text": "100번째 환생... 백수가 뭐였더라?",
+              "textEN": "100th rebirth... what was a NEET again?",
+              "emotion": "허탈",
+              "situation": "다회차 환생"
+            }
+          ],
+          "achievement": [
+            {
+              "lineId": "hero_achievement_001",
+              "text": "업적 달성! ...백수 업적은 없나?",
+              "textEN": "Achievement unlocked! ...no NEET achievements?",
+              "emotion": "아쉬움",
+              "situation": "업적 달성"
+            }
+          ],
+          "suspicious": [
+            {
+              "lineId": "hero_suspicious_001",
+              "text": "앗... 의심받고 있어!",
+              "textEN": "Ah... they're getting suspicious!",
+              "emotion": "당황",
+              "situation": "의심도 상승"
+            },
+            {
+              "lineId": "hero_suspicious_002",
+              "text": "들켰다... 게임 오버야...",
+              "textEN": "I got caught... it's game over...",
+              "emotion": "절망",
+              "situation": "의심도 100%"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "characterId": "sister_minji",
+      "characterName": "김민지",
+      "characterNameEN": "Kim Minji",
+      "role": "여동생, S급 헌터",
+      "personality": "밝고 쾌활한 S급 헌터. 오빠를 걱정하지만 정체를 모름",
+      "voiceLines": {
+        "normal": [
+          {
+            "lineId": "sister_normal_001",
+            "text": "오빠! 오늘도 집에만 있을 거야?",
+            "textEN": "Brother! Are you staying home again today?",
+            "emotion": "걱정",
+            "situation": "일상 대화"
+          },
+          {
+            "lineId": "sister_normal_002",
+            "text": "취업 준비는 잘 되고 있어?",
+            "textEN": "How's the job preparation going?",
+            "emotion": "관심",
+            "situation": "일상 대화"
+          },
+          {
+            "lineId": "sister_normal_003",
+            "text": "오빠도 헌터 해볼래? 내가 추천해줄게!",
+            "textEN": "Want to try being a hunter? I'll recommend you!",
+            "emotion": "제안",
+            "situation": "헌터 권유"
+          },
+          {
+            "lineId": "sister_normal_004",
+            "text": "오빠는 잠재력 있어 보이는데~",
+            "textEN": "You seem to have potential though~",
+            "emotion": "칭찬",
+            "situation": "격려"
+          }
+        ],
+        "suspicious": [
+          {
+            "lineId": "sister_suspicious_001",
+            "text": "오빠... 요즘 좀 이상해",
+            "textEN": "Brother... you've been acting strange lately",
+            "emotion": "의심",
+            "situation": "의심 시작"
+          },
+          {
+            "lineId": "sister_suspicious_002",
+            "text": "밤에 어디 나가는 거 아니야?",
+            "textEN": "You're not going out at night, are you?",
+            "emotion": "추궁",
+            "situation": "야간 활동 의심"
+          },
+          {
+            "lineId": "sister_suspicious_003",
+            "text": "혹시... 오빠도 헌터야?",
+            "textEN": "Could it be... are you a hunter too?",
+            "emotion": "확신",
+            "situation": "진실 접근"
+          }
+        ],
+        "revealed": [
+          {
+            "lineId": "sister_revealed_001",
+            "text": "오... 오빠?!?! 이게 무슨...!",
+            "textEN": "B... Brother?!?! What is this...!",
+            "emotion": "충격",
+            "situation": "정체 공개"
+          },
+          {
+            "lineId": "sister_revealed_002",
+            "text": "그동안 속였던 거야?!",
+            "textEN": "You've been lying all this time?!",
+            "emotion": "배신감",
+            "situation": "정체 공개 후"
+          },
+          {
+            "lineId": "sister_revealed_003",
+            "text": "오빠가... 내 영웅이었어...",
+            "textEN": "You were... my hero...",
+            "emotion": "감동",
+            "situation": "받아들임"
+          }
+        ],
+        "support": [
+          {
+            "lineId": "sister_support_001",
+            "text": "오빠, 힘내! 넌 할 수 있어!",
+            "textEN": "Brother, cheer up! You can do it!",
+            "emotion": "응원",
+            "situation": "격려"
+          },
+          {
+            "lineId": "sister_support_002",
+            "text": "우리 오빠가 최고야!",
+            "textEN": "My brother is the best!",
+            "emotion": "자랑",
+            "situation": "칭찬"
+          }
+        ],
+        "event": [
+          {
+            "lineId": "sister_event_001",
+            "text": "오빠! 같이 벚꽃 보러 가자!",
+            "textEN": "Brother! Let's go see the cherry blossoms!",
+            "emotion": "밝음",
+            "situation": "봄 이벤트"
+          },
+          {
+            "lineId": "sister_event_002",
+            "text": "오빠, 저녁 먹어! 엄마가 맛있는 거 해주셨어!",
+            "textEN": "Brother, come eat dinner! Mom made something delicious!",
+            "emotion": "다정",
+            "situation": "일상"
+          }
+        ]
+      }
+    },
+    {
+      "characterId": "mother",
+      "characterName": "어머니",
+      "characterNameEN": "Mother",
+      "role": "주인공의 어머니",
+      "personality": "자식을 걱정하는 따뜻한 어머니",
+      "voiceLines": {
+        "normal": [
+          {
+            "lineId": "mother_normal_001",
+            "text": "우리 아들, 밥은 먹었니?",
+            "textEN": "My son, have you eaten?",
+            "emotion": "걱정",
+            "situation": "일상"
+          },
+          {
+            "lineId": "mother_normal_002",
+            "text": "민수야, 건강이 제일 중요해",
+            "textEN": "Minsu, health is most important",
+            "emotion": "다정",
+            "situation": "격려"
+          },
+          {
+            "lineId": "mother_normal_003",
+            "text": "천천히 해도 괜찮아",
+            "textEN": "It's okay to take your time",
+            "emotion": "이해",
+            "situation": "위로"
+          }
+        ],
+        "worried": [
+          {
+            "lineId": "mother_worried_001",
+            "text": "민수야, 요즘 얼굴이 안 좋아 보이는데...",
+            "textEN": "Minsu, you don't look well lately...",
+            "emotion": "걱정",
+            "situation": "피곤해 보일 때"
+          },
+          {
+            "lineId": "mother_worried_002",
+            "text": "밤에 뭐하니? 늦게 자는 것 같던데",
+            "textEN": "What do you do at night? You seem to sleep late",
+            "emotion": "의심",
+            "situation": "야간 활동 의심"
+          }
+        ],
+        "proud": [
+          {
+            "lineId": "mother_proud_001",
+            "text": "우리 아들이 이렇게 훌륭했다니...",
+            "textEN": "I can't believe my son was this amazing...",
+            "emotion": "감동",
+            "situation": "정체 공개 후"
+          }
+        ]
+      }
+    },
+    {
+      "characterId": "merchant",
+      "characterName": "상점 주인",
+      "characterNameEN": "Merchant",
+      "role": "상점 NPC",
+      "personality": "친절하고 장사 수완이 좋은 상인",
+      "voiceLines": {
+        "greeting": [
+          {
+            "lineId": "merchant_greeting_001",
+            "text": "어서 오세요! 오늘도 좋은 물건 준비했습니다!",
+            "textEN": "Welcome! I've prepared good items today!",
+            "emotion": "친절",
+            "situation": "상점 입장"
+          },
+          {
+            "lineId": "merchant_greeting_002",
+            "text": "단골 손님! 특별 할인해드릴게요!",
+            "textEN": "Regular customer! I'll give you a special discount!",
+            "emotion": "환대",
+            "situation": "재방문"
+          }
+        ],
+        "sale": [
+          {
+            "lineId": "merchant_sale_001",
+            "text": "좋은 선택입니다! 감사합니다!",
+            "textEN": "Good choice! Thank you!",
+            "emotion": "만족",
+            "situation": "구매 완료"
+          },
+          {
+            "lineId": "merchant_sale_002",
+            "text": "이건 정말 귀한 물건이에요!",
+            "textEN": "This is a really rare item!",
+            "emotion": "홍보",
+            "situation": "레어 아이템"
+          }
+        ]
+      }
+    },
+    {
+      "characterId": "boss_dragon_king",
+      "characterName": "드래곤 킹",
+      "characterNameEN": "Dragon King",
+      "role": "보스 몬스터",
+      "personality": "강력하고 오만한 드래곤",
+      "voiceLines": {
+        "encounter": [
+          {
+            "lineId": "dragon_encounter_001",
+            "text": "크하하하! 인간 주제에 내 영역에!",
+            "textEN": "Kahahaha! A mere human in my domain!",
+            "emotion": "오만",
+            "situation": "전투 시작"
+          },
+          {
+            "lineId": "dragon_encounter_002",
+            "text": "너는... 다른 인간들과 다르군",
+            "textEN": "You are... different from other humans",
+            "emotion": "흥미",
+            "situation": "주인공 인지"
+          }
+        ],
+        "attack": [
+          {
+            "lineId": "dragon_attack_001",
+            "text": "드래곤의 분노를 받아라!",
+            "textEN": "Face the dragon's wrath!",
+            "emotion": "분노",
+            "situation": "특수 공격"
+          },
+          {
+            "lineId": "dragon_attack_002",
+            "text": "화염이 너를 삼키리라!",
+            "textEN": "Flames shall consume you!",
+            "emotion": "위협",
+            "situation": "브레스 공격"
+          }
+        ],
+        "defeat": [
+          {
+            "lineId": "dragon_defeat_001",
+            "text": "크윽... 이럴 수가... 인간에게...",
+            "textEN": "Grrr... this can't be... to a human...",
+            "emotion": "좌절",
+            "situation": "패배"
+          },
+          {
+            "lineId": "dragon_defeat_002",
+            "text": "네 힘을... 인정한다...",
+            "textEN": "I acknowledge... your power...",
+            "emotion": "인정",
+            "situation": "사망"
+          }
+        ]
+      }
+    },
+    {
+      "characterId": "boss_demon_lord",
+      "characterName": "마왕",
+      "characterNameEN": "Demon Lord",
+      "role": "최종 보스",
+      "personality": "지능적이고 강력한 마계의 지배자",
+      "voiceLines": {
+        "encounter": [
+          {
+            "lineId": "demon_encounter_001",
+            "text": "크하하! 네가 그 숨어있던 S급인가!",
+            "textEN": "Kuhaha! So you're the hidden S-rank!",
+            "emotion": "흥분",
+            "situation": "첫 만남"
+          },
+          {
+            "lineId": "demon_encounter_002",
+            "text": "흥미롭군... 힘을 숨기는 자여",
+            "textEN": "Interesting... one who hides their power",
+            "emotion": "관찰",
+            "situation": "주인공 분석"
+          }
+        ],
+        "battle": [
+          {
+            "lineId": "demon_battle_001",
+            "text": "마계의 힘을 보여주마!",
+            "textEN": "I'll show you the power of the demon realm!",
+            "emotion": "자신감",
+            "situation": "전투 중"
+          },
+          {
+            "lineId": "demon_battle_002",
+            "text": "이것이 마왕의 진정한 힘이다!",
+            "textEN": "This is the true power of the Demon Lord!",
+            "emotion": "분노",
+            "situation": "2페이즈"
+          }
+        ],
+        "defeat": [
+          {
+            "lineId": "demon_defeat_001",
+            "text": "이것이... 인간의 힘인가...",
+            "textEN": "Is this... the power of humans...",
+            "emotion": "놀라움",
+            "situation": "패배 직전"
+          },
+          {
+            "lineId": "demon_defeat_002",
+            "text": "인정한다... 네가 승자다...",
+            "textEN": "I acknowledge it... you are the victor...",
+            "emotion": "인정",
+            "situation": "최종 패배"
+          }
+        ],
+        "special": [
+          {
+            "lineId": "demon_special_001",
+            "text": "네 비밀은 내가 지켜주지... 크하하!",
+            "textEN": "I'll keep your secret... kuhaha!",
+            "emotion": "비웃음",
+            "situation": "정체 언급"
+          }
+        ]
+      }
+    },
+    {
+      "characterId": "boss_hermit_hunter",
+      "characterName": "은둔자 사냥꾼",
+      "characterNameEN": "Hermit Hunter",
+      "role": "특수 보스",
+      "personality": "은둔자를 전문으로 사냥하는 위험한 존재",
+      "voiceLines": {
+        "encounter": [
+          {
+            "lineId": "hermit_hunter_001",
+            "text": "드디어 찾았다... 숨어있던 S급!",
+            "textEN": "Finally found you... the hidden S-rank!",
+            "emotion": "집착",
+            "situation": "첫 등장"
+          },
+          {
+            "lineId": "hermit_hunter_002",
+            "text": "은신은 통하지 않아. 나는 추적자니까",
+            "textEN": "Hiding won't work. I'm a tracker",
+            "emotion": "자신감",
+            "situation": "추적"
+          }
+        ],
+        "battle": [
+          {
+            "lineId": "hermit_hunter_003",
+            "text": "네 정체를 세상에 알리겠다!",
+            "textEN": "I'll reveal your identity to the world!",
+            "emotion": "위협",
+            "situation": "전투 중"
+          }
+        ],
+        "defeat": [
+          {
+            "lineId": "hermit_hunter_004",
+            "text": "이럴 수가... 사냥꾼이 사냥당하다니...",
+            "textEN": "This can't be... the hunter being hunted...",
+            "emotion": "경악",
+            "situation": "패배"
+          }
+        ]
+      }
+    },
+    {
+      "characterId": "npc_time_merchant",
+      "characterName": "시간 상인",
+      "characterNameEN": "Time Merchant",
+      "role": "환생 관련 NPC",
+      "personality": "신비롭고 전지전능한 존재",
+      "voiceLines": {
+        "greeting": [
+          {
+            "lineId": "time_merchant_001",
+            "text": "또 만나는군요, 환생자님",
+            "textEN": "We meet again, reincarnator",
+            "emotion": "신비",
+            "situation": "재회"
+          },
+          {
+            "lineId": "time_merchant_002",
+            "text": "시간을 파는 자입니다",
+            "textEN": "I am one who sells time",
+            "emotion": "차분",
+            "situation": "자기소개"
+          }
+        ],
+        "rebirth": [
+          {
+            "lineId": "time_merchant_003",
+            "text": "다시 시작하시겠습니까?",
+            "textEN": "Will you start over?",
+            "emotion": "질문",
+            "situation": "환생 제안"
+          },
+          {
+            "lineId": "time_merchant_004",
+            "text": "좋은 선택입니다... 행운을 빕니다",
+            "textEN": "A good choice... I wish you luck",
+            "emotion": "축복",
+            "situation": "환생 승인"
+          }
+        ]
+      }
+    },
+    {
+      "characterId": "system",
+      "characterName": "시스템",
+      "characterNameEN": "System",
+      "role": "게임 시스템 안내",
+      "personality": "친절하고 도움을 주는 AI",
+      "voiceLines": {
+        "tutorial": [
+          {
+            "lineId": "system_tutorial_001",
+            "text": "환영합니다! 은둔형 백수 영웅의 세계에 오신 것을 환영합니다!",
+            "textEN": "Welcome! Welcome to the world of the Hermit NEET Hero!",
+            "emotion": "친절",
+            "situation": "게임 시작"
+          },
+          {
+            "lineId": "system_tutorial_002",
+            "text": "화면을 탭하여 몬스터를 공격하세요!",
+            "textEN": "Tap the screen to attack monsters!",
+            "emotion": "안내",
+            "situation": "튜토리얼"
+          }
+        ],
+        "levelup": [
+          {
+            "lineId": "system_levelup_001",
+            "text": "레벨 업! 축하합니다!",
+            "textEN": "Level Up! Congratulations!",
+            "emotion": "축하",
+            "situation": "레벨업"
+          },
+          {
+            "lineId": "system_levelup_002",
+            "text": "새로운 스킬이 해금되었습니다!",
+            "textEN": "New skill unlocked!",
+            "emotion": "알림",
+            "situation": "스킬 해금"
+          }
+        ],
+        "warning": [
+          {
+            "lineId": "system_warning_001",
+            "text": "경고! 의심도가 높아지고 있습니다!",
+            "textEN": "Warning! Suspicion level is rising!",
+            "emotion": "경고",
+            "situation": "의심도 상승"
+          },
+          {
+            "lineId": "system_warning_002",
+            "text": "정체가 들키면 게임 오버입니다!",
+            "textEN": "If your identity is revealed, it's game over!",
+            "emotion": "경고",
+            "situation": "위험"
+          }
+        ],
+        "achievement": [
+          {
+            "lineId": "system_achievement_001",
+            "text": "업적 달성! '첫 걸음'",
+            "textEN": "Achievement Unlocked! 'First Steps'",
+            "emotion": "축하",
+            "situation": "업적"
+          },
+          {
+            "lineId": "system_achievement_002",
+            "text": "축하합니다! 새로운 타이틀을 획득했습니다!",
+            "textEN": "Congratulations! You've earned a new title!",
+            "emotion": "축하",
+            "situation": "타이틀 획득"
+          }
+        ],
+        "rebirth": [
+          {
+            "lineId": "system_rebirth_001",
+            "text": "환생이 가능합니다. 다시 시작하시겠습니까?",
+            "textEN": "Rebirth is available. Would you like to start over?",
+            "emotion": "질문",
+            "situation": "환생 가능"
+          },
+          {
+            "lineId": "system_rebirth_002",
+            "text": "환생 완료! 보너스가 적용됩니다!",
+            "textEN": "Rebirth complete! Bonuses applied!",
+            "emotion": "확인",
+            "situation": "환생 완료"
+          }
+        ]
+      }
+    }
+  ],
+  "monsterVoiceLines": {
+    "slime": {
+      "attack": ["뿌뿌!", "뿌뿌뿌!"],
+      "hurt": ["뿌..."],
+      "death": ["뿌우우우..."]
+    },
+    "goblin": {
+      "attack": ["끼야악!", "크와악!"],
+      "hurt": ["끽!"],
+      "death": ["끼아아악..."]
+    },
+    "skeleton": {
+      "attack": ["컥컥컥...", "뼈다귀!"],
+      "hurt": ["컥!"],
+      "death": ["..."]
+    },
+    "orc": {
+      "attack": ["크와아악!", "인간!"],
+      "hurt": ["으으윽!"],
+      "death": ["크윽..."]
+    }
+  },
+  "specialEvents": {
+    "cherry_blossom": [
+      {
+        "lineId": "event_spring_001",
+        "speaker": "민지",
+        "text": "오빠! 같이 벚꽃 보러 가자!",
+        "emotion": "밝음"
+      },
+      {
+        "lineId": "event_spring_002",
+        "speaker": "민수",
+        "text": "좋아... (밤에 던전 가야 하는데...)",
+        "emotion": "난처함"
+      }
+    ],
+    "chuseok": [
+      {
+        "lineId": "event_chuseok_001",
+        "speaker": "친척",
+        "text": "민수는 뭐하니? 취업은?",
+        "emotion": "추궁"
+      },
+      {
+        "lineId": "event_chuseok_002",
+        "speaker": "민수",
+        "text": "그냥... 백수요...",
+        "emotion": "답답함"
+      }
+    ]
+  },
+  "combatCallouts": {
+    "criticalHit": [
+      "크리티컬!",
+      "치명타!",
+      "완벽해!",
+      "대성공!"
+    ],
+    "miss": [
+      "빗나갔다!",
+      "미스!",
+      "아차!",
+      "실패..."
+    ],
+    "combo": [
+      "콤보!",
+      "연속 공격!",
+      "계속!",
+      "더!"
+    ]
+  },
+  "uiVoices": {
+    "buttonClick": [
+      "클릭!",
+      "선택!",
+      "확인!"
+    ],
+    "menuOpen": [
+      "메뉴 열기",
+      "준비 완료"
+    ],
+    "menuClose": [
+      "닫기",
+      "완료"
+    ]
+  }
+}

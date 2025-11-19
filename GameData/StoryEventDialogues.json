@@ -1,0 +1,792 @@
+{
+  "version": "1.0.0",
+  "description": "스토리 이벤트 및 상황별 대사 - 은둔형 백수 영웅",
+  "storyArcs": {
+    "arc1_awakening": {
+      "arcName": "은둔의 시작 (Lv.1~100)",
+      "phase1": {
+        "phaseName": "가족 앞 백수 (Lv.1~30)",
+        "dialogues": [
+          {
+            "eventId": "arc1_phase1_001",
+            "situation": "첫 던전 입장",
+            "characters": ["민수"],
+            "lines": [
+              {
+                "speaker": "민수",
+                "text": "새벽 3시... 이 시간이면 아무도 없겠지",
+                "emotion": "긴장"
+              },
+              {
+                "speaker": "민수",
+                "text": "조용히... 들키면 안 돼",
+                "emotion": "결의"
+              }
+            ]
+          },
+          {
+            "eventId": "arc1_phase1_002",
+            "situation": "어머니와 대화",
+            "characters": ["민수", "어머니"],
+            "lines": [
+              {
+                "speaker": "어머니",
+                "text": "민수야, 오늘도 집에만 있니?",
+                "emotion": "걱정"
+              },
+              {
+                "speaker": "민수",
+                "text": "네... 조금 쉬고 싶어요",
+                "emotion": "거짓말",
+                "thought": "(밤새 던전 돌며 피곤)"
+              },
+              {
+                "speaker": "어머니",
+                "text": "그래... 천천히 해도 괜찮아",
+                "emotion": "이해"
+              },
+              {
+                "speaker": "민수",
+                "text": "...미안해요, 엄마",
+                "emotion": "죄책감",
+                "thought": "(진실을 말하고 싶지만...)"
+              }
+            ]
+          },
+          {
+            "eventId": "arc1_phase1_003",
+            "situation": "첫 레벨 10 달성",
+            "characters": ["민수"],
+            "lines": [
+              {
+                "speaker": "민수",
+                "text": "레벨 10... 생각보다 강해지는데?",
+                "emotion": "놀람"
+              },
+              {
+                "speaker": "민수",
+                "text": "하지만 아직 F급 수준... 더 강해져야 해",
+                "emotion": "결의"
+              },
+              {
+                "speaker": "민수",
+                "text": "그리고... 절대 들키면 안 돼",
+                "emotion": "다짐"
+              }
+            ]
+          }
+        ]
+      },
+      "phase2": {
+        "phaseName": "야간의 사냥꾼 (Lv.31~60)",
+        "dialogues": [
+          {
+            "eventId": "arc1_phase2_001",
+            "situation": "민지의 의심",
+            "characters": ["민수", "민지"],
+            "lines": [
+              {
+                "speaker": "민지",
+                "text": "오빠, 요즘 용돈 잘 쓰네?",
+                "emotion": "의심"
+              },
+              {
+                "speaker": "민수",
+                "text": "아... 주식 좀 했어",
+                "emotion": "당황",
+                "thought": "(던전 수익 1억...)"
+              },
+              {
+                "speaker": "민지",
+                "text": "주식? 오빠가? 대박~",
+                "emotion": "놀람"
+              },
+              {
+                "speaker": "민수",
+                "text": "응... 운이 좋았어",
+                "emotion": "거짓말"
+              }
+            ]
+          },
+          {
+            "eventId": "arc1_phase2_002",
+            "situation": "첫 각성 (Lv.50)",
+            "characters": ["민수", "시스템"],
+            "lines": [
+              {
+                "speaker": "시스템",
+                "text": "레벨 50 달성! 첫 번째 각성이 가능합니다!",
+                "emotion": "알림"
+              },
+              {
+                "speaker": "민수",
+                "text": "각성...? 이게 뭐지?",
+                "emotion": "놀람"
+              },
+              {
+                "speaker": "시스템",
+                "text": "새로운 힘이 깨어납니다. 스킬 트리가 확장됩니다!",
+                "emotion": "설명"
+              },
+              {
+                "speaker": "민수",
+                "text": "오... 이 정도 힘이면... 아니 안 돼! 더 조심해야 해!",
+                "emotion": "각오"
+              }
+            ]
+          }
+        ]
+      },
+      "phase3": {
+        "phaseName": "도시의 유령 (Lv.61~90)",
+        "dialogues": [
+          {
+            "eventId": "arc1_phase3_001",
+            "situation": "수수께끼 헌터 소문",
+            "characters": ["민수", "민지", "뉴스"],
+            "lines": [
+              {
+                "speaker": "뉴스",
+                "text": "정체불명 헌터, A급 던전 솔로 클리어!",
+                "emotion": "보도"
+              },
+              {
+                "speaker": "민지",
+                "text": "오빠, 이 사람 대박! 근데... 체형이 오빠랑 비슷한데?",
+                "emotion": "의심"
+              },
+              {
+                "speaker": "민수",
+                "text": "...우연이겠지?",
+                "emotion": "식은땀",
+                "thought": "(들켰나?!)"
+              },
+              {
+                "speaker": "민지",
+                "text": "그런가? 근데 진짜 닮았어~",
+                "emotion": "관찰"
+              }
+            ]
+          }
+        ]
+      },
+      "phase4": {
+        "phaseName": "정체의 공개 (Lv.91~100)",
+        "dialogues": [
+          {
+            "eventId": "arc1_phase4_001",
+            "situation": "민지 위기",
+            "characters": ["민수", "민지", "S급 몬스터"],
+            "lines": [
+              {
+                "speaker": "민지",
+                "text": "크윽... 이런... S급 게이트가...!",
+                "emotion": "공포"
+              },
+              {
+                "speaker": "민수",
+                "text": "민지가... 위험해!",
+                "emotion": "긴장",
+                "thought": "(이제 숨길 수 없어!)"
+              },
+              {
+                "speaker": "민수",
+                "text": "미안해 민지야... 사실은...",
+                "emotion": "결심"
+              }
+            ]
+          },
+          {
+            "eventId": "arc1_phase4_002",
+            "situation": "정체 공개",
+            "characters": ["민수", "민지"],
+            "lines": [
+              {
+                "speaker": "민수",
+                "text": "(마스크 벗으며) 민지야, 미안해. 사실은...",
+                "emotion": "진지"
+              },
+              {
+                "speaker": "민지",
+                "text": "오...오빠?!?!",
+                "emotion": "충격"
+              },
+              {
+                "speaker": "민수",
+                "text": "내가... 그 수수께끼 헌터였어",
+                "emotion": "고백"
+              },
+              {
+                "speaker": "민지",
+                "text": "이게... 무슨...",
+                "emotion": "혼란"
+              },
+              {
+                "speaker": "시스템",
+                "text": "[Arc 1 완료 - 영웅 칭호 획득]",
+                "emotion": "달성"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "arc2_dimension": {
+      "arcName": "차원의 균열 (Lv.101~200)",
+      "phase1": {
+        "phaseName": "평화의 착각 (Lv.101~120)",
+        "dialogues": [
+          {
+            "eventId": "arc2_phase1_001",
+            "situation": "공개 활동 시작",
+            "characters": ["민수", "민지"],
+            "lines": [
+              {
+                "speaker": "민수",
+                "text": "이게 내가 원한 백수 생활이 아닌데...",
+                "emotion": "한숨"
+              },
+              {
+                "speaker": "민지",
+                "text": "오빠, 방송 출연 제안 왔어!",
+                "emotion": "흥분"
+              },
+              {
+                "speaker": "민수",
+                "text": "...싫어",
+                "emotion": "거부"
+              }
+            ]
+          },
+          {
+            "eventId": "arc2_phase1_002",
+            "situation": "국가 영웅 제안",
+            "characters": ["민수", "대통령"],
+            "lines": [
+              {
+                "speaker": "대통령",
+                "text": "김민수 씨, 국가를 위해 일해주시겠습니까?",
+                "emotion": "제안"
+              },
+              {
+                "speaker": "민수",
+                "text": "저... 그냥 백수하고 싶은데요...",
+                "emotion": "난처"
+              },
+              {
+                "speaker": "시스템",
+                "text": "[강제 이벤트 - 거절 불가]",
+                "emotion": "알림"
+              },
+              {
+                "speaker": "민수",
+                "text": "...하아",
+                "emotion": "체념"
+              }
+            ]
+          }
+        ]
+      },
+      "phase2": {
+        "phaseName": "균열의 예고 (Lv.121~150)",
+        "dialogues": [
+          {
+            "eventId": "arc2_phase2_001",
+            "situation": "차원 균열 발견",
+            "characters": ["민수", "민지"],
+            "lines": [
+              {
+                "speaker": "민지",
+                "text": "오빠, 이번 적은 너무 강해...",
+                "emotion": "두려움"
+              },
+              {
+                "speaker": "민수",
+                "text": "괜찮아. 내가... 처음부터 다시 강해지면 돼",
+                "emotion": "결의"
+              },
+              {
+                "speaker": "시스템",
+                "text": "[2차 각성 가능 - Lv.150]",
+                "emotion": "알림"
+              },
+              {
+                "speaker": "민수",
+                "text": "아직 약하다는 건가... 더 강해져야 해!",
+                "emotion": "각오"
+              }
+            ]
+          }
+        ]
+      },
+      "phase3": {
+        "phaseName": "차원 헌터 (Lv.151~180)",
+        "dialogues": [
+          {
+            "eventId": "arc2_phase3_001",
+            "situation": "평행세계 자신과 만남",
+            "characters": ["민수", "차원-A 민수", "차원-B 민수"],
+            "lines": [
+              {
+                "speaker": "차원-A 민수",
+                "text": "너도 이세계 귀환자구나",
+                "emotion": "동질감"
+              },
+              {
+                "speaker": "차원-B 민수",
+                "text": "나는 정체를 끝까지 숨겼어",
+                "emotion": "자랑"
+              },
+              {
+                "speaker": "차원-C 민수",
+                "text": "나는 처음부터 공개했지",
+                "emotion": "당당"
+              },
+              {
+                "speaker": "민수",
+                "text": "수많은 가능성의 나...",
+                "emotion": "경이"
+              }
+            ]
+          }
+        ]
+      },
+      "phase4": {
+        "phaseName": "차원의 지배자 (Lv.181~200)",
+        "dialogues": [
+          {
+            "eventId": "arc2_phase4_001",
+            "situation": "미래의 자신과 대결",
+            "characters": ["민수", "미래 민수"],
+            "lines": [
+              {
+                "speaker": "미래 민수",
+                "text": "결국... 너도 백수가 되지 못했구나",
+                "emotion": "비웃음"
+              },
+              {
+                "speaker": "민수",
+                "text": "넌... 나야?!",
+                "emotion": "충격"
+              },
+              {
+                "speaker": "미래 민수",
+                "text": "백수가 되지 못해 절망한 미래의 너다",
+                "emotion": "절망"
+              },
+              {
+                "speaker": "민수",
+                "text": "그런 미래는... 바꾸겠어!",
+                "emotion": "결의"
+              }
+            ]
+          },
+          {
+            "eventId": "arc2_phase4_002",
+            "situation": "미래 자신 패배",
+            "characters": ["민수", "미래 민수"],
+            "lines": [
+              {
+                "speaker": "미래 민수",
+                "text": "...너는 꼭 백수가 되어라",
+                "emotion": "간절"
+              },
+              {
+                "speaker": "민수",
+                "text": "...약속할게",
+                "emotion": "다짐"
+              },
+              {
+                "speaker": "시스템",
+                "text": "[Arc 2 완료 - 차원 지배자 칭호]",
+                "emotion": "달성"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "rebirth_system": {
+      "rebirthName": "환생 시스템",
+      "dialogues": [
+        {
+          "eventId": "rebirth_001",
+          "situation": "첫 환생 결심",
+          "characters": ["민수", "시간 상인"],
+          "lines": [
+            {
+              "speaker": "민수",
+              "text": "처음부터 완벽하게 백수가 되자",
+              "emotion": "결의"
+            },
+            {
+              "speaker": "시간 상인",
+              "text": "좋은 선택입니다... 시간을 되돌려 드리죠",
+              "emotion": "신비"
+            },
+            {
+              "speaker": "시스템",
+              "text": "레벨 1로 초기화됩니다. 프레스티지 보너스 유지!",
+              "emotion": "알림"
+            }
+          ]
+        },
+        {
+          "eventId": "rebirth_002",
+          "situation": "10회차 환생",
+          "characters": ["민수"],
+          "lines": [
+            {
+              "speaker": "민수",
+              "text": "10번째 환생... 이제 좀 익숙해지네",
+              "emotion": "무덤덤"
+            },
+            {
+              "speaker": "민수",
+              "text": "이번엔... 진짜진짜 백수가 될 거야!",
+              "emotion": "결의"
+            }
+          ]
+        },
+        {
+          "eventId": "rebirth_003",
+          "situation": "100회차 환생",
+          "characters": ["민수", "시간 상인"],
+          "lines": [
+            {
+              "speaker": "민수",
+              "text": "100번째 환생... 백수가 뭐였더라?",
+              "emotion": "허탈"
+            },
+            {
+              "speaker": "시간 상인",
+              "text": "아직도... 찾고 계시는군요",
+              "emotion": "동정"
+            },
+            {
+              "speaker": "민수",
+              "text": "언젠간... 꼭 이루고 말겠어",
+              "emotion": "집념"
+            }
+          ]
+        }
+      ]
+    },
+    "seasonal_events": {
+      "spring": {
+        "eventName": "벚꽃 아래 은둔자",
+        "dialogues": [
+          {
+            "eventId": "spring_001",
+            "characters": ["민수", "민지"],
+            "lines": [
+              {
+                "speaker": "민지",
+                "text": "오빠, 같이 벚꽃 보러 가자!",
+                "emotion": "밝음"
+              },
+              {
+                "speaker": "민수",
+                "text": "좋아",
+                "emotion": "미소",
+                "thought": "(밤에 던전 가야 하는데...)"
+              }
+            ]
+          }
+        ]
+      },
+      "summer": {
+        "eventName": "해변의 백수",
+        "dialogues": [
+          {
+            "eventId": "summer_001",
+            "characters": ["민수", "민지"],
+            "lines": [
+              {
+                "speaker": "민지",
+                "text": "가족 여행이야! 신난다!",
+                "emotion": "흥분"
+              },
+              {
+                "speaker": "민수",
+                "text": "휴가 좀 쉬자...",
+                "emotion": "나른"
+              },
+              {
+                "speaker": "시스템",
+                "text": "[긴급! SSS급 게이트 출현!]",
+                "emotion": "경고"
+              },
+              {
+                "speaker": "민수",
+                "text": "...하아",
+                "emotion": "한숨"
+              }
+            ]
+          }
+        ]
+      },
+      "autumn": {
+        "eventName": "추석 특집",
+        "dialogues": [
+          {
+            "eventId": "autumn_001",
+            "characters": ["민수", "친척"],
+            "lines": [
+              {
+                "speaker": "친척",
+                "text": "민수는 뭐하니?",
+                "emotion": "추궁"
+              },
+              {
+                "speaker": "민수",
+                "text": "그냥... 백수요...",
+                "emotion": "답답"
+              },
+              {
+                "speaker": "친척",
+                "text": "민지는 S급인데...",
+                "emotion": "비교"
+              },
+              {
+                "speaker": "민수",
+                "text": "...",
+                "emotion": "무언",
+                "thought": "(나도 S급이야... 말 못하지만)"
+              }
+            ]
+          }
+        ]
+      },
+      "winter": {
+        "eventName": "크리스마스의 기적",
+        "dialogues": [
+          {
+            "eventId": "winter_001",
+            "characters": ["민수", "다크 산타"],
+            "lines": [
+              {
+                "speaker": "다크 산타",
+                "text": "착한 아이에게만 선물을!",
+                "emotion": "심판"
+              },
+              {
+                "speaker": "민수",
+                "text": "저 헌터 아닌데요...",
+                "emotion": "거짓말"
+              },
+              {
+                "speaker": "다크 산타",
+                "text": "거짓말쟁이는 석탄!",
+                "emotion": "분노"
+              },
+              {
+                "speaker": "민수",
+                "text": "아, 안 돼!",
+                "emotion": "당황"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "special_endings": {
+      "true_neet": {
+        "endingName": "진정한 백수",
+        "condition": "레벨 999까지 정체 숨김 + 100억 모으기",
+        "dialogues": [
+          {
+            "eventId": "ending_neet_001",
+            "characters": ["민수"],
+            "lines": [
+              {
+                "speaker": "민수",
+                "text": "드디어... 진짜 백수다...",
+                "emotion": "감격"
+              },
+              {
+                "speaker": "민수",
+                "text": "아무것도 안 해도 되는 삶...",
+                "emotion": "행복"
+              },
+              {
+                "speaker": "시스템",
+                "text": "[엔딩: 진정한 백수]",
+                "emotion": "달성"
+              }
+            ]
+          }
+        ]
+      },
+      "world_ruler": {
+        "endingName": "세계의 지배자",
+        "condition": "모든 차원 정복",
+        "dialogues": [
+          {
+            "eventId": "ending_ruler_001",
+            "characters": ["민수"],
+            "lines": [
+              {
+                "speaker": "민수",
+                "text": "모든 차원을 지배했지만...",
+                "emotion": "허무"
+              },
+              {
+                "speaker": "민수",
+                "text": "왕도 귀찮은데...",
+                "emotion": "한숨"
+              }
+            ]
+          }
+        ]
+      },
+      "normal_life": {
+        "endingName": "평범한 삶",
+        "condition": "능력 포기 선택",
+        "dialogues": [
+          {
+            "eventId": "ending_normal_001",
+            "characters": ["민수"],
+            "lines": [
+              {
+                "speaker": "민수",
+                "text": "능력을 버리고... 평범한 백수로...",
+                "emotion": "평온"
+              },
+              {
+                "speaker": "민수",
+                "text": "이게 진짜 백수...",
+                "emotion": "만족"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "relationshipDialogues": {
+    "sister_relationship": {
+      "level_0_20": {
+        "tier": "냉담",
+        "dialogues": [
+          {
+            "speaker": "민지",
+            "text": "오빠... 요즘 너무해",
+            "emotion": "실망"
+          }
+        ]
+      },
+      "level_21_40": {
+        "tier": "보통",
+        "dialogues": [
+          {
+            "speaker": "민지",
+            "text": "오빠, 힘내",
+            "emotion": "격려"
+          }
+        ]
+      },
+      "level_41_60": {
+        "tier": "친밀",
+        "dialogues": [
+          {
+            "speaker": "민지",
+            "text": "오빠는 할 수 있어!",
+            "emotion": "응원"
+          }
+        ]
+      },
+      "level_61_80": {
+        "tier": "신뢰",
+        "dialogues": [
+          {
+            "speaker": "민지",
+            "text": "오빠가 최고야!",
+            "emotion": "자랑"
+          }
+        ]
+      },
+      "level_81_100": {
+        "tier": "절대 신뢰",
+        "dialogues": [
+          {
+            "speaker": "민지",
+            "text": "오빠... 사랑해!",
+            "emotion": "애정"
+          }
+        ]
+      }
+    }
+  },
+  "combatSituations": {
+    "low_hp": [
+      {
+        "speaker": "민수",
+        "text": "위험해... 회복해야 해!",
+        "emotion": "긴급"
+      },
+      {
+        "speaker": "민수",
+        "text": "이대로는... 안 돼!",
+        "emotion": "다급"
+      }
+    ],
+    "critical_moment": [
+      {
+        "speaker": "민수",
+        "text": "지금이다!",
+        "emotion": "집중"
+      },
+      {
+        "speaker": "민수",
+        "text": "마지막 일격!",
+        "emotion": "결의"
+      }
+    ],
+    "boss_phase_change": [
+      {
+        "speaker": "민수",
+        "text": "2페이즈...? 진지해져야겠어!",
+        "emotion": "각성"
+      }
+    ],
+    "party_wipe": [
+      {
+        "speaker": "민수",
+        "text": "모두... 죄송합니다...",
+        "emotion": "죄책감"
+      }
+    ]
+  },
+  "idleConversations": {
+    "waiting": [
+      {
+        "speaker": "민수",
+        "text": "하아... 백수 생활 언제쯤...",
+        "emotion": "한숨"
+      },
+      {
+        "speaker": "민수",
+        "text": "침대가 그립다...",
+        "emotion": "나른"
+      },
+      {
+        "speaker": "민수",
+        "text": "이럴 시간에 집에서 쉬고 싶어...",
+        "emotion": "피곤"
+      }
+    ],
+    "afk_warnings": [
+      {
+        "speaker": "시스템",
+        "text": "플레이어님? 계신가요?",
+        "emotion": "걱정"
+      },
+      {
+        "speaker": "민수",
+        "text": "혹시... 백수하러 가신 건가요?",
+        "emotion": "의심"
+      }
+    ]
+  }
+}
