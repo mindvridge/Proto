@@ -1,0 +1,319 @@
+{
+  "version": "1.0.0",
+  "description": "캐릭터 대사별 립싱크 타이밍 데이터",
+  "lipSyncData": [
+    {
+      "dialogueId": "hero_attack_001",
+      "text": "조용히... 끝내자",
+      "textEN": "Quietly... let's end this",
+      "duration": 2.0,
+      "phonemes": [
+        { "phoneme": "J", "shape": "Narrow", "startTime": 0.0, "duration": 0.15 },
+        { "phoneme": "O", "shape": "O_Shape", "startTime": 0.15, "duration": 0.2 },
+        { "phoneme": "YO", "shape": "O_Shape", "startTime": 0.35, "duration": 0.15 },
+        { "phoneme": "NG", "shape": "Medium", "startTime": 0.5, "duration": 0.15 },
+        { "phoneme": "H", "shape": "Medium", "startTime": 0.65, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 0.75, "duration": 0.25 },
+
+        { "phoneme": "G", "shape": "Medium", "startTime": 1.2, "duration": 0.1 },
+        { "phoneme": "EU", "shape": "Narrow", "startTime": 1.3, "duration": 0.15 },
+        { "phoneme": "T", "shape": "Narrow", "startTime": 1.45, "duration": 0.1 },
+        { "phoneme": "N", "shape": "Narrow", "startTime": 1.55, "duration": 0.15 },
+        { "phoneme": "AE", "shape": "Wide", "startTime": 1.7, "duration": 0.15 },
+        { "phoneme": "J", "shape": "Narrow", "startTime": 1.85, "duration": 0.15 }
+      ]
+    },
+    {
+      "dialogueId": "hero_attack_002",
+      "text": "빨리 처리하고 집에 가야지",
+      "textEN": "Gotta finish this quick and go home",
+      "duration": 2.5,
+      "phonemes": [
+        { "phoneme": "BB", "shape": "Closed", "startTime": 0.0, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 0.1, "duration": 0.15 },
+        { "phoneme": "L", "shape": "Narrow", "startTime": 0.25, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 0.35, "duration": 0.2 },
+
+        { "phoneme": "CH", "shape": "Narrow", "startTime": 0.7, "duration": 0.1 },
+        { "phoneme": "EO", "shape": "Medium", "startTime": 0.8, "duration": 0.15 },
+        { "phoneme": "L", "shape": "Narrow", "startTime": 0.95, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 1.05, "duration": 0.15 },
+
+        { "phoneme": "H", "shape": "Medium", "startTime": 1.35, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 1.45, "duration": 0.15 },
+        { "phoneme": "G", "shape": "Medium", "startTime": 1.6, "duration": 0.1 },
+        { "phoneme": "O", "shape": "O_Shape", "startTime": 1.7, "duration": 0.2 },
+
+        { "phoneme": "J", "shape": "Narrow", "startTime": 2.0, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 2.1, "duration": 0.1 },
+        { "phoneme": "B", "shape": "Closed", "startTime": 2.2, "duration": 0.1 },
+        { "phoneme": "E", "shape": "Medium", "startTime": 2.3, "duration": 0.2 }
+      ]
+    },
+    {
+      "dialogueId": "hero_victory_001",
+      "text": "휴... 이제 집에 가서 쉬어야지",
+      "textEN": "Phew... time to go home and rest",
+      "duration": 3.0,
+      "phonemes": [
+        { "phoneme": "H", "shape": "Medium", "startTime": 0.0, "duration": 0.3 },
+        { "phoneme": "YU", "shape": "O_Shape", "startTime": 0.3, "duration": 0.5 },
+
+        { "phoneme": "I", "shape": "Narrow", "startTime": 1.0, "duration": 0.15 },
+        { "phoneme": "J", "shape": "Narrow", "startTime": 1.15, "duration": 0.1 },
+        { "phoneme": "E", "shape": "Medium", "startTime": 1.25, "duration": 0.2 },
+
+        { "phoneme": "J", "shape": "Narrow", "startTime": 1.6, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 1.7, "duration": 0.1 },
+        { "phoneme": "B", "shape": "Closed", "startTime": 1.8, "duration": 0.1 },
+        { "phoneme": "E", "shape": "Medium", "startTime": 1.9, "duration": 0.2 },
+
+        { "phoneme": "G", "shape": "Medium", "startTime": 2.2, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 2.3, "duration": 0.15 },
+        { "phoneme": "S", "shape": "Narrow", "startTime": 2.45, "duration": 0.1 },
+        { "phoneme": "EO", "shape": "Medium", "startTime": 2.55, "duration": 0.15 },
+
+        { "phoneme": "S", "shape": "Narrow", "startTime": 2.8, "duration": 0.1 },
+        { "phoneme": "WI", "shape": "Narrow", "startTime": 2.9, "duration": 0.1 }
+      ]
+    },
+    {
+      "dialogueId": "sister_normal_001",
+      "text": "오빠! 오늘도 집에만 있을 거야?",
+      "textEN": "Brother! Are you staying home again today?",
+      "duration": 2.8,
+      "phonemes": [
+        { "phoneme": "O", "shape": "O_Shape", "startTime": 0.0, "duration": 0.2 },
+        { "phoneme": "BB", "shape": "Closed", "startTime": 0.2, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 0.3, "duration": 0.2 },
+
+        { "phoneme": "O", "shape": "O_Shape", "startTime": 0.7, "duration": 0.15 },
+        { "phoneme": "N", "shape": "Narrow", "startTime": 0.85, "duration": 0.1 },
+        { "phoneme": "EU", "shape": "Narrow", "startTime": 0.95, "duration": 0.1 },
+        { "phoneme": "L", "shape": "Narrow", "startTime": 1.05, "duration": 0.1 },
+        { "phoneme": "D", "shape": "Narrow", "startTime": 1.15, "duration": 0.05 },
+        { "phoneme": "O", "shape": "O_Shape", "startTime": 1.2, "duration": 0.2 },
+
+        { "phoneme": "J", "shape": "Narrow", "startTime": 1.55, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 1.65, "duration": 0.1 },
+        { "phoneme": "B", "shape": "Closed", "startTime": 1.75, "duration": 0.1 },
+        { "phoneme": "E", "shape": "Medium", "startTime": 1.85, "duration": 0.15 },
+        { "phoneme": "M", "shape": "Closed", "startTime": 2.0, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 2.1, "duration": 0.1 },
+        { "phoneme": "N", "shape": "Narrow", "startTime": 2.2, "duration": 0.1 },
+
+        { "phoneme": "I", "shape": "Narrow", "startTime": 2.4, "duration": 0.1 },
+        { "phoneme": "SS", "shape": "Narrow", "startTime": 2.5, "duration": 0.1 },
+        { "phoneme": "EU", "shape": "Narrow", "startTime": 2.6, "duration": 0.1 },
+        { "phoneme": "L", "shape": "Narrow", "startTime": 2.7, "duration": 0.1 }
+      ]
+    },
+    {
+      "dialogueId": "boss_dragon_001",
+      "text": "크하하하! 인간 주제에 내 영역에!",
+      "textEN": "Kahahaha! A mere human in my domain!",
+      "duration": 3.5,
+      "phonemes": [
+        { "phoneme": "K", "shape": "Medium", "startTime": 0.0, "duration": 0.15 },
+        { "phoneme": "EU", "shape": "Narrow", "startTime": 0.15, "duration": 0.15 },
+
+        { "phoneme": "H", "shape": "Medium", "startTime": 0.4, "duration": 0.2 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 0.6, "duration": 0.3 },
+
+        { "phoneme": "H", "shape": "Medium", "startTime": 1.0, "duration": 0.2 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 1.2, "duration": 0.3 },
+
+        { "phoneme": "H", "shape": "Medium", "startTime": 1.6, "duration": 0.2 },
+        { "phoneme": "A", "shape": "VeryWide", "startTime": 1.8, "duration": 0.4 },
+
+        { "phoneme": "I", "shape": "Narrow", "startTime": 2.4, "duration": 0.15 },
+        { "phoneme": "N", "shape": "Narrow", "startTime": 2.55, "duration": 0.1 },
+        { "phoneme": "G", "shape": "Medium", "startTime": 2.65, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 2.75, "duration": 0.1 },
+        { "phoneme": "N", "shape": "Narrow", "startTime": 2.85, "duration": 0.15 },
+
+        { "phoneme": "J", "shape": "Narrow", "startTime": 3.1, "duration": 0.1 },
+        { "phoneme": "U", "shape": "O_Shape", "startTime": 3.2, "duration": 0.15 },
+        { "phoneme": "J", "shape": "Narrow", "startTime": 3.35, "duration": 0.15 }
+      ]
+    },
+    {
+      "dialogueId": "hero_levelup_milestone_002",
+      "text": "레벨 100 달성! ...정체가 들킬 것 같은데?",
+      "textEN": "Level 100 achieved! ...I think my identity will be revealed?",
+      "duration": 4.0,
+      "phonemes": [
+        { "phoneme": "L", "shape": "Narrow", "startTime": 0.0, "duration": 0.1 },
+        { "phoneme": "E", "shape": "Medium", "startTime": 0.1, "duration": 0.15 },
+        { "phoneme": "B", "shape": "Closed", "startTime": 0.25, "duration": 0.1 },
+        { "phoneme": "E", "shape": "Medium", "startTime": 0.35, "duration": 0.1 },
+        { "phoneme": "L", "shape": "Narrow", "startTime": 0.45, "duration": 0.15 },
+
+        { "phoneme": "B", "shape": "Closed", "startTime": 0.7, "duration": 0.1 },
+        { "phoneme": "AE", "shape": "Wide", "startTime": 0.8, "duration": 0.15 },
+        { "phoneme": "G", "shape": "Medium", "startTime": 0.95, "duration": 0.15 },
+
+        { "phoneme": "D", "shape": "Narrow", "startTime": 1.2, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 1.3, "duration": 0.15 },
+        { "phoneme": "L", "shape": "Narrow", "startTime": 1.45, "duration": 0.1 },
+        { "phoneme": "S", "shape": "Narrow", "startTime": 1.55, "duration": 0.1 },
+        { "phoneme": "EO", "shape": "Medium", "startTime": 1.65, "duration": 0.1 },
+        { "phoneme": "NG", "shape": "Medium", "startTime": 1.75, "duration": 0.25 },
+
+        { "phoneme": "J", "shape": "Narrow", "startTime": 2.3, "duration": 0.1 },
+        { "phoneme": "EO", "shape": "Medium", "startTime": 2.4, "duration": 0.15 },
+        { "phoneme": "NG", "shape": "Medium", "startTime": 2.55, "duration": 0.1 },
+        { "phoneme": "CH", "shape": "Narrow", "startTime": 2.65, "duration": 0.1 },
+        { "phoneme": "E", "shape": "Medium", "startTime": 2.75, "duration": 0.1 },
+        { "phoneme": "G", "shape": "Medium", "startTime": 2.85, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 2.95, "duration": 0.15 },
+
+        { "phoneme": "D", "shape": "Narrow", "startTime": 3.2, "duration": 0.1 },
+        { "phoneme": "EU", "shape": "Narrow", "startTime": 3.3, "duration": 0.1 },
+        { "phoneme": "L", "shape": "Narrow", "startTime": 3.4, "duration": 0.1 },
+        { "phoneme": "K", "shape": "Medium", "startTime": 3.5, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 3.6, "duration": 0.1 },
+        { "phoneme": "L", "shape": "Narrow", "startTime": 3.7, "duration": 0.3 }
+      ]
+    },
+    {
+      "dialogueId": "hero_rebirth_001",
+      "text": "다시 시작이야... 이번엔 완벽하게!",
+      "textEN": "Starting over... perfectly this time!",
+      "duration": 3.5,
+      "phonemes": [
+        { "phoneme": "D", "shape": "Narrow", "startTime": 0.0, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 0.1, "duration": 0.15 },
+        { "phoneme": "S", "shape": "Narrow", "startTime": 0.25, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 0.35, "duration": 0.2 },
+
+        { "phoneme": "S", "shape": "Narrow", "startTime": 0.7, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 0.8, "duration": 0.15 },
+        { "phoneme": "J", "shape": "Narrow", "startTime": 0.95, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 1.05, "duration": 0.15 },
+        { "phoneme": "G", "shape": "Medium", "startTime": 1.2, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 1.3, "duration": 0.15 },
+        { "phoneme": "Y", "shape": "Narrow", "startTime": 1.45, "duration": 0.15 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 1.6, "duration": 0.3 },
+
+        { "phoneme": "I", "shape": "Narrow", "startTime": 2.1, "duration": 0.15 },
+        { "phoneme": "B", "shape": "Closed", "startTime": 2.25, "duration": 0.1 },
+        { "phoneme": "EO", "shape": "Medium", "startTime": 2.35, "duration": 0.1 },
+        { "phoneme": "N", "shape": "Narrow", "startTime": 2.45, "duration": 0.1 },
+        { "phoneme": "E", "shape": "Medium", "startTime": 2.55, "duration": 0.05 },
+        { "phoneme": "N", "shape": "Narrow", "startTime": 2.6, "duration": 0.15 },
+
+        { "phoneme": "W", "shape": "O_Shape", "startTime": 2.85, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 2.95, "duration": 0.1 },
+        { "phoneme": "N", "shape": "Narrow", "startTime": 3.05, "duration": 0.1 },
+        { "phoneme": "B", "shape": "Closed", "startTime": 3.15, "duration": 0.1 },
+        { "phoneme": "YEO", "shape": "Medium", "startTime": 3.25, "duration": 0.1 },
+        { "phoneme": "K", "shape": "Medium", "startTime": 3.35, "duration": 0.15 }
+      ]
+    },
+    {
+      "dialogueId": "slime_attack_001",
+      "text": "뿌뿌!",
+      "textEN": "Bloop!",
+      "duration": 0.5,
+      "phonemes": [
+        { "phoneme": "BB", "shape": "Closed", "startTime": 0.0, "duration": 0.1 },
+        { "phoneme": "U", "shape": "O_Shape", "startTime": 0.1, "duration": 0.15 },
+        { "phoneme": "BB", "shape": "Closed", "startTime": 0.3, "duration": 0.1 },
+        { "phoneme": "U", "shape": "O_Shape", "startTime": 0.4, "duration": 0.1 }
+      ]
+    },
+    {
+      "dialogueId": "goblin_attack_001",
+      "text": "끼야악!",
+      "textEN": "Kiyaaak!",
+      "duration": 0.8,
+      "phonemes": [
+        { "phoneme": "GG", "shape": "Medium", "startTime": 0.0, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 0.1, "duration": 0.15 },
+        { "phoneme": "Y", "shape": "Narrow", "startTime": 0.25, "duration": 0.1 },
+        { "phoneme": "A", "shape": "VeryWide", "startTime": 0.35, "duration": 0.45 }
+      ]
+    },
+    {
+      "dialogueId": "demon_encounter_001",
+      "text": "크하하! 네가 그 숨어있던 S급인가!",
+      "textEN": "Kuhaha! So you're the hidden S-rank!",
+      "duration": 3.8,
+      "phonemes": [
+        { "phoneme": "K", "shape": "Medium", "startTime": 0.0, "duration": 0.1 },
+        { "phoneme": "EU", "shape": "Narrow", "startTime": 0.1, "duration": 0.15 },
+
+        { "phoneme": "H", "shape": "Medium", "startTime": 0.35, "duration": 0.15 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 0.5, "duration": 0.25 },
+
+        { "phoneme": "H", "shape": "Medium", "startTime": 0.85, "duration": 0.15 },
+        { "phoneme": "A", "shape": "VeryWide", "startTime": 1.0, "duration": 0.35 },
+
+        { "phoneme": "N", "shape": "Narrow", "startTime": 1.6, "duration": 0.1 },
+        { "phoneme": "E", "shape": "Medium", "startTime": 1.7, "duration": 0.15 },
+        { "phoneme": "G", "shape": "Medium", "startTime": 1.85, "duration": 0.1 },
+        { "phoneme": "A", "shape": "Wide", "startTime": 1.95, "duration": 0.15 },
+
+        { "phoneme": "G", "shape": "Medium", "startTime": 2.2, "duration": 0.1 },
+        { "phoneme": "EU", "shape": "Narrow", "startTime": 2.3, "duration": 0.15 },
+
+        { "phoneme": "S", "shape": "Narrow", "startTime": 2.55, "duration": 0.1 },
+        { "phoneme": "U", "shape": "O_Shape", "startTime": 2.65, "duration": 0.15 },
+        { "phoneme": "M", "shape": "Closed", "startTime": 2.8, "duration": 0.1 },
+        { "phoneme": "EO", "shape": "Medium", "startTime": 2.9, "duration": 0.1 },
+        { "phoneme": "I", "shape": "Narrow", "startTime": 3.0, "duration": 0.1 },
+        { "phoneme": "SS", "shape": "Narrow", "startTime": 3.1, "duration": 0.1 },
+        { "phoneme": "D", "shape": "Narrow", "startTime": 3.2, "duration": 0.05 },
+        { "phoneme": "EO", "shape": "Medium", "startTime": 3.25, "duration": 0.1 },
+        { "phoneme": "N", "shape": "Narrow", "startTime": 3.35, "duration": 0.1 },
+
+        { "phoneme": "S", "shape": "Narrow", "startTime": 3.55, "duration": 0.15 },
+        { "phoneme": "G", "shape": "Medium", "startTime": 3.7, "duration": 0.1 }
+      ]
+    }
+  ],
+  "animationCurves": {
+    "description": "입 모양 전환에 사용되는 애니메이션 커브 설정",
+    "curves": {
+      "linear": {
+        "description": "선형 전환",
+        "easing": "linear"
+      },
+      "easeInOut": {
+        "description": "부드러운 전환",
+        "easing": "easeInOut"
+      },
+      "snap": {
+        "description": "빠른 전환",
+        "easing": "snap",
+        "transitionTime": 0.05
+      }
+    }
+  },
+  "emotionModifiers": {
+    "description": "감정에 따른 립싱크 수정자",
+    "emotions": {
+      "happy": {
+        "mouthShapeModifier": "Smile",
+        "opennesMultiplier": 1.1,
+        "speedMultiplier": 1.2
+      },
+      "sad": {
+        "mouthShapeModifier": "Sad",
+        "opennessMultiplier": 0.8,
+        "speedMultiplier": 0.9
+      },
+      "angry": {
+        "opennessMultiplier": 1.3,
+        "speedMultiplier": 1.3,
+        "tension": 0.8
+      },
+      "surprised": {
+        "mouthShapeModifier": "VeryWide",
+        "opennessMultiplier": 1.5,
+        "duration": 0.5
+      }
+    }
+  }
+}

@@ -1,0 +1,501 @@
+{
+  "version": "1.0.0",
+  "description": "음소와 입 모양 매핑 데이터 - 한국어 및 영어 지원",
+  "koreanPhonemes": {
+    "vowels": {
+      "ㅏ": {
+        "phoneme": "A",
+        "shape": "Wide",
+        "description": "아 - 입을 크게 벌림",
+        "mouthOpenness": 0.9,
+        "lipRounding": 0.0
+      },
+      "ㅐ": {
+        "phoneme": "AE",
+        "shape": "Wide",
+        "description": "애 - 입을 옆으로 벌림",
+        "mouthOpenness": 0.7,
+        "lipRounding": 0.0
+      },
+      "ㅑ": {
+        "phoneme": "YA",
+        "shape": "Wide",
+        "description": "야 - 입을 크게 벌림",
+        "mouthOpenness": 0.9,
+        "lipRounding": 0.0
+      },
+      "ㅒ": {
+        "phoneme": "YAE",
+        "shape": "Wide",
+        "description": "얘",
+        "mouthOpenness": 0.7,
+        "lipRounding": 0.0
+      },
+      "ㅓ": {
+        "phoneme": "EO",
+        "shape": "Medium",
+        "description": "어 - 중간 크기",
+        "mouthOpenness": 0.6,
+        "lipRounding": 0.0
+      },
+      "ㅔ": {
+        "phoneme": "E",
+        "shape": "Medium",
+        "description": "에 - 중간 크기",
+        "mouthOpenness": 0.6,
+        "lipRounding": 0.0
+      },
+      "ㅕ": {
+        "phoneme": "YEO",
+        "shape": "Medium",
+        "description": "여",
+        "mouthOpenness": 0.6,
+        "lipRounding": 0.0
+      },
+      "ㅖ": {
+        "phoneme": "YE",
+        "shape": "Medium",
+        "description": "예",
+        "mouthOpenness": 0.6,
+        "lipRounding": 0.0
+      },
+      "ㅗ": {
+        "phoneme": "O",
+        "shape": "O_Shape",
+        "description": "오 - O 모양",
+        "mouthOpenness": 0.7,
+        "lipRounding": 0.9
+      },
+      "ㅘ": {
+        "phoneme": "WA",
+        "shape": "Wide",
+        "description": "와",
+        "mouthOpenness": 0.8,
+        "lipRounding": 0.5
+      },
+      "ㅙ": {
+        "phoneme": "WAE",
+        "shape": "Wide",
+        "description": "왜",
+        "mouthOpenness": 0.7,
+        "lipRounding": 0.5
+      },
+      "ㅚ": {
+        "phoneme": "OE",
+        "shape": "O_Shape",
+        "description": "외",
+        "mouthOpenness": 0.6,
+        "lipRounding": 0.8
+      },
+      "ㅛ": {
+        "phoneme": "YO",
+        "shape": "O_Shape",
+        "description": "요",
+        "mouthOpenness": 0.7,
+        "lipRounding": 0.9
+      },
+      "ㅜ": {
+        "phoneme": "U",
+        "shape": "O_Shape",
+        "description": "우 - 입술을 동그랗게",
+        "mouthOpenness": 0.5,
+        "lipRounding": 1.0
+      },
+      "ㅝ": {
+        "phoneme": "WO",
+        "shape": "O_Shape",
+        "description": "워",
+        "mouthOpenness": 0.6,
+        "lipRounding": 0.8
+      },
+      "ㅞ": {
+        "phoneme": "WE",
+        "shape": "Medium",
+        "description": "웨",
+        "mouthOpenness": 0.6,
+        "lipRounding": 0.5
+      },
+      "ㅟ": {
+        "phoneme": "WI",
+        "shape": "Narrow",
+        "description": "위",
+        "mouthOpenness": 0.4,
+        "lipRounding": 0.9
+      },
+      "ㅠ": {
+        "phoneme": "YU",
+        "shape": "O_Shape",
+        "description": "유",
+        "mouthOpenness": 0.5,
+        "lipRounding": 1.0
+      },
+      "ㅡ": {
+        "phoneme": "EU",
+        "shape": "Narrow",
+        "description": "으 - 입을 좁게",
+        "mouthOpenness": 0.3,
+        "lipRounding": 0.0
+      },
+      "ㅢ": {
+        "phoneme": "UI",
+        "shape": "Narrow",
+        "description": "의",
+        "mouthOpenness": 0.3,
+        "lipRounding": 0.0
+      },
+      "ㅣ": {
+        "phoneme": "I",
+        "shape": "Narrow",
+        "description": "이 - 입을 옆으로 좁게",
+        "mouthOpenness": 0.4,
+        "lipRounding": 0.0
+      }
+    },
+    "consonants": {
+      "ㄱ": {
+        "phoneme": "G",
+        "shape": "Medium",
+        "description": "ㄱ - 목구멍 소리",
+        "mouthOpenness": 0.5
+      },
+      "ㄲ": {
+        "phoneme": "GG",
+        "shape": "Medium",
+        "description": "ㄲ - 된소리",
+        "mouthOpenness": 0.4
+      },
+      "ㄴ": {
+        "phoneme": "N",
+        "shape": "Narrow",
+        "description": "ㄴ - 혀 위치",
+        "mouthOpenness": 0.4
+      },
+      "ㄷ": {
+        "phoneme": "D",
+        "shape": "Narrow",
+        "description": "ㄷ - 치경음",
+        "mouthOpenness": 0.4
+      },
+      "ㄸ": {
+        "phoneme": "DD",
+        "shape": "Narrow",
+        "description": "ㄸ - 된소리",
+        "mouthOpenness": 0.3
+      },
+      "ㄹ": {
+        "phoneme": "L",
+        "shape": "Narrow",
+        "description": "ㄹ - 유음",
+        "mouthOpenness": 0.4
+      },
+      "ㅁ": {
+        "phoneme": "M",
+        "shape": "Closed",
+        "description": "ㅁ - 입술 닫힘",
+        "mouthOpenness": 0.0
+      },
+      "ㅂ": {
+        "phoneme": "B",
+        "shape": "Closed",
+        "description": "ㅂ - 입술음",
+        "mouthOpenness": 0.0
+      },
+      "ㅃ": {
+        "phoneme": "BB",
+        "shape": "Closed",
+        "description": "ㅃ - 된소리",
+        "mouthOpenness": 0.0
+      },
+      "ㅅ": {
+        "phoneme": "S",
+        "shape": "Narrow",
+        "description": "ㅅ - 치찰음",
+        "mouthOpenness": 0.3
+      },
+      "ㅆ": {
+        "phoneme": "SS",
+        "shape": "Narrow",
+        "description": "ㅆ - 된소리",
+        "mouthOpenness": 0.2
+      },
+      "ㅇ": {
+        "phoneme": "NG",
+        "shape": "Medium",
+        "description": "ㅇ - 묵음/받침",
+        "mouthOpenness": 0.5
+      },
+      "ㅈ": {
+        "phoneme": "J",
+        "shape": "Narrow",
+        "description": "ㅈ - 파찰음",
+        "mouthOpenness": 0.3
+      },
+      "ㅉ": {
+        "phoneme": "JJ",
+        "shape": "Narrow",
+        "description": "ㅉ - 된소리",
+        "mouthOpenness": 0.2
+      },
+      "ㅊ": {
+        "phoneme": "CH",
+        "shape": "Narrow",
+        "description": "ㅊ - 격음",
+        "mouthOpenness": 0.4
+      },
+      "ㅋ": {
+        "phoneme": "K",
+        "shape": "Medium",
+        "description": "ㅋ - 격음",
+        "mouthOpenness": 0.5
+      },
+      "ㅌ": {
+        "phoneme": "T",
+        "shape": "Narrow",
+        "description": "ㅌ - 격음",
+        "mouthOpenness": 0.4
+      },
+      "ㅍ": {
+        "phoneme": "P",
+        "shape": "Closed",
+        "description": "ㅍ - 격음",
+        "mouthOpenness": 0.1
+      },
+      "ㅎ": {
+        "phoneme": "H",
+        "shape": "Medium",
+        "description": "ㅎ - 기식음",
+        "mouthOpenness": 0.6
+      }
+    }
+  },
+  "englishPhonemes": {
+    "vowels": {
+      "a": {
+        "phoneme": "A",
+        "shape": "Wide",
+        "description": "ah sound",
+        "examples": ["father", "ah"],
+        "mouthOpenness": 0.9
+      },
+      "e": {
+        "phoneme": "E",
+        "shape": "Medium",
+        "description": "eh sound",
+        "examples": ["bet", "bed"],
+        "mouthOpenness": 0.6
+      },
+      "i": {
+        "phoneme": "I",
+        "shape": "Narrow",
+        "description": "ee sound",
+        "examples": ["beat", "bee"],
+        "mouthOpenness": 0.4
+      },
+      "o": {
+        "phoneme": "O",
+        "shape": "O_Shape",
+        "description": "oh sound",
+        "examples": ["boat", "go"],
+        "mouthOpenness": 0.7,
+        "lipRounding": 0.9
+      },
+      "u": {
+        "phoneme": "U",
+        "shape": "O_Shape",
+        "description": "oo sound",
+        "examples": ["boot", "moon"],
+        "mouthOpenness": 0.5,
+        "lipRounding": 1.0
+      }
+    },
+    "consonants": {
+      "m": {
+        "phoneme": "M",
+        "shape": "Closed",
+        "description": "bilabial nasal",
+        "mouthOpenness": 0.0
+      },
+      "b": {
+        "phoneme": "B",
+        "shape": "Closed",
+        "description": "bilabial stop",
+        "mouthOpenness": 0.0
+      },
+      "p": {
+        "phoneme": "P",
+        "shape": "Closed",
+        "description": "bilabial stop",
+        "mouthOpenness": 0.0
+      },
+      "f": {
+        "phoneme": "F",
+        "shape": "Narrow",
+        "description": "labiodental fricative",
+        "mouthOpenness": 0.3
+      },
+      "v": {
+        "phoneme": "V",
+        "shape": "Narrow",
+        "description": "labiodental fricative",
+        "mouthOpenness": 0.3
+      },
+      "t": {
+        "phoneme": "T",
+        "shape": "Narrow",
+        "description": "alveolar stop",
+        "mouthOpenness": 0.4
+      },
+      "d": {
+        "phoneme": "D",
+        "shape": "Narrow",
+        "description": "alveolar stop",
+        "mouthOpenness": 0.4
+      },
+      "s": {
+        "phoneme": "S",
+        "shape": "Narrow",
+        "description": "alveolar fricative",
+        "mouthOpenness": 0.3
+      },
+      "z": {
+        "phoneme": "Z",
+        "shape": "Narrow",
+        "description": "alveolar fricative",
+        "mouthOpenness": 0.3
+      },
+      "l": {
+        "phoneme": "L",
+        "shape": "Narrow",
+        "description": "alveolar lateral",
+        "mouthOpenness": 0.4
+      },
+      "r": {
+        "phoneme": "R",
+        "shape": "Narrow",
+        "description": "alveolar approximant",
+        "mouthOpenness": 0.4
+      },
+      "n": {
+        "phoneme": "N",
+        "shape": "Narrow",
+        "description": "alveolar nasal",
+        "mouthOpenness": 0.4
+      },
+      "k": {
+        "phoneme": "K",
+        "shape": "Medium",
+        "description": "velar stop",
+        "mouthOpenness": 0.5
+      },
+      "g": {
+        "phoneme": "G",
+        "shape": "Medium",
+        "description": "velar stop",
+        "mouthOpenness": 0.5
+      },
+      "h": {
+        "phoneme": "H",
+        "shape": "Medium",
+        "description": "glottal fricative",
+        "mouthOpenness": 0.6
+      }
+    }
+  },
+  "mouthShapeDescriptions": {
+    "Closed": {
+      "description": "입이 완전히 닫힌 상태",
+      "openness": 0.0,
+      "lipContact": true,
+      "usage": "ㅁ, ㅂ, ㅍ, M, B, P"
+    },
+    "Narrow": {
+      "description": "입이 좁게 벌어진 상태",
+      "openness": 0.3,
+      "lipContact": false,
+      "usage": "ㅣ, ㅡ, I, E (narrow)"
+    },
+    "Medium": {
+      "description": "입이 중간 정도 벌어진 상태",
+      "openness": 0.6,
+      "lipContact": false,
+      "usage": "ㅓ, ㅔ, E, D, T"
+    },
+    "Wide": {
+      "description": "입이 크게 벌어진 상태",
+      "openness": 0.9,
+      "lipContact": false,
+      "usage": "ㅏ, ㅐ, A"
+    },
+    "O_Shape": {
+      "description": "입술을 동그랗게 모은 상태",
+      "openness": 0.7,
+      "lipRounding": 0.9,
+      "lipContact": false,
+      "usage": "ㅗ, ㅜ, O, U"
+    },
+    "Smile": {
+      "description": "미소 짓는 모양",
+      "openness": 0.5,
+      "lipStretch": 0.8,
+      "usage": "기쁨, 웃음"
+    },
+    "Sad": {
+      "description": "슬픈 표정",
+      "openness": 0.3,
+      "mouthCornerDown": true,
+      "usage": "슬픔, 우울"
+    },
+    "VeryWide": {
+      "description": "입이 매우 크게 벌어진 상태",
+      "openness": 1.0,
+      "lipContact": false,
+      "usage": "소리 지르기, 놀람"
+    }
+  },
+  "blendShapeWeights": {
+    "description": "3D 모델용 Blend Shape 가중치 매핑",
+    "shapes": {
+      "Closed": {
+        "jawOpen": 0.0,
+        "mouthClose": 1.0,
+        "lipsTogether": 1.0
+      },
+      "Narrow": {
+        "jawOpen": 0.3,
+        "mouthWide": 0.2,
+        "lipsTogether": 0.0
+      },
+      "Medium": {
+        "jawOpen": 0.6,
+        "mouthWide": 0.5,
+        "lipsTogether": 0.0
+      },
+      "Wide": {
+        "jawOpen": 0.9,
+        "mouthWide": 0.8,
+        "lipsTogether": 0.0
+      },
+      "O_Shape": {
+        "jawOpen": 0.7,
+        "mouthNarrow": 0.5,
+        "lipsRounded": 0.9,
+        "lipsTogether": 0.0
+      },
+      "Smile": {
+        "jawOpen": 0.5,
+        "mouthSmile": 0.8,
+        "cheekRaise": 0.6
+      },
+      "Sad": {
+        "jawOpen": 0.3,
+        "mouthFrown": 0.7,
+        "browDown": 0.5
+      },
+      "VeryWide": {
+        "jawOpen": 1.0,
+        "mouthWide": 1.0,
+        "lipsTogether": 0.0
+      }
+    }
+  }
+}
