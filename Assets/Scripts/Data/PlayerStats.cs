@@ -17,7 +17,6 @@ namespace HiddenGrowth.Data
         public event Action<BigNumber, BigNumber> OnHealthChanged;       // currentHP, maxHP
         public event Action<BigNumber, BigNumber> OnAttackChanged;       // oldAttack, newAttack
         public event Action OnStatsChanged;
-        public event Action<int> OnRebirthCountChanged;                  // rebirthCount
         #endregion
 
         #region Base Stats (BigNumber 사용)
@@ -25,7 +24,6 @@ namespace HiddenGrowth.Data
         [SerializeField] private string currentExpSerialized = "0:0";
         [SerializeField] private string goldSerialized = "0:0";
         [SerializeField] private string currentHPSerialized = "0:0";
-        [SerializeField] private int rebirthCount = 0;
         [SerializeField] private int skillPoints = 0;
 
         // Runtime BigNumber values
@@ -51,7 +49,6 @@ namespace HiddenGrowth.Data
         private const float DROP_RATE_PER_LUCK = 0.3f;          // 0.3% per point
         private const float LEVEL_ATTACK_MULTIPLIER = 1.5f;
         private const float LEVEL_HP_MULTIPLIER = 10f;
-        private const float REBIRTH_BONUS_MULTIPLIER = 0.1f;    // 10% per rebirth
         private const int STAT_POINTS_PER_LEVEL = 3;
         private const int SKILL_POINTS_PER_LEVEL = 1;
         #endregion
@@ -89,7 +86,6 @@ namespace HiddenGrowth.Data
             }
         }
 
-        public int RebirthCount => rebirthCount;
         public int SkillPoints => skillPoints;
         public int StatPointsAvailable => statPointsAvailable;
         public int StrengthPoints => strengthPoints;
@@ -120,7 +116,7 @@ namespace HiddenGrowth.Data
         /// <summary>
         /// 치명타 데미지 배율
         /// </summary>
-        public float CriticalDamageMultiplier => 2.0f + (rebirthCount * 0.1f);
+        public float CriticalDamageMultiplier => 2.0f;
 
         /// <summary>
         /// 드롭률 보너스 (0~1)
@@ -130,12 +126,12 @@ namespace HiddenGrowth.Data
         /// <summary>
         /// 골드 획득 보너스 (1.0 = 100%)
         /// </summary>
-        public float GoldBonus => 1.0f + (rebirthCount * REBIRTH_BONUS_MULTIPLIER);
+        public float GoldBonus => 1.0f;
 
         /// <summary>
         /// 경험치 획득 보너스 (1.0 = 100%)
         /// </summary>
-        public float ExpBonus => 1.0f + (rebirthCount * REBIRTH_BONUS_MULTIPLIER * 0.5f);
+        public float ExpBonus => 1.0f;
 
         /// <summary>
         /// HP 퍼센트
@@ -188,7 +184,6 @@ namespace HiddenGrowth.Data
             level = 1;
             CurrentExp = BigNumber.Zero;
             Gold = BigNumber.Zero;
-            rebirthCount = 0;
             skillPoints = 0;
             statPointsAvailable = 0;
             strengthPoints = 0;
@@ -208,7 +203,6 @@ namespace HiddenGrowth.Data
             level = saveData.level;
             CurrentExp = BigNumber.Deserialize(saveData.currentExpSerialized);
             Gold = BigNumber.Deserialize(saveData.goldSerialized);
-            rebirthCount = saveData.rebirthCount;
             skillPoints = saveData.skillPoints;
             statPointsAvailable = saveData.statPointsAvailable;
             strengthPoints = saveData.strengthPoints;
@@ -233,7 +227,6 @@ namespace HiddenGrowth.Data
                 currentExpSerialized = this.CurrentExp.Serialize(),
                 goldSerialized = this.Gold.Serialize(),
                 currentHPSerialized = this.CurrentHP.Serialize(),
-                rebirthCount = this.rebirthCount,
                 skillPoints = this.skillPoints,
                 statPointsAvailable = this.statPointsAvailable,
                 strengthPoints = this.strengthPoints,
@@ -281,15 +274,8 @@ namespace HiddenGrowth.Data
             BigNumber baseHP = BASE_MAX_HP;
             BigNumber levelBonus = new BigNumber(level * LEVEL_HP_MULTIPLIER);
             BigNumber vitalityBonus = new BigNumber(vitalityPoints * HP_PER_VITALITY);
-            float rebirthBonus = 1 + (rebirthCount * REBIRTH_BONUS_MULTIPLIER);
 
-            // 환생 보너스로 지수적 증가
-            if (rebirthCount > 0)
-            {
-                rebirthBonus *= (float)Math.Pow(1.5, rebirthCount);
-            }
-
-            return (baseHP + levelBonus + vitalityBonus) * rebirthBonus;
+            return baseHP + levelBonus + vitalityBonus;
         }
 
         /// <summary>
@@ -300,15 +286,8 @@ namespace HiddenGrowth.Data
             BigNumber baseAtk = BASE_ATTACK;
             BigNumber levelBonus = new BigNumber(level * LEVEL_ATTACK_MULTIPLIER);
             BigNumber strengthBonus = new BigNumber(strengthPoints * ATTACK_PER_STRENGTH);
-            float rebirthBonus = 1 + (rebirthCount * REBIRTH_BONUS_MULTIPLIER);
 
-            // 환생 보너스로 지수적 증가
-            if (rebirthCount > 0)
-            {
-                rebirthBonus *= (float)Math.Pow(2.0, rebirthCount);
-            }
-
-            return (baseAtk + levelBonus + strengthBonus) * rebirthBonus;
+            return baseAtk + levelBonus + strengthBonus;
         }
 
         /// <summary>
@@ -327,8 +306,7 @@ namespace HiddenGrowth.Data
         private float CalculateDropRateBonus()
         {
             float luckBonus = luckPoints * DROP_RATE_PER_LUCK / 100f;
-            float rebirthBonus = rebirthCount * 0.05f;
-            return luckBonus + rebirthBonus;
+            return luckBonus;
         }
         #endregion
 
@@ -608,33 +586,6 @@ namespace HiddenGrowth.Data
         }
         #endregion
 
-        #region Rebirth
-        /// <summary>
-        /// 환생 처리
-        /// </summary>
-        public bool Rebirth(int requiredLevel = 100)
-        {
-            if (level < requiredLevel) return false;
-
-            rebirthCount++;
-            level = 1;
-            CurrentExp = BigNumber.Zero;
-
-            // 스탯 포인트는 유지하되 추가 보너스 지급
-            statPointsAvailable += 10;
-            skillPoints = 0;
-
-            CurrentHP = MaxHP;
-
-            OnRebirthCountChanged?.Invoke(rebirthCount);
-            OnStatsChanged?.Invoke();
-            OnHealthChanged?.Invoke(CurrentHP, MaxHP);
-
-            Debug.Log($"[PlayerStats] Rebirth! Count: {rebirthCount}");
-            return true;
-        }
-        #endregion
-
         #region Damage Calculation
         /// <summary>
         /// 최종 데미지 계산 (치명타 포함)
@@ -731,7 +682,6 @@ namespace HiddenGrowth.Data
         public string currentExpSerialized;
         public string goldSerialized;
         public string currentHPSerialized;
-        public int rebirthCount;
         public int skillPoints;
         public int statPointsAvailable;
         public int strengthPoints;

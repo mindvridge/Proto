@@ -29,7 +29,6 @@ namespace HiddenGrowth.Managers
         [SerializeField] private int unlockDungeonLevel = 15;
         [SerializeField] private int unlockPvPLevel = 20;
         [SerializeField] private int unlockGuildLevel = 25;
-        [SerializeField] private int unlockRebirthLevel = 100;
 
         [Header("=== Stat Growth Per Level ===")]
         [SerializeField] private float attackGrowthPercent = 5f;      // 레벨당 공격력 증가 %
@@ -97,7 +96,7 @@ namespace HiddenGrowth.Managers
                 new LevelMilestone { level = 20, rewardType = MilestoneRewardType.StatPoints, rewardAmount = 10, description = "PvP 해금" },
                 new LevelMilestone { level = 25, rewardType = MilestoneRewardType.Gold, rewardAmount = 5000, description = "길드 해금" },
                 new LevelMilestone { level = 50, rewardType = MilestoneRewardType.SkillPoints, rewardAmount = 20, description = "고급 스킬 해금" },
-                new LevelMilestone { level = 100, rewardType = MilestoneRewardType.All, rewardAmount = 50, description = "환생 해금" },
+                new LevelMilestone { level = 100, rewardType = MilestoneRewardType.All, rewardAmount = 50, description = "최고 레벨 달성" },
             };
         }
         #endregion
@@ -144,13 +143,6 @@ namespace HiddenGrowth.Managers
                 reward.goldBonus *= 5;
             }
 
-            // 환생 횟수에 따른 보너스
-            if (playerStats != null && playerStats.RebirthCount > 0)
-            {
-                float rebirthMultiplier = 1f + (playerStats.RebirthCount * 0.1f);
-                reward.goldBonus = (long)(reward.goldBonus * rebirthMultiplier);
-            }
-
             return reward;
         }
 
@@ -181,7 +173,6 @@ namespace HiddenGrowth.Managers
             CheckAndUnlock(level, unlockDungeonLevel, "Dungeon");
             CheckAndUnlock(level, unlockPvPLevel, "PvP");
             CheckAndUnlock(level, unlockGuildLevel, "Guild");
-            CheckAndUnlock(level, unlockRebirthLevel, "Rebirth");
         }
 
         /// <summary>
@@ -220,7 +211,6 @@ namespace HiddenGrowth.Managers
                 "Dungeon" => level >= unlockDungeonLevel,
                 "PvP" => level >= unlockPvPLevel,
                 "Guild" => level >= unlockGuildLevel,
-                "Rebirth" => level >= unlockRebirthLevel,
                 _ => false
             };
         }

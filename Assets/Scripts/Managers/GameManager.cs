@@ -420,8 +420,7 @@ namespace HiddenGrowth.Managers
                    $"HP: {playerStats.CurrentHP}/{playerStats.MaxHP}\n" +
                    $"Attack: {playerStats.Attack}\n" +
                    $"Gold: {playerStats.Gold}\n" +
-                   $"Exp: {playerStats.CurrentExp}/{playerStats.RequiredExp}\n" +
-                   $"Rebirth: {playerStats.RebirthCount}";
+                   $"Exp: {playerStats.CurrentExp}/{playerStats.RequiredExp}";
         }
 
         /// <summary>

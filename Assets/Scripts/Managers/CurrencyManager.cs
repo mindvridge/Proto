@@ -76,15 +76,6 @@ namespace HiddenGrowth.Managers
         }
 
         /// <summary>
-        /// 환생 포인트
-        /// </summary>
-        public BigNumber RebirthPoints
-        {
-            get => GetCurrency(CurrencyType.RebirthPoint);
-            set => SetCurrency(CurrencyType.RebirthPoint, value);
-        }
-
-        /// <summary>
         /// 이벤트 포인트
         /// </summary>
         public BigNumber EventPoints
@@ -377,7 +368,6 @@ namespace HiddenGrowth.Managers
                 CurrencyType.Diamond => "<sprite name=\"icon_diamond\">",
                 CurrencyType.Exp => "<sprite name=\"icon_exp\">",
                 CurrencyType.SkillPoint => "<sprite name=\"icon_skill\">",
-                CurrencyType.RebirthPoint => "<sprite name=\"icon_rebirth\">",
                 CurrencyType.EventPoint => "<sprite name=\"icon_event\">",
                 CurrencyType.DungeonKey => "<sprite name=\"icon_key\">",
                 CurrencyType.ArenaTicket => "<sprite name=\"icon_ticket\">",
@@ -396,7 +386,6 @@ namespace HiddenGrowth.Managers
                 CurrencyType.Diamond => "다이아",
                 CurrencyType.Exp => "경험치",
                 CurrencyType.SkillPoint => "스킬 포인트",
-                CurrencyType.RebirthPoint => "환생 포인트",
                 CurrencyType.EventPoint => "이벤트 포인트",
                 CurrencyType.DungeonKey => "던전 열쇠",
                 CurrencyType.ArenaTicket => "아레나 티켓",
@@ -570,7 +559,6 @@ namespace HiddenGrowth.Managers
         Diamond,        // 다이아몬드/젬 (프리미엄 재화)
         Exp,            // 경험치
         SkillPoint,     // 스킬 포인트
-        RebirthPoint,   // 환생 포인트
         EventPoint,     // 이벤트 포인트
         DungeonKey,     // 던전 입장권
         ArenaTicket,    // 아레나 티켓
