@@ -5,6 +5,7 @@ import compression from 'compression';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
+import path from 'path';
 
 import { logger } from './utils/logger';
 import { Database } from './database/connection';
@@ -18,6 +19,7 @@ import saveRoutes from './routes/save.routes';
 import rankingRoutes from './routes/ranking.routes';
 import iapRoutes from './routes/iap.routes';
 import securityRoutes from './routes/security.routes';
+import adminRoutes from './routes/admin.routes';
 
 // Load environment variables
 dotenv.config();
@@ -30,13 +32,18 @@ const API_VERSION = process.env.API_VERSION || 'v1';
 app.set('trust proxy', 1);
 
 // Security middlewares
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false, // 대시보드 CDN 리소스 허용
+}));
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
     ? ['https://yourgame.com']
     : '*',
   credentials: true
 }));
+
+// Static files (Admin Dashboard)
+app.use('/admin', express.static(path.join(__dirname, '../public/admin')));
 
 // Rate limiting
 const limiter = rateLimit({
@@ -75,6 +82,7 @@ app.use(`/api/${API_VERSION}/save`, saveRoutes);
 app.use(`/api/${API_VERSION}/ranking`, rankingRoutes);
 app.use(`/api/${API_VERSION}/iap`, iapRoutes);
 app.use(`/api/${API_VERSION}/security`, securityRoutes);
+app.use(`/api/${API_VERSION}/admin`, adminRoutes);
 
 // Ping endpoint
 app.get(`/api/${API_VERSION}/ping`, (req, res) => {
