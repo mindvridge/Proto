@@ -5,26 +5,33 @@ namespace HiddenGrowth.Data
 {
     /// <summary>
     /// 플레이어 스탯 관리 클래스
+    /// BigNumber를 사용하여 무제한 큰 숫자 지원
     /// </summary>
     [Serializable]
     public class PlayerStats
     {
         #region Events
-        public event Action<int, int> OnLevelUp;                    // oldLevel, newLevel
-        public event Action<long, long> OnExpChanged;               // currentExp, requiredExp
-        public event Action<long> OnGoldChanged;                    // newGold
-        public event Action<long, long> OnHealthChanged;            // currentHP, maxHP
+        public event Action<int, int> OnLevelUp;                         // oldLevel, newLevel
+        public event Action<BigNumber, BigNumber> OnExpChanged;          // currentExp, requiredExp
+        public event Action<BigNumber> OnGoldChanged;                    // newGold
+        public event Action<BigNumber, BigNumber> OnHealthChanged;       // currentHP, maxHP
+        public event Action<BigNumber, BigNumber> OnAttackChanged;       // oldAttack, newAttack
         public event Action OnStatsChanged;
-        public event Action<int> OnRebirthCountChanged;             // rebirthCount
+        public event Action<int> OnRebirthCountChanged;                  // rebirthCount
         #endregion
 
-        #region Base Stats
+        #region Base Stats (BigNumber 사용)
         [SerializeField] private int level = 1;
-        [SerializeField] private long currentExp = 0;
-        [SerializeField] private long gold = 0;
-        [SerializeField] private long currentHP;
+        [SerializeField] private string currentExpSerialized = "0:0";
+        [SerializeField] private string goldSerialized = "0:0";
+        [SerializeField] private string currentHPSerialized = "0:0";
         [SerializeField] private int rebirthCount = 0;
         [SerializeField] private int skillPoints = 0;
+
+        // Runtime BigNumber values
+        private BigNumber _currentExp = BigNumber.Zero;
+        private BigNumber _gold = BigNumber.Zero;
+        private BigNumber _currentHP = BigNumber.Zero;
         #endregion
 
         #region Stat Points (레벨업 시 분배)
@@ -36,8 +43,8 @@ namespace HiddenGrowth.Data
         #endregion
 
         #region Constants
-        private const int BASE_ATTACK = 10;
-        private const int BASE_MAX_HP = 100;
+        private static readonly BigNumber BASE_ATTACK = new BigNumber(10);
+        private static readonly BigNumber BASE_MAX_HP = new BigNumber(100);
         private const float ATTACK_PER_STRENGTH = 5f;
         private const float HP_PER_VITALITY = 20f;
         private const float CRIT_RATE_PER_AGILITY = 0.5f;       // 0.5% per point
@@ -51,9 +58,37 @@ namespace HiddenGrowth.Data
 
         #region Properties
         public int Level => level;
-        public long CurrentExp => currentExp;
-        public long Gold => gold;
-        public long CurrentHP => currentHP;
+
+        public BigNumber CurrentExp
+        {
+            get => _currentExp;
+            private set
+            {
+                _currentExp = value;
+                currentExpSerialized = value.Serialize();
+            }
+        }
+
+        public BigNumber Gold
+        {
+            get => _gold;
+            private set
+            {
+                _gold = value;
+                goldSerialized = value.Serialize();
+            }
+        }
+
+        public BigNumber CurrentHP
+        {
+            get => _currentHP;
+            private set
+            {
+                _currentHP = value;
+                currentHPSerialized = value.Serialize();
+            }
+        }
+
         public int RebirthCount => rebirthCount;
         public int SkillPoints => skillPoints;
         public int StatPointsAvailable => statPointsAvailable;
@@ -65,17 +100,17 @@ namespace HiddenGrowth.Data
         /// <summary>
         /// 다음 레벨에 필요한 경험치
         /// </summary>
-        public long RequiredExp => CalculateRequiredExp(level);
+        public BigNumber RequiredExp => CalculateRequiredExp(level);
 
         /// <summary>
         /// 최대 체력
         /// </summary>
-        public long MaxHP => CalculateMaxHP();
+        public BigNumber MaxHP => CalculateMaxHP();
 
         /// <summary>
         /// 공격력
         /// </summary>
-        public long Attack => CalculateAttack();
+        public BigNumber Attack => CalculateAttack();
 
         /// <summary>
         /// 치명타 확률 (0~1)
@@ -105,12 +140,41 @@ namespace HiddenGrowth.Data
         /// <summary>
         /// HP 퍼센트
         /// </summary>
-        public float HPPercent => MaxHP > 0 ? (float)CurrentHP / MaxHP : 0;
+        public float HPPercent
+        {
+            get
+            {
+                if (MaxHP.IsZero) return 0;
+                return (CurrentHP / MaxHP).ToFloat();
+            }
+        }
 
         /// <summary>
         /// 경험치 퍼센트
         /// </summary>
-        public float ExpPercent => RequiredExp > 0 ? (float)CurrentExp / RequiredExp : 0;
+        public float ExpPercent
+        {
+            get
+            {
+                if (RequiredExp.IsZero) return 0;
+                return (CurrentExp / RequiredExp).ToFloat();
+            }
+        }
+
+        /// <summary>
+        /// 포맷된 골드 문자열
+        /// </summary>
+        public string GoldFormatted => CurrencyFormatter.FormatKoreanSimple(Gold);
+
+        /// <summary>
+        /// 포맷된 공격력 문자열
+        /// </summary>
+        public string AttackFormatted => CurrencyFormatter.FormatKoreanSimple(Attack);
+
+        /// <summary>
+        /// 포맷된 HP 문자열
+        /// </summary>
+        public string HPFormatted => $"{CurrencyFormatter.FormatKoreanSimple(CurrentHP)}/{CurrencyFormatter.FormatKoreanSimple(MaxHP)}";
         #endregion
 
         #region Initialization
@@ -122,8 +186,8 @@ namespace HiddenGrowth.Data
         public void Initialize()
         {
             level = 1;
-            currentExp = 0;
-            gold = 0;
+            CurrentExp = BigNumber.Zero;
+            Gold = BigNumber.Zero;
             rebirthCount = 0;
             skillPoints = 0;
             statPointsAvailable = 0;
@@ -131,7 +195,7 @@ namespace HiddenGrowth.Data
             vitalityPoints = 0;
             agilityPoints = 0;
             luckPoints = 0;
-            currentHP = MaxHP;
+            CurrentHP = MaxHP;
         }
 
         /// <summary>
@@ -142,8 +206,8 @@ namespace HiddenGrowth.Data
             if (saveData == null) return;
 
             level = saveData.level;
-            currentExp = saveData.currentExp;
-            gold = saveData.gold;
+            CurrentExp = BigNumber.Deserialize(saveData.currentExpSerialized);
+            Gold = BigNumber.Deserialize(saveData.goldSerialized);
             rebirthCount = saveData.rebirthCount;
             skillPoints = saveData.skillPoints;
             statPointsAvailable = saveData.statPointsAvailable;
@@ -151,7 +215,9 @@ namespace HiddenGrowth.Data
             vitalityPoints = saveData.vitalityPoints;
             agilityPoints = saveData.agilityPoints;
             luckPoints = saveData.luckPoints;
-            currentHP = saveData.currentHP > 0 ? saveData.currentHP : MaxHP;
+
+            BigNumber loadedHP = BigNumber.Deserialize(saveData.currentHPSerialized);
+            CurrentHP = loadedHP > BigNumber.Zero ? loadedHP : MaxHP;
 
             OnStatsChanged?.Invoke();
         }
@@ -164,9 +230,9 @@ namespace HiddenGrowth.Data
             return new PlayerSaveData
             {
                 level = this.level,
-                currentExp = this.currentExp,
-                gold = this.gold,
-                currentHP = this.currentHP,
+                currentExpSerialized = this.CurrentExp.Serialize(),
+                goldSerialized = this.Gold.Serialize(),
+                currentHPSerialized = this.CurrentHP.Serialize(),
                 rebirthCount = this.rebirthCount,
                 skillPoints = this.skillPoints,
                 statPointsAvailable = this.statPointsAvailable,
@@ -176,42 +242,73 @@ namespace HiddenGrowth.Data
                 luckPoints = this.luckPoints
             };
         }
+
+        /// <summary>
+        /// 직렬화된 데이터에서 BigNumber 복원
+        /// </summary>
+        public void DeserializeBigNumbers()
+        {
+            _currentExp = BigNumber.Deserialize(currentExpSerialized);
+            _gold = BigNumber.Deserialize(goldSerialized);
+            _currentHP = BigNumber.Deserialize(currentHPSerialized);
+        }
         #endregion
 
         #region Stat Calculations
         /// <summary>
         /// 필요 경험치 계산 (레벨 기반 곡선)
         /// </summary>
-        private long CalculateRequiredExp(int targetLevel)
+        private BigNumber CalculateRequiredExp(int targetLevel)
         {
             // 기본 공식: 100 * level^2 + 50 * level
-            return (long)(100 * Mathf.Pow(targetLevel, 2) + 50 * targetLevel);
+            // 고레벨에서 급격히 증가
+            double baseExp = 100 * Math.Pow(targetLevel, 2) + 50 * targetLevel;
+
+            // 레벨 100 이후 추가 스케일링
+            if (targetLevel > 100)
+            {
+                baseExp *= Math.Pow(1.1, targetLevel - 100);
+            }
+
+            return new BigNumber(baseExp);
         }
 
         /// <summary>
         /// 최대 체력 계산
         /// </summary>
-        private long CalculateMaxHP()
+        private BigNumber CalculateMaxHP()
         {
-            float baseHP = BASE_MAX_HP;
-            float levelBonus = level * LEVEL_HP_MULTIPLIER;
-            float vitalityBonus = vitalityPoints * HP_PER_VITALITY;
+            BigNumber baseHP = BASE_MAX_HP;
+            BigNumber levelBonus = new BigNumber(level * LEVEL_HP_MULTIPLIER);
+            BigNumber vitalityBonus = new BigNumber(vitalityPoints * HP_PER_VITALITY);
             float rebirthBonus = 1 + (rebirthCount * REBIRTH_BONUS_MULTIPLIER);
 
-            return (long)((baseHP + levelBonus + vitalityBonus) * rebirthBonus);
+            // 환생 보너스로 지수적 증가
+            if (rebirthCount > 0)
+            {
+                rebirthBonus *= (float)Math.Pow(1.5, rebirthCount);
+            }
+
+            return (baseHP + levelBonus + vitalityBonus) * rebirthBonus;
         }
 
         /// <summary>
         /// 공격력 계산
         /// </summary>
-        private long CalculateAttack()
+        private BigNumber CalculateAttack()
         {
-            float baseAtk = BASE_ATTACK;
-            float levelBonus = level * LEVEL_ATTACK_MULTIPLIER;
-            float strengthBonus = strengthPoints * ATTACK_PER_STRENGTH;
+            BigNumber baseAtk = BASE_ATTACK;
+            BigNumber levelBonus = new BigNumber(level * LEVEL_ATTACK_MULTIPLIER);
+            BigNumber strengthBonus = new BigNumber(strengthPoints * ATTACK_PER_STRENGTH);
             float rebirthBonus = 1 + (rebirthCount * REBIRTH_BONUS_MULTIPLIER);
 
-            return (long)((baseAtk + levelBonus + strengthBonus) * rebirthBonus);
+            // 환생 보너스로 지수적 증가
+            if (rebirthCount > 0)
+            {
+                rebirthBonus *= (float)Math.Pow(2.0, rebirthCount);
+            }
+
+            return (baseAtk + levelBonus + strengthBonus) * rebirthBonus;
         }
 
         /// <summary>
@@ -239,20 +336,28 @@ namespace HiddenGrowth.Data
         /// <summary>
         /// 경험치 획득
         /// </summary>
-        public void AddExp(long amount)
+        public void AddExp(BigNumber amount)
         {
-            if (amount <= 0) return;
+            if (amount <= BigNumber.Zero) return;
 
-            long bonusExp = (long)(amount * ExpBonus);
-            currentExp += bonusExp;
+            BigNumber bonusExp = amount * ExpBonus;
+            CurrentExp = CurrentExp + bonusExp;
 
-            OnExpChanged?.Invoke(currentExp, RequiredExp);
+            OnExpChanged?.Invoke(CurrentExp, RequiredExp);
 
             // 레벨업 체크
-            while (currentExp >= RequiredExp)
+            while (CurrentExp >= RequiredExp)
             {
                 LevelUp();
             }
+        }
+
+        /// <summary>
+        /// 경험치 획득 (long 오버로드)
+        /// </summary>
+        public void AddExp(long amount)
+        {
+            AddExp(new BigNumber(amount));
         }
 
         /// <summary>
@@ -261,7 +366,7 @@ namespace HiddenGrowth.Data
         private void LevelUp()
         {
             int oldLevel = level;
-            currentExp -= RequiredExp;
+            CurrentExp = CurrentExp - RequiredExp;
             level++;
 
             // 스탯 포인트 및 스킬 포인트 지급
@@ -269,11 +374,11 @@ namespace HiddenGrowth.Data
             skillPoints += SKILL_POINTS_PER_LEVEL;
 
             // HP 회복
-            currentHP = MaxHP;
+            CurrentHP = MaxHP;
 
             OnLevelUp?.Invoke(oldLevel, level);
             OnStatsChanged?.Invoke();
-            OnHealthChanged?.Invoke(currentHP, MaxHP);
+            OnHealthChanged?.Invoke(CurrentHP, MaxHP);
 
             Debug.Log($"[PlayerStats] Level Up! {oldLevel} -> {level}");
         }
@@ -287,8 +392,8 @@ namespace HiddenGrowth.Data
 
             int oldLevel = level;
             level = newLevel;
-            currentExp = 0;
-            currentHP = MaxHP;
+            CurrentExp = BigNumber.Zero;
+            CurrentHP = MaxHP;
 
             OnLevelUp?.Invoke(oldLevel, level);
             OnStatsChanged?.Invoke();
@@ -299,34 +404,58 @@ namespace HiddenGrowth.Data
         /// <summary>
         /// 골드 획득
         /// </summary>
+        public void AddGold(BigNumber amount)
+        {
+            if (amount <= BigNumber.Zero) return;
+
+            BigNumber bonusGold = amount * GoldBonus;
+            Gold = Gold + bonusGold;
+
+            OnGoldChanged?.Invoke(Gold);
+        }
+
+        /// <summary>
+        /// 골드 획득 (long 오버로드)
+        /// </summary>
         public void AddGold(long amount)
         {
-            if (amount <= 0) return;
-
-            long bonusGold = (long)(amount * GoldBonus);
-            gold += bonusGold;
-
-            OnGoldChanged?.Invoke(gold);
+            AddGold(new BigNumber(amount));
         }
 
         /// <summary>
         /// 골드 소비
         /// </summary>
+        public bool SpendGold(BigNumber amount)
+        {
+            if (amount <= BigNumber.Zero || Gold < amount) return false;
+
+            Gold = Gold - amount;
+            OnGoldChanged?.Invoke(Gold);
+            return true;
+        }
+
+        /// <summary>
+        /// 골드 소비 (long 오버로드)
+        /// </summary>
         public bool SpendGold(long amount)
         {
-            if (amount <= 0 || gold < amount) return false;
-
-            gold -= amount;
-            OnGoldChanged?.Invoke(gold);
-            return true;
+            return SpendGold(new BigNumber(amount));
         }
 
         /// <summary>
         /// 골드 충분한지 확인
         /// </summary>
+        public bool HasEnoughGold(BigNumber amount)
+        {
+            return Gold >= amount;
+        }
+
+        /// <summary>
+        /// 골드 충분한지 확인 (long 오버로드)
+        /// </summary>
         public bool HasEnoughGold(long amount)
         {
-            return gold >= amount;
+            return HasEnoughGold(new BigNumber(amount));
         }
         #endregion
 
@@ -334,28 +463,44 @@ namespace HiddenGrowth.Data
         /// <summary>
         /// 데미지 받기
         /// </summary>
-        public void TakeDamage(long damage)
+        public void TakeDamage(BigNumber damage)
         {
-            if (damage <= 0) return;
+            if (damage <= BigNumber.Zero) return;
 
-            currentHP = Math.Max(0, currentHP - damage);
-            OnHealthChanged?.Invoke(currentHP, MaxHP);
+            CurrentHP = BigNumber.Max(BigNumber.Zero, CurrentHP - damage);
+            OnHealthChanged?.Invoke(CurrentHP, MaxHP);
 
-            if (currentHP <= 0)
+            if (CurrentHP.IsZero)
             {
                 Debug.Log("[PlayerStats] Player died!");
             }
         }
 
         /// <summary>
+        /// 데미지 받기 (long 오버로드)
+        /// </summary>
+        public void TakeDamage(long damage)
+        {
+            TakeDamage(new BigNumber(damage));
+        }
+
+        /// <summary>
         /// HP 회복
+        /// </summary>
+        public void Heal(BigNumber amount)
+        {
+            if (amount <= BigNumber.Zero) return;
+
+            CurrentHP = BigNumber.Min(MaxHP, CurrentHP + amount);
+            OnHealthChanged?.Invoke(CurrentHP, MaxHP);
+        }
+
+        /// <summary>
+        /// HP 회복 (long 오버로드)
         /// </summary>
         public void Heal(long amount)
         {
-            if (amount <= 0) return;
-
-            currentHP = Math.Min(MaxHP, currentHP + amount);
-            OnHealthChanged?.Invoke(currentHP, MaxHP);
+            Heal(new BigNumber(amount));
         }
 
         /// <summary>
@@ -363,7 +508,7 @@ namespace HiddenGrowth.Data
         /// </summary>
         public void HealPercent(float percent)
         {
-            long healAmount = (long)(MaxHP * percent);
+            BigNumber healAmount = MaxHP * percent;
             Heal(healAmount);
         }
 
@@ -372,14 +517,14 @@ namespace HiddenGrowth.Data
         /// </summary>
         public void FullHeal()
         {
-            currentHP = MaxHP;
-            OnHealthChanged?.Invoke(currentHP, MaxHP);
+            CurrentHP = MaxHP;
+            OnHealthChanged?.Invoke(CurrentHP, MaxHP);
         }
 
         /// <summary>
         /// 살아있는지 확인
         /// </summary>
-        public bool IsAlive => currentHP > 0;
+        public bool IsAlive => CurrentHP > BigNumber.Zero;
         #endregion
 
         #region Stat Points
@@ -389,6 +534,8 @@ namespace HiddenGrowth.Data
         public bool AllocateStatPoint(StatType statType, int amount = 1)
         {
             if (amount <= 0 || statPointsAvailable < amount) return false;
+
+            BigNumber oldAttack = Attack;
 
             switch (statType)
             {
@@ -410,6 +557,12 @@ namespace HiddenGrowth.Data
 
             statPointsAvailable -= amount;
             OnStatsChanged?.Invoke();
+
+            if (statType == StatType.Strength)
+            {
+                OnAttackChanged?.Invoke(oldAttack, Attack);
+            }
+
             return true;
         }
 
@@ -465,17 +618,17 @@ namespace HiddenGrowth.Data
 
             rebirthCount++;
             level = 1;
-            currentExp = 0;
+            CurrentExp = BigNumber.Zero;
 
             // 스탯 포인트는 유지하되 추가 보너스 지급
             statPointsAvailable += 10;
             skillPoints = 0;
 
-            currentHP = MaxHP;
+            CurrentHP = MaxHP;
 
             OnRebirthCountChanged?.Invoke(rebirthCount);
             OnStatsChanged?.Invoke();
-            OnHealthChanged?.Invoke(currentHP, MaxHP);
+            OnHealthChanged?.Invoke(CurrentHP, MaxHP);
 
             Debug.Log($"[PlayerStats] Rebirth! Count: {rebirthCount}");
             return true;
@@ -486,17 +639,17 @@ namespace HiddenGrowth.Data
         /// <summary>
         /// 최종 데미지 계산 (치명타 포함)
         /// </summary>
-        public DamageResult CalculateDamage()
+        public BigDamageResult CalculateDamage()
         {
             bool isCritical = UnityEngine.Random.value <= CriticalRate;
-            long damage = Attack;
+            BigNumber damage = Attack;
 
             if (isCritical)
             {
-                damage = (long)(damage * CriticalDamageMultiplier);
+                damage = damage * CriticalDamageMultiplier;
             }
 
-            return new DamageResult
+            return new BigDamageResult
             {
                 damage = damage,
                 isCritical = isCritical
@@ -506,10 +659,10 @@ namespace HiddenGrowth.Data
         /// <summary>
         /// 특정 스킬의 데미지 계산
         /// </summary>
-        public DamageResult CalculateSkillDamage(float skillMultiplier)
+        public BigDamageResult CalculateSkillDamage(float skillMultiplier)
         {
-            DamageResult result = CalculateDamage();
-            result.damage = (long)(result.damage * skillMultiplier);
+            BigDamageResult result = CalculateDamage();
+            result.damage = result.damage * skillMultiplier;
             return result;
         }
         #endregion
@@ -527,12 +680,45 @@ namespace HiddenGrowth.Data
     }
 
     /// <summary>
-    /// 데미지 결과
+    /// 데미지 결과 (BigNumber 버전)
+    /// </summary>
+    public struct BigDamageResult
+    {
+        public BigNumber damage;
+        public bool isCritical;
+
+        /// <summary>
+        /// long으로 변환 (하위 호환용)
+        /// </summary>
+        public long ToLong() => damage.ToLong();
+
+        /// <summary>
+        /// 포맷된 데미지 문자열
+        /// </summary>
+        public string Formatted => CurrencyFormatter.FormatKoreanSimple(damage);
+
+        /// <summary>
+        /// 컬러 포맷된 데미지 문자열
+        /// </summary>
+        public string FormattedWithColor => CurrencyFormatter.FormatDamage(damage, isCritical);
+    }
+
+    /// <summary>
+    /// 데미지 결과 (long 버전 - 하위 호환용)
     /// </summary>
     public struct DamageResult
     {
         public long damage;
         public bool isCritical;
+
+        public static implicit operator DamageResult(BigDamageResult big)
+        {
+            return new DamageResult
+            {
+                damage = big.damage.ToLong(),
+                isCritical = big.isCritical
+            };
+        }
     }
 
     /// <summary>
@@ -542,9 +728,9 @@ namespace HiddenGrowth.Data
     public class PlayerSaveData
     {
         public int level;
-        public long currentExp;
-        public long gold;
-        public long currentHP;
+        public string currentExpSerialized;
+        public string goldSerialized;
+        public string currentHPSerialized;
         public int rebirthCount;
         public int skillPoints;
         public int statPointsAvailable;
@@ -552,5 +738,13 @@ namespace HiddenGrowth.Data
         public int vitalityPoints;
         public int agilityPoints;
         public int luckPoints;
+
+        // 하위 호환용 (기존 long 데이터)
+        [Obsolete("Use currentExpSerialized instead")]
+        public long currentExp;
+        [Obsolete("Use goldSerialized instead")]
+        public long gold;
+        [Obsolete("Use currentHPSerialized instead")]
+        public long currentHP;
     }
 }
