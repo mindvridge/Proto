@@ -505,6 +505,1085 @@
       "textEN": "Okay, I'm coming!",
       "nextDialogueId": null,
       "action": "ShowCredits"
+    },
+
+    {
+      "dialogueId": "npc_sister_002",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_normal",
+      "text": "오빠, 택배 왔어. 또 뭐 샀어? 돈은 있어?",
+      "textEN": "Brother, you got a package. What did you buy this time? Do you even have money?",
+      "choices": [
+        {"choiceText": "아... 그냥 필요한 거야.", "nextDialogueId": "npc_sister_002_a"},
+        {"choiceText": "신경 쓰지 마.", "nextDialogueId": "npc_sister_002_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_sister_002_a",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_suspicious",
+      "text": "필요한 거라... 오빠 요즘 뭔가 이상해. 방에서 이상한 소리도 나고...",
+      "textEN": "Something you need, huh... You've been acting strange lately. There are weird sounds from your room too...",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 8}
+    },
+    {
+      "dialogueId": "npc_sister_002_b",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_angry",
+      "text": "뭐야, 비밀이야? 더 궁금해지잖아!",
+      "textEN": "What, is it a secret? Now I'm even more curious!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 12}
+    },
+    {
+      "dialogueId": "npc_sister_003",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_happy",
+      "text": "오빠! 나 시험 끝났어! 오늘은 좀 놀아줘~",
+      "textEN": "Brother! I finished my exams! Play with me today~",
+      "choices": [
+        {"choiceText": "좋아, 뭐 할까?", "nextDialogueId": "npc_sister_003_a"},
+        {"choiceText": "오빠 좀 바빠...", "nextDialogueId": "npc_sister_003_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_sister_003_a",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_happy",
+      "text": "진짜?! 오빠 최고! 게임하자!",
+      "textEN": "Really?! You're the best! Let's play games!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -15},
+      "reward": {"type": "Gold", "amount": 1000}
+    },
+    {
+      "dialogueId": "npc_sister_003_b",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_disappointed",
+      "text": "에이... 맨날 바쁘다면서. 뭐가 그렇게 바빠?",
+      "textEN": "Aww... You always say you're busy. What are you so busy with?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 10}
+    },
+    {
+      "dialogueId": "npc_sister_004",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_worried",
+      "text": "오빠... 혹시 온라인 도박 같은 거 하는 건 아니지? 요즘 왜 그래?",
+      "textEN": "Brother... You're not doing online gambling or anything, right? What's wrong with you lately?",
+      "choices": [
+        {"choiceText": "무슨 소리야, 당연히 아니지!", "nextDialogueId": "npc_sister_004_a"},
+        {"choiceText": "걱정해줘서 고마워.", "nextDialogueId": "npc_sister_004_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_sister_004_a",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_normal",
+      "text": "그래? 다행이다... 근데 진짜 요즘 이상해. 얼굴도 좀 안 좋고.",
+      "textEN": "Really? That's a relief... But you really are acting strange. You don't look well either.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 5}
+    },
+    {
+      "dialogueId": "npc_sister_004_b",
+      "dialogueType": "NPC",
+      "characterName": "여동생",
+      "characterSprite": "sister_happy",
+      "text": "당연하지! 오빠니까! 뭔가 힘든 일 있으면 말해, 알았지?",
+      "textEN": "Of course! You're my brother! If something's wrong, tell me, okay?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -10}
+    },
+
+    {
+      "dialogueId": "npc_mom_002",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_normal",
+      "text": "우리 아들, 오늘 날씨 좋은데 산책이라도 다녀오지 그래?",
+      "textEN": "Son, the weather is nice today. Why don't you go for a walk?",
+      "choices": [
+        {"choiceText": "네, 잠깐 나갔다 올게요.", "nextDialogueId": "npc_mom_002_a"},
+        {"choiceText": "오늘은 좀 피곤해서...", "nextDialogueId": "npc_mom_002_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_mom_002_a",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_happy",
+      "text": "그래, 바깥 공기 쐬고 와. 엄마가 맛있는 거 해놓을게.",
+      "textEN": "Good, get some fresh air. Mom will make something delicious for you.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -8},
+      "reward": {"type": "HP", "amount": 1000}
+    },
+    {
+      "dialogueId": "npc_mom_002_b",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_worried",
+      "text": "또 피곤해? 병원이라도 가봐야 하는 거 아니야?",
+      "textEN": "Tired again? Shouldn't you see a doctor?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 7}
+    },
+    {
+      "dialogueId": "npc_mom_003",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_normal",
+      "text": "이모가 우리 아들 어떻게 지내냐고 물어보시더라. 뭐라고 할까?",
+      "textEN": "Your aunt asked how you're doing. What should I tell her?",
+      "choices": [
+        {"choiceText": "취업 준비 중이라고 해주세요.", "nextDialogueId": "npc_mom_003_a"},
+        {"choiceText": "건강하게 잘 지낸다고 해주세요.", "nextDialogueId": "npc_mom_003_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_mom_003_a",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_happy",
+      "text": "그래, 그렇게 말할게. 우리 아들 열심히 준비하고 있다고!",
+      "textEN": "Okay, I'll tell her that. Our son is working hard on preparation!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -5}
+    },
+    {
+      "dialogueId": "npc_mom_003_b",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_normal",
+      "text": "그래, 건강이 최고야. 천천히 해도 돼.",
+      "textEN": "Right, health is the most important. Take your time.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -3}
+    },
+    {
+      "dialogueId": "npc_mom_004",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_worried",
+      "text": "아들아, 요즘 밤에 안 자는 것 같은데... 무슨 일 있어?",
+      "textEN": "Son, you don't seem to be sleeping at night lately... Is something wrong?",
+      "choices": [
+        {"choiceText": "그냥 좀 생각이 많아서요.", "nextDialogueId": "npc_mom_004_a"},
+        {"choiceText": "새벽에 공부하고 있어요.", "nextDialogueId": "npc_mom_004_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_mom_004_a",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_worried",
+      "text": "무슨 걱정 있어? 엄마한테 말해봐.",
+      "textEN": "What are you worried about? Tell mom.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 5}
+    },
+    {
+      "dialogueId": "npc_mom_004_b",
+      "dialogueType": "NPC",
+      "characterName": "엄마",
+      "characterSprite": "mom_happy",
+      "text": "공부? 오, 그래? 열심히 하는구나! 근데 건강도 챙겨야지.",
+      "textEN": "Studying? Oh, really? You're working hard! But take care of your health too.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -12}
+    },
+
+    {
+      "dialogueId": "npc_dad_001",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_normal",
+      "text": "아들, 요즘 뭐 하고 지내? 취업 준비는 잘 돼가냐?",
+      "textEN": "Son, what have you been up to lately? How's the job preparation going?",
+      "choices": [
+        {"choiceText": "네, 열심히 하고 있습니다.", "nextDialogueId": "npc_dad_001_a"},
+        {"choiceText": "좀 더 준비가 필요해요.", "nextDialogueId": "npc_dad_001_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_dad_001_a",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_happy",
+      "text": "그래, 내 아들 믿는다. 조급해하지 말고 차근차근 해.",
+      "textEN": "Good, I believe in you. Don't rush, take it step by step.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -10}
+    },
+    {
+      "dialogueId": "npc_dad_001_b",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_normal",
+      "text": "그래, 급할 거 없어. 아빠도 예전에 고생 많이 했거든.",
+      "textEN": "Right, no need to rush. Dad went through a lot back in the day too.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -5}
+    },
+    {
+      "dialogueId": "npc_dad_002",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_suspicious",
+      "text": "요즘 컴퓨터로 뭐 하냐? 게임만 하는 건 아니겠지?",
+      "textEN": "What are you doing on the computer lately? You're not just playing games, right?",
+      "choices": [
+        {"choiceText": "온라인 강의 듣고 있어요.", "nextDialogueId": "npc_dad_002_a"},
+        {"choiceText": "취업 정보 찾아보고 있어요.", "nextDialogueId": "npc_dad_002_b"},
+        {"choiceText": "...", "nextDialogueId": "npc_dad_002_c"}
+      ]
+    },
+    {
+      "dialogueId": "npc_dad_002_a",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_happy",
+      "text": "오, 자기개발 중이구나! 좋아, 필요한 거 있으면 말해.",
+      "textEN": "Oh, working on self-improvement! Good, tell me if you need anything.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -15}
+    },
+    {
+      "dialogueId": "npc_dad_002_b",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_normal",
+      "text": "그래, 열심히 해라. 혹시 아빠 인맥 필요하면 말하고.",
+      "textEN": "Good, work hard. Let me know if you need any of dad's connections.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -8}
+    },
+    {
+      "dialogueId": "npc_dad_002_c",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_angry",
+      "text": "뭐야, 대답을 안 해? 뭔가 숨기는 거 있냐?",
+      "textEN": "What, no answer? Are you hiding something?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 20}
+    },
+    {
+      "dialogueId": "npc_dad_003",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_happy",
+      "text": "오늘 저녁에 치킨 시켜 먹을까? 뭐 먹고 싶어?",
+      "textEN": "Want to order chicken for dinner? What do you want to eat?",
+      "choices": [
+        {"choiceText": "감사합니다! 양념치킨이요!", "nextDialogueId": "npc_dad_003_a"},
+        {"choiceText": "저는 괜찮아요, 아버지들만 드세요.", "nextDialogueId": "npc_dad_003_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_dad_003_a",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_happy",
+      "text": "좋아! 가족이 같이 먹어야 맛있지!",
+      "textEN": "Great! Food tastes better when we eat together as a family!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -10},
+      "reward": {"type": "HP", "amount": 2000}
+    },
+    {
+      "dialogueId": "npc_dad_003_b",
+      "dialogueType": "NPC",
+      "characterName": "아빠",
+      "characterSprite": "dad_worried",
+      "text": "뭐야, 입맛 없어? 요즘 잘 안 먹는 것 같은데...",
+      "textEN": "What, no appetite? You don't seem to be eating well lately...",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 8}
+    },
+
+    {
+      "dialogueId": "npc_delivery_001",
+      "dialogueType": "NPC",
+      "characterName": "배달기사",
+      "characterSprite": "delivery_man",
+      "text": "배달 왔습니다! 여기 사인해 주세요.",
+      "textEN": "Delivery! Please sign here.",
+      "choices": [
+        {"choiceText": "감사합니다! (빠르게 받는다)", "nextDialogueId": "npc_delivery_001_a"},
+        {"choiceText": "(문틈으로만 손을 내민다)", "nextDialogueId": "npc_delivery_001_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_delivery_001_a",
+      "dialogueType": "NPC",
+      "characterName": "배달기사",
+      "characterSprite": "delivery_man",
+      "text": "네! 좋은 하루 되세요!",
+      "textEN": "Yes! Have a nice day!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 0}
+    },
+    {
+      "dialogueId": "npc_delivery_001_b",
+      "dialogueType": "NPC",
+      "characterName": "배달기사",
+      "characterSprite": "delivery_man_confused",
+      "text": "어... 네, 감사합니다? (왜 이러시지...)",
+      "textEN": "Uh... yes, thank you? (What's with this person...)",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 3}
+    },
+    {
+      "dialogueId": "npc_delivery_002",
+      "dialogueType": "NPC",
+      "characterName": "배달기사",
+      "characterSprite": "delivery_man",
+      "text": "손님, 이거 세 번째 배달인데... 혹시 온라인 쇼핑 많이 하시나 봐요?",
+      "textEN": "Sir, this is the third delivery... You must do a lot of online shopping?",
+      "choices": [
+        {"choiceText": "아, 네... 하하...", "nextDialogueId": "npc_delivery_002_a"},
+        {"choiceText": "(묵묵히 받는다)", "nextDialogueId": "npc_delivery_002_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_delivery_002_a",
+      "dialogueType": "NPC",
+      "characterName": "배달기사",
+      "characterSprite": "delivery_man",
+      "text": "저도 집에서 많이 시켜요! 편하잖아요, 하하!",
+      "textEN": "I order a lot from home too! It's convenient, haha!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -2}
+    },
+    {
+      "dialogueId": "npc_delivery_002_b",
+      "dialogueType": "NPC",
+      "characterName": "배달기사",
+      "characterSprite": "delivery_man",
+      "text": "...네, 좋은 하루 되세요.",
+      "textEN": "...Yes, have a nice day.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 2}
+    },
+
+    {
+      "dialogueId": "npc_convenience_001",
+      "dialogueType": "NPC",
+      "characterName": "편의점 알바생",
+      "characterSprite": "convenience_clerk",
+      "text": "어서오세요~ 아, 손님 오늘도 오셨네요!",
+      "textEN": "Welcome~ Oh, you're here again today!",
+      "choices": [
+        {"choiceText": "네, 안녕하세요.", "nextDialogueId": "npc_convenience_001_a"},
+        {"choiceText": "(눈을 피한다)", "nextDialogueId": "npc_convenience_001_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_convenience_001_a",
+      "dialogueType": "NPC",
+      "characterName": "편의점 알바생",
+      "characterSprite": "convenience_clerk_happy",
+      "text": "매일 같은 시간에 오시네요! 에너지 드링크 드릴까요?",
+      "textEN": "You come at the same time every day! Would you like an energy drink?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 3}
+    },
+    {
+      "dialogueId": "npc_convenience_001_b",
+      "dialogueType": "NPC",
+      "characterName": "편의점 알바생",
+      "characterSprite": "convenience_clerk",
+      "text": "(속으로) 왜 저렇게 눈을 피하지... 좀 이상한 사람인가?",
+      "textEN": "(Thinking) Why do they avoid eye contact... Kind of a strange person?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 8}
+    },
+    {
+      "dialogueId": "npc_convenience_002",
+      "dialogueType": "NPC",
+      "characterName": "편의점 알바생",
+      "characterSprite": "convenience_clerk",
+      "text": "손님, 새벽 3시에 컵라면이랑 에너지 드링크... 야근하시나 봐요?",
+      "textEN": "Sir, cup noodles and energy drink at 3 AM... Working late?",
+      "choices": [
+        {"choiceText": "네, 좀 바빠서요.", "nextDialogueId": "npc_convenience_002_a"},
+        {"choiceText": "그냥 잠이 안 와서...", "nextDialogueId": "npc_convenience_002_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_convenience_002_a",
+      "dialogueType": "NPC",
+      "characterName": "편의점 알바생",
+      "characterSprite": "convenience_clerk_happy",
+      "text": "열심히 사시네요! 화이팅이에요!",
+      "textEN": "You're working hard! Fighting!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -5}
+    },
+    {
+      "dialogueId": "npc_convenience_002_b",
+      "dialogueType": "NPC",
+      "characterName": "편의점 알바생",
+      "characterSprite": "convenience_clerk",
+      "text": "아... 불면증이신가? 저도 가끔 그래요.",
+      "textEN": "Ah... Insomnia? I get that sometimes too.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 2}
+    },
+
+    {
+      "dialogueId": "npc_friend_001",
+      "dialogueType": "NPC",
+      "characterName": "옛날 친구",
+      "characterSprite": "old_friend",
+      "text": "야! 오랜만이다! 요즘 뭐 하고 지내?",
+      "textEN": "Hey! Long time no see! What have you been up to?",
+      "choices": [
+        {"choiceText": "그냥 뭐... 이것저것.", "nextDialogueId": "npc_friend_001_a"},
+        {"choiceText": "취업 준비 중이야.", "nextDialogueId": "npc_friend_001_b"},
+        {"choiceText": "바빠서 연락 못 했어, 미안.", "nextDialogueId": "npc_friend_001_c"}
+      ]
+    },
+    {
+      "dialogueId": "npc_friend_001_a",
+      "dialogueType": "NPC",
+      "characterName": "옛날 친구",
+      "characterSprite": "old_friend",
+      "text": "이것저것? 뭔가 숨기는 거 있지? 얼굴에 다 써있어!",
+      "textEN": "This and that? You're hiding something, aren't you? It's written all over your face!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 10}
+    },
+    {
+      "dialogueId": "npc_friend_001_b",
+      "dialogueType": "NPC",
+      "characterName": "옛날 친구",
+      "characterSprite": "old_friend_happy",
+      "text": "오, 힘내라! 너 능력 있잖아. 분명 좋은 데 갈 거야!",
+      "textEN": "Oh, cheer up! You've got skills. You'll definitely land somewhere good!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -8}
+    },
+    {
+      "dialogueId": "npc_friend_001_c",
+      "dialogueType": "NPC",
+      "characterName": "옛날 친구",
+      "characterSprite": "old_friend",
+      "text": "바빠? 뭐가 그렇게 바빠? 우리 술이나 한 잔 하자!",
+      "textEN": "Busy? What's keeping you so busy? Let's grab a drink!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 5}
+    },
+    {
+      "dialogueId": "npc_friend_002",
+      "dialogueType": "NPC",
+      "characterName": "옛날 친구",
+      "characterSprite": "old_friend_worried",
+      "text": "야, 진짜 괜찮아? 요즘 왜 이렇게 연락이 안 돼?",
+      "textEN": "Hey, are you really okay? Why have you been so hard to reach lately?",
+      "choices": [
+        {"choiceText": "아, 미안. 정신없었어.", "nextDialogueId": "npc_friend_002_a"},
+        {"choiceText": "사실 요즘 좀 힘들어.", "nextDialogueId": "npc_friend_002_b"}
+      ]
+    },
+    {
+      "dialogueId": "npc_friend_002_a",
+      "dialogueType": "NPC",
+      "characterName": "옛날 친구",
+      "characterSprite": "old_friend",
+      "text": "그래? 뭔가 있구나. 언제든 연락해, 알았지?",
+      "textEN": "Really? Something's going on. Contact me anytime, okay?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 3}
+    },
+    {
+      "dialogueId": "npc_friend_002_b",
+      "dialogueType": "NPC",
+      "characterName": "옛날 친구",
+      "characterSprite": "old_friend_happy",
+      "text": "힘든 일 있으면 말해! 친구잖아. 내가 도와줄 수 있는 거면 뭐든!",
+      "textEN": "Tell me if you're going through a hard time! We're friends. I'll help with whatever I can!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -10},
+      "reward": {"type": "HP", "amount": 500}
+    },
+
+    {
+      "dialogueId": "npc_security_001",
+      "dialogueType": "NPC",
+      "characterName": "경비원 아저씨",
+      "characterSprite": "security_guard",
+      "text": "어, 학생! 이 시간에 어딜 가는 거야?",
+      "textEN": "Hey, young man! Where are you going at this hour?",
+      "choices": [
+        {"choiceText": "산책 좀 하려고요.", "nextDialogueId": "npc_security_001_a"},
+        {"choiceText": "편의점 다녀오려고요.", "nextDialogueId": "npc_security_001_b"},
+        {"choiceText": "(무시하고 지나간다)", "nextDialogueId": "npc_security_001_c"}
+      ]
+    },
+    {
+      "dialogueId": "npc_security_001_a",
+      "dialogueType": "NPC",
+      "characterName": "경비원 아저씨",
+      "characterSprite": "security_guard",
+      "text": "밤에 산책? 건강에 좋지. 조심해서 다녀!",
+      "textEN": "A walk at night? Good for your health. Be careful!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -3}
+    },
+    {
+      "dialogueId": "npc_security_001_b",
+      "dialogueType": "NPC",
+      "characterName": "경비원 아저씨",
+      "characterSprite": "security_guard",
+      "text": "그래, 빨리 다녀와. 요즘 밤에 이상한 일이 많아.",
+      "textEN": "Okay, hurry back. There have been strange things happening at night lately.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -2}
+    },
+    {
+      "dialogueId": "npc_security_001_c",
+      "dialogueType": "NPC",
+      "characterName": "경비원 아저씨",
+      "characterSprite": "security_guard_suspicious",
+      "text": "...뭐야, 대답도 안 해? 수상하네.",
+      "textEN": "...What, no answer? That's suspicious.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 15}
+    },
+    {
+      "dialogueId": "npc_security_002",
+      "dialogueType": "NPC",
+      "characterName": "경비원 아저씨",
+      "characterSprite": "security_guard_suspicious",
+      "text": "자네, 요즘 밤마다 나갔다 들어오던데... 무슨 일 있나?",
+      "textEN": "You've been going out every night lately... Is something going on?",
+      "choices": [
+        {"choiceText": "야간 알바 다녀요.", "nextDialogueId": "npc_security_002_a"},
+        {"choiceText": "그냥 운동이요.", "nextDialogueId": "npc_security_002_b"},
+        {"choiceText": "제 사생활이에요.", "nextDialogueId": "npc_security_002_c"}
+      ]
+    },
+    {
+      "dialogueId": "npc_security_002_a",
+      "dialogueType": "NPC",
+      "characterName": "경비원 아저씨",
+      "characterSprite": "security_guard",
+      "text": "아, 야간 알바? 열심히 사네! 젊을 때 고생은 약이야.",
+      "textEN": "Ah, a night job? You're working hard! Hardship in youth builds character.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -15}
+    },
+    {
+      "dialogueId": "npc_security_002_b",
+      "dialogueType": "NPC",
+      "characterName": "경비원 아저씨",
+      "characterSprite": "security_guard",
+      "text": "운동? 좋지! 젊을 때 건강 챙겨야 해.",
+      "textEN": "Exercise? Good! You need to take care of your health while young.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -10}
+    },
+    {
+      "dialogueId": "npc_security_002_c",
+      "dialogueType": "NPC",
+      "characterName": "경비원 아저씨",
+      "characterSprite": "security_guard_angry",
+      "text": "사생활? 흠... 뭔가 수상하군. 지켜보고 있겠네.",
+      "textEN": "Privacy? Hmm... That's suspicious. I'll be keeping an eye on you.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 25}
+    },
+
+    {
+      "dialogueId": "boss_shadow_master_001",
+      "dialogueType": "Boss",
+      "characterName": "그림자의 주인",
+      "characterSprite": "shadow_master",
+      "text": "후후... 그림자 속에서 살아가는 자여. 나와 같은 존재로군.",
+      "textEN": "Heh... One who lives in the shadows. A kindred spirit.",
+      "nextDialogueId": "boss_shadow_master_002"
+    },
+    {
+      "dialogueId": "boss_shadow_master_002",
+      "dialogueType": "Boss",
+      "characterName": "그림자의 주인",
+      "characterSprite": "shadow_master",
+      "text": "하지만 이 그림자의 세계에는 오직 하나의 어둠만이 존재할 수 있다!",
+      "textEN": "But in this realm of shadows, only one darkness can exist!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "boss_shadow_master_defeat",
+      "dialogueType": "Boss",
+      "characterName": "그림자의 주인",
+      "characterSprite": "shadow_master_defeated",
+      "text": "크윽... 네 그림자가... 나보다 더 짙구나...",
+      "textEN": "Ugh... Your shadow... is darker than mine...",
+      "nextDialogueId": null,
+      "reward": {"type": "Gold", "amount": 150000}
+    },
+    {
+      "dialogueId": "boss_night_king_001",
+      "dialogueType": "Boss",
+      "characterName": "밤의 군주",
+      "characterSprite": "night_king",
+      "text": "밤의 지배자인 내 앞에 감히...! 너도 밤에 활동하는 존재인가?",
+      "textEN": "How dare you stand before me, the ruler of night...! Are you also a creature of the night?",
+      "nextDialogueId": "boss_night_king_002"
+    },
+    {
+      "dialogueId": "boss_night_king_002",
+      "dialogueType": "Boss",
+      "characterName": "밤의 군주",
+      "characterSprite": "night_king",
+      "text": "그래도 용서할 수 없다! 밤은 오직 나의 것!",
+      "textEN": "Still, I cannot forgive you! The night belongs only to me!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "boss_night_king_defeat",
+      "dialogueType": "Boss",
+      "characterName": "밤의 군주",
+      "characterSprite": "night_king_defeated",
+      "text": "밤새 활동하는 너의 끈기... 인정한다...",
+      "textEN": "Your persistence to stay active all night... I acknowledge it...",
+      "nextDialogueId": null,
+      "reward": {"type": "Gold", "amount": 180000}
+    },
+    {
+      "dialogueId": "boss_social_anxiety_001",
+      "dialogueType": "Boss",
+      "characterName": "사회불안",
+      "characterSprite": "social_anxiety",
+      "text": "후후후... 사람들의 시선이 느껴지지? 모두 너를 보고 있어...",
+      "textEN": "Hehehe... Can you feel the stares? Everyone is watching you...",
+      "nextDialogueId": "boss_social_anxiety_002"
+    },
+    {
+      "dialogueId": "boss_social_anxiety_002",
+      "dialogueType": "Boss",
+      "characterName": "사회불안",
+      "characterSprite": "social_anxiety",
+      "text": "집 밖으로 나오다니 대단한 용기야. 하지만 여기서 끝이다!",
+      "textEN": "What courage to leave your house. But this is where it ends!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "boss_social_anxiety_defeat",
+      "dialogueType": "Boss",
+      "characterName": "사회불안",
+      "characterSprite": "social_anxiety_defeated",
+      "text": "어떻게... 나를 극복하다니... 너는 진정한 용사야...",
+      "textEN": "How... could you overcome me... You are a true warrior...",
+      "nextDialogueId": null,
+      "reward": {"type": "Item", "itemId": "accessory_courage", "count": 1}
+    },
+    {
+      "dialogueId": "boss_procrastination_001",
+      "dialogueType": "Boss",
+      "characterName": "게으름",
+      "characterSprite": "procrastination",
+      "text": "에이, 내일 해도 되잖아... 오늘은 그냥 쉬어...",
+      "textEN": "Eh, you can do it tomorrow... Just rest today...",
+      "nextDialogueId": "boss_procrastination_002"
+    },
+    {
+      "dialogueId": "boss_procrastination_002",
+      "dialogueType": "Boss",
+      "characterName": "게으름",
+      "characterSprite": "procrastination",
+      "text": "그냥... 누워있어... 일어나지 마... 침대가 널 부르잖아...",
+      "textEN": "Just... lie down... Don't get up... The bed is calling you...",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "boss_procrastination_defeat",
+      "dialogueType": "Boss",
+      "characterName": "게으름",
+      "characterSprite": "procrastination_defeated",
+      "text": "으... 이 의지력은 어디서... 너 진짜 대단해...",
+      "textEN": "Ugh... Where does this willpower come from... You're truly amazing...",
+      "nextDialogueId": null,
+      "reward": {"type": "SkillPoint", "amount": 5}
+    },
+    {
+      "dialogueId": "boss_deadline_001",
+      "dialogueType": "Boss",
+      "characterName": "마감",
+      "characterSprite": "deadline",
+      "text": "째깍째깍... 시간이 없다... 마감이 다가온다...",
+      "textEN": "Tick tock... Time is running out... The deadline approaches...",
+      "nextDialogueId": "boss_deadline_002"
+    },
+    {
+      "dialogueId": "boss_deadline_002",
+      "dialogueType": "Boss",
+      "characterName": "마감",
+      "characterSprite": "deadline",
+      "text": "제출하지 못하면 모든 것이 끝이다! 크하하하!",
+      "textEN": "If you don't submit, everything is over! Mwahahaha!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "boss_deadline_defeat",
+      "dialogueType": "Boss",
+      "characterName": "마감",
+      "characterSprite": "deadline_defeated",
+      "text": "이런... 벼락치기의 달인이구나... 인정한다...",
+      "textEN": "Oh my... A master of cramming... I acknowledge you...",
+      "nextDialogueId": null,
+      "reward": {"type": "Gold", "amount": 50000}
+    },
+
+    {
+      "dialogueId": "event_midnight_snack_001",
+      "dialogueType": "Event",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "새벽 2시. 배가 고프다. 냉장고를 뒤지면 가족들이 깰 수도 있다...",
+      "textEN": "2 AM. You're hungry. Rummaging through the fridge might wake up your family...",
+      "choices": [
+        {"choiceText": "조용히 냉장고를 연다", "nextDialogueId": "event_midnight_snack_001_a"},
+        {"choiceText": "참는다", "nextDialogueId": "event_midnight_snack_001_b"}
+      ]
+    },
+    {
+      "dialogueId": "event_midnight_snack_001_a",
+      "dialogueType": "Event",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "닌자처럼 조용히 냉장고에서 음식을 꺼냈다. 아무도 눈치채지 못했다!",
+      "textEN": "Like a ninja, you quietly took food from the fridge. No one noticed!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 0},
+      "reward": {"type": "HP", "amount": 500}
+    },
+    {
+      "dialogueId": "event_midnight_snack_001_b",
+      "dialogueType": "Event",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "참았다... 하지만 배고파서 집중이 안 된다.",
+      "textEN": "You held back... But you can't focus because you're hungry.",
+      "nextDialogueId": null,
+      "effect": {"debuff": "hunger"}
+    },
+    {
+      "dialogueId": "event_package_arrived_001",
+      "dialogueType": "Event",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "택배가 도착했습니다! 장비 강화 재료입니다.",
+      "textEN": "Package has arrived! Equipment enhancement materials.",
+      "nextDialogueId": "event_package_arrived_002"
+    },
+    {
+      "dialogueId": "event_package_arrived_002",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_suspicious",
+      "text": "오빠, 또 택배야? 요즘 무슨 택배가 이렇게 많아?",
+      "textEN": "Brother, another package? Why are there so many packages lately?",
+      "choices": [
+        {"choiceText": "그냥 생활용품이야.", "nextDialogueId": "event_package_arrived_002_a"},
+        {"choiceText": "인터넷 쇼핑 좀 했어.", "nextDialogueId": "event_package_arrived_002_b"}
+      ]
+    },
+    {
+      "dialogueId": "event_package_arrived_002_a",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_normal",
+      "text": "생활용품? 흠... 의심스럽긴 한데 알았어.",
+      "textEN": "Household items? Hmm... It's suspicious, but okay.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 5}
+    },
+    {
+      "dialogueId": "event_package_arrived_002_b",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_happy",
+      "text": "오, 쇼핑? 뭐 샀어? 나도 보여줘!",
+      "textEN": "Oh, shopping? What did you buy? Show me too!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 8}
+    },
+    {
+      "dialogueId": "event_family_dinner_001",
+      "dialogueType": "Event",
+      "characterName": "엄마",
+      "characterSprite": "mom_happy",
+      "text": "오늘은 가족 다 같이 저녁 먹자! 오빠도 나와!",
+      "textEN": "Let's all have dinner together today! Come out!",
+      "choices": [
+        {"choiceText": "네, 금방 갈게요!", "nextDialogueId": "event_family_dinner_001_a"},
+        {"choiceText": "저는 나중에 먹을게요...", "nextDialogueId": "event_family_dinner_001_b"}
+      ]
+    },
+    {
+      "dialogueId": "event_family_dinner_001_a",
+      "dialogueType": "Event",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "가족과 즐거운 저녁 시간을 보냈다. 모두 행복해 보인다.",
+      "textEN": "You had a pleasant dinner with your family. Everyone looks happy.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -20},
+      "reward": {"type": "HP", "amount": 3000}
+    },
+    {
+      "dialogueId": "event_family_dinner_001_b",
+      "dialogueType": "Event",
+      "characterName": "아빠",
+      "characterSprite": "dad_worried",
+      "text": "쟤 요즘 왜 저래? 밥도 같이 안 먹으려고 하고...",
+      "textEN": "What's wrong with that kid lately? Not even eating meals together...",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 15}
+    },
+    {
+      "dialogueId": "event_power_outage_001",
+      "dialogueType": "Event",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "갑자기 정전이 됐다! 던전 탐험 중 연결이 끊어졌다!",
+      "textEN": "Sudden blackout! You got disconnected during dungeon exploration!",
+      "nextDialogueId": "event_power_outage_002"
+    },
+    {
+      "dialogueId": "event_power_outage_002",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_scared",
+      "text": "헉! 오빠! 정전이야! 무서워!",
+      "textEN": "Eek! Brother! Blackout! I'm scared!",
+      "choices": [
+        {"choiceText": "(침착하게) 괜찮아, 금방 들어올 거야.", "nextDialogueId": "event_power_outage_002_a"},
+        {"choiceText": "(당황) 아, 내 던전 진행이...!", "nextDialogueId": "event_power_outage_002_b"}
+      ]
+    },
+    {
+      "dialogueId": "event_power_outage_002_a",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_happy",
+      "text": "오빠 든든하다! 진짜?",
+      "textEN": "You're so reliable, brother! Really?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -10}
+    },
+    {
+      "dialogueId": "event_power_outage_002_b",
+      "dialogueType": "Event",
+      "characterName": "여동생",
+      "characterSprite": "sister_suspicious",
+      "text": "던전? 뭔 던전? 오빠 게임 중이었어?!",
+      "textEN": "Dungeon? What dungeon? Were you playing a game?!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 25}
+    },
+    {
+      "dialogueId": "event_overheard_001",
+      "dialogueType": "Event",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "전화 통화 중 몬스터에 대해 말하고 있었는데, 엄마가 지나갔다...",
+      "textEN": "You were talking about monsters on the phone, and mom walked by...",
+      "nextDialogueId": "event_overheard_002"
+    },
+    {
+      "dialogueId": "event_overheard_002",
+      "dialogueType": "Event",
+      "characterName": "엄마",
+      "characterSprite": "mom_confused",
+      "text": "몬스터? 무슨 몬스터? 뭐하는 거야?",
+      "textEN": "Monster? What monster? What are you doing?",
+      "choices": [
+        {"choiceText": "아, 게임 이야기예요!", "nextDialogueId": "event_overheard_002_a"},
+        {"choiceText": "아, 친구랑 영화 얘기 중이었어요.", "nextDialogueId": "event_overheard_002_b"}
+      ]
+    },
+    {
+      "dialogueId": "event_overheard_002_a",
+      "dialogueType": "Event",
+      "characterName": "엄마",
+      "characterSprite": "mom_disappointed",
+      "text": "또 게임? 하루 종일 게임만 하면 어떡해...",
+      "textEN": "Games again? What are you going to do playing games all day...",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 10}
+    },
+    {
+      "dialogueId": "event_overheard_002_b",
+      "dialogueType": "Event",
+      "characterName": "엄마",
+      "characterSprite": "mom_normal",
+      "text": "아, 영화? 요즘 재밌는 영화 많이 나왔어?",
+      "textEN": "Ah, movies? Are there many good movies out lately?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 2}
+    },
+    {
+      "dialogueId": "event_injury_001",
+      "dialogueType": "Event",
+      "characterName": "내레이션",
+      "characterSprite": null,
+      "text": "던전에서 입은 상처가 아직 남아있다. 가족들에게 들키면 안 된다...",
+      "textEN": "The wound from the dungeon is still there. Your family mustn't find out...",
+      "nextDialogueId": "event_injury_002"
+    },
+    {
+      "dialogueId": "event_injury_002",
+      "dialogueType": "Event",
+      "characterName": "엄마",
+      "characterSprite": "mom_worried",
+      "text": "어머, 팔에 이게 뭐야?! 어디서 다친 거야?!",
+      "textEN": "Oh my, what's this on your arm?! Where did you get hurt?!",
+      "choices": [
+        {"choiceText": "아, 넘어졌어요. 괜찮아요.", "nextDialogueId": "event_injury_002_a"},
+        {"choiceText": "모기한테 물렸어요.", "nextDialogueId": "event_injury_002_b"}
+      ]
+    },
+    {
+      "dialogueId": "event_injury_002_a",
+      "dialogueType": "Event",
+      "characterName": "엄마",
+      "characterSprite": "mom_worried",
+      "text": "넘어졌다고? 병원 가봐야 하는 거 아니야?",
+      "textEN": "You fell? Shouldn't you go to the hospital?",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 10}
+    },
+    {
+      "dialogueId": "event_injury_002_b",
+      "dialogueType": "Event",
+      "characterName": "엄마",
+      "characterSprite": "mom_suspicious",
+      "text": "모기? 이게 모기 물린 거라고? 거짓말하지 마!",
+      "textEN": "Mosquito? You're saying this is a mosquito bite? Don't lie!",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 20}
+    },
+
+    {
+      "dialogueId": "random_excuse_success_001",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "완벽한 변명! 의심도가 크게 감소했습니다.",
+      "textEN": "Perfect excuse! Suspicion significantly decreased.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": -15}
+    },
+    {
+      "dialogueId": "random_excuse_fail_001",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "변명이 의심스러웠습니다... 의심도가 증가합니다.",
+      "textEN": "The excuse was suspicious... Suspicion increased.",
+      "nextDialogueId": null,
+      "effect": {"suspicion": 10}
+    },
+    {
+      "dialogueId": "random_tip_001",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "팁: 가족과 대화할 때는 최대한 평범하게 행동하세요!",
+      "textEN": "Tip: Act as normal as possible when talking to your family!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "random_tip_002",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "팁: 밤에 활동하면 의심도 증가율이 낮아집니다!",
+      "textEN": "Tip: Acting at night reduces the suspicion gain rate!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "random_tip_003",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "팁: 정체가 들키면 게임 오버! 의심도를 잘 관리하세요!",
+      "textEN": "Tip: If your identity is discovered, it's game over! Manage your suspicion well!",
+      "nextDialogueId": null
+    },
+
+    {
+      "dialogueId": "npc_shop_joke_001",
+      "dialogueType": "NPC",
+      "characterName": "상점 주인",
+      "characterSprite": "merchant_wink",
+      "text": "요즘 특별히 은둔형 영웅을 위한 상품이 많이 들어왔지!",
+      "textEN": "We've got a lot of special items for hermit heroes lately!",
+      "nextDialogueId": null
+    },
+    {
+      "dialogueId": "npc_shop_hint_001",
+      "dialogueType": "NPC",
+      "characterName": "상점 주인",
+      "characterSprite": "merchant",
+      "text": "흠, 요즘 던전에 강력한 몬스터가 나타났다는 소문이 있어. 장비 점검해둬!",
+      "textEN": "Hmm, rumor has it that powerful monsters have appeared in the dungeons. Check your equipment!",
+      "nextDialogueId": null
+    },
+
+    {
+      "dialogueId": "achievement_first_lie",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "업적 달성: 첫 번째 거짓말! 가족에게 처음으로 변명에 성공했습니다.",
+      "textEN": "Achievement unlocked: First Lie! You successfully made your first excuse to your family.",
+      "nextDialogueId": null,
+      "reward": {"type": "Gold", "amount": 1000}
+    },
+    {
+      "dialogueId": "achievement_master_of_excuses",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "업적 달성: 변명의 달인! 100번의 변명에 성공했습니다.",
+      "textEN": "Achievement unlocked: Master of Excuses! You successfully made 100 excuses.",
+      "nextDialogueId": null,
+      "reward": {"type": "SkillPoint", "amount": 10}
+    },
+    {
+      "dialogueId": "achievement_night_owl",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "업적 달성: 올빼미! 밤 시간대에 100시간 활동했습니다.",
+      "textEN": "Achievement unlocked: Night Owl! You've been active for 100 hours at night.",
+      "nextDialogueId": null,
+      "reward": {"type": "Item", "itemId": "accessory_night_vision", "count": 1}
+    },
+    {
+      "dialogueId": "achievement_family_time",
+      "dialogueType": "System",
+      "characterName": "시스템",
+      "characterSprite": "system_icon",
+      "text": "업적 달성: 가족의 시간! 의심도를 낮추면서 가족과 10번 대화했습니다.",
+      "textEN": "Achievement unlocked: Family Time! You talked to your family 10 times while lowering suspicion.",
+      "nextDialogueId": null,
+      "reward": {"type": "Gold", "amount": 5000}
     }
   ]
 }
