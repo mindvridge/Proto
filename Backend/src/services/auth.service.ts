@@ -31,6 +31,13 @@ export interface UserInfo {
   last_login: string | null;
 }
 
+export interface GuestDeviceInfo {
+  device_fingerprint?: string;
+  device_model?: string;
+  os_version?: string;
+  app_version?: string;
+}
+
 class AuthService {
   private googleClient: OAuth2Client;
 
@@ -192,7 +199,7 @@ class AuthService {
   // Guest Authentication
   // ========================
 
-  async loginAsGuest(deviceId: string, platform: string): Promise<{ user: UserInfo; tokens: TokenPair }> {
+  async loginAsGuest(deviceId: string, platform: string, deviceInfo?: GuestDeviceInfo): Promise<{ user: UserInfo; tokens: TokenPair; isNewUser: boolean }> {
     let result = await Database.query(
       `SELECT id, email, nickname, profile_image, level, created_at, last_login_at,
               is_active, is_banned, ban_reason, ban_until
@@ -201,9 +208,11 @@ class AuthService {
     );
 
     let dbUser;
+    let isNewUser = false;
 
     if (result.rows.length === 0) {
-      // Create guest user
+      // 자동 회원가입 - 새 게스트 유저 생성
+      isNewUser = true;
       const guestNickname = `영웅${Math.floor(Math.random() * 900000) + 100000}`;
 
       result = await Database.query(
@@ -214,6 +223,13 @@ class AuthService {
       );
 
       dbUser = result.rows[0];
+
+      // 기기 정보 저장
+      if (deviceInfo) {
+        await this.registerGuestDevice(dbUser.id, deviceId, deviceInfo);
+      }
+
+      logger.info(`New guest user created: ${dbUser.id}, device: ${deviceId}`);
     } else {
       dbUser = result.rows[0];
 
@@ -225,12 +241,52 @@ class AuthService {
         'UPDATE users SET last_login_at = CURRENT_TIMESTAMP WHERE id = $1',
         [dbUser.id]
       );
+
+      // 기기 정보 업데이트
+      if (deviceInfo) {
+        await this.updateGuestDevice(dbUser.id, deviceId, deviceInfo);
+      }
     }
 
     const user = this.formatUserInfo(dbUser);
     const tokens = await this.generateTokens(user);
 
-    return { user, tokens };
+    return { user, tokens, isNewUser };
+  }
+
+  /**
+   * 게스트 기기 정보 등록
+   */
+  private async registerGuestDevice(userId: string, deviceId: string, info: GuestDeviceInfo): Promise<void> {
+    try {
+      await Database.query(
+        `INSERT INTO user_devices (user_id, device_fingerprint, device_id, device_model, os_version, app_version, is_primary, last_active_at)
+         VALUES ($1, $2, $3, $4, $5, $6, TRUE, CURRENT_TIMESTAMP)
+         ON CONFLICT (user_id, device_fingerprint) DO NOTHING`,
+        [userId, info.device_fingerprint || deviceId, deviceId, info.device_model, info.os_version, info.app_version]
+      );
+    } catch (error) {
+      logger.error('Failed to register guest device:', error);
+    }
+  }
+
+  /**
+   * 게스트 기기 정보 업데이트
+   */
+  private async updateGuestDevice(userId: string, deviceId: string, info: GuestDeviceInfo): Promise<void> {
+    try {
+      await Database.query(
+        `UPDATE user_devices SET
+           device_model = COALESCE($3, device_model),
+           os_version = COALESCE($4, os_version),
+           app_version = COALESCE($5, app_version),
+           last_active_at = CURRENT_TIMESTAMP
+         WHERE user_id = $1 AND device_id = $2`,
+        [userId, deviceId, info.device_model, info.os_version, info.app_version]
+      );
+    } catch (error) {
+      logger.error('Failed to update guest device:', error);
+    }
   }
 
   // ========================

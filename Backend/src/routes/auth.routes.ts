@@ -41,7 +41,12 @@ const guestLoginSchema = Joi.object({
   device_id: Joi.string().required().messages({
     'any.required': '디바이스 ID가 필요합니다.',
   }),
-  platform: Joi.string().valid('Android', 'IPhonePlayer', 'WindowsEditor', 'OSXEditor').required(),
+  platform: Joi.string().valid('Android', 'IPhonePlayer', 'WindowsEditor', 'OSXEditor', 'WindowsPlayer', 'LinuxPlayer').required(),
+  // 추가 기기 정보 (선택)
+  device_fingerprint: Joi.string().optional(),
+  device_model: Joi.string().optional(),
+  os_version: Joi.string().optional(),
+  app_version: Joi.string().optional(),
 });
 
 const refreshSchema = Joi.object({

@@ -86,13 +86,21 @@ class AuthController {
 
   /**
    * POST /auth/login/guest
-   * Guest login
+   * Guest login (자동 회원가입 포함)
    */
   async loginGuest(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const { device_id, platform } = req.body;
+      const { device_id, platform, device_fingerprint, device_model, os_version, app_version } = req.body;
 
-      const result = await authService.loginAsGuest(device_id, platform);
+      // 기기 정보
+      const deviceInfo = {
+        device_fingerprint,
+        device_model,
+        os_version,
+        app_version,
+      };
+
+      const result = await authService.loginAsGuest(device_id, platform, deviceInfo);
 
       // Log login
       await this.logLogin(result.user.user_id, 'guest', req, true);
@@ -103,6 +111,7 @@ class AuthController {
         refresh_token: result.tokens.refreshToken,
         expires_in: result.tokens.expiresIn,
         user: result.user,
+        is_new_user: result.isNewUser,  // 신규 가입 여부
       });
     } catch (error) {
       next(error);

@@ -438,7 +438,7 @@ namespace HiddenGrowth.Network
 
         #region Guest Login
         /// <summary>
-        /// 게스트 로그인 (기기 ID 기반)
+        /// 게스트 로그인 (기기 ID 기반 자동 가입/로그인)
         /// </summary>
         public void LoginAsGuest(Action<bool, string> callback = null)
         {
@@ -454,7 +454,12 @@ namespace HiddenGrowth.Network
             var guestData = new GuestLoginRequest
             {
                 device_id = deviceId,
-                platform = Application.platform.ToString()
+                platform = Application.platform.ToString(),
+                // 추가 기기 정보 전송
+                device_fingerprint = GenerateDeviceFingerprint(),
+                device_model = SystemInfo.deviceModel,
+                os_version = SystemInfo.operatingSystem,
+                app_version = Application.version
             };
 
             NetworkManager.Instance?.Post("/auth/login/guest", guestData, (response) =>
@@ -463,6 +468,13 @@ namespace HiddenGrowth.Network
 
                 if (response.success)
                 {
+                    // GuestLoginResponse로 파싱하여 is_new_user 확인
+                    var guestResponse = response.GetData<GuestLoginResponse>();
+                    if (guestResponse != null && guestResponse.is_new_user)
+                    {
+                        Debug.Log("[AuthManager] 신규 게스트 계정이 생성되었습니다.");
+                    }
+
                     HandleLoginResponse(response, LoginType.Guest);
                     callback?.Invoke(true, null);
                 }
@@ -473,6 +485,19 @@ namespace HiddenGrowth.Network
                     callback?.Invoke(false, errorMsg);
                 }
             }, false);
+        }
+
+        /// <summary>
+        /// 기기 핑거프린트 생성
+        /// </summary>
+        private string GenerateDeviceFingerprint()
+        {
+            string raw = $"{SystemInfo.deviceUniqueIdentifier}_{SystemInfo.deviceModel}_{SystemInfo.operatingSystem}";
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(raw));
+                return BitConverter.ToString(bytes).Replace("-", "").ToLower();
+            }
         }
         #endregion
 
@@ -789,6 +814,21 @@ namespace HiddenGrowth.Network
     {
         public string device_id;
         public string platform;
+        // 추가 기기 정보
+        public string device_fingerprint;
+        public string device_model;
+        public string os_version;
+        public string app_version;
+    }
+
+    [Serializable]
+    public class GuestLoginResponse
+    {
+        public string access_token;
+        public string refresh_token;
+        public int expires_in;
+        public UserInfo user;
+        public bool is_new_user;  // 신규 가입 여부
     }
 
     [Serializable]

@@ -22,6 +22,7 @@ namespace HiddenGrowth.Network
 
         #region Settings
         [Header("=== Server Settings ===")]
+        [Tooltip("운영 서버: https://api.yourgame.com, 로컬 테스트: http://localhost:3000")]
         [SerializeField] private string baseUrl = "https://api.yourgame.com";
         [SerializeField] private string apiVersion = "v1";
         [SerializeField] private float requestTimeout = 30f;
@@ -31,6 +32,8 @@ namespace HiddenGrowth.Network
         [Header("=== Debug Settings ===")]
         [SerializeField] private bool enableLogging = true;
         [SerializeField] private bool useMockServer = false;
+        [SerializeField] private bool useLocalServer = false;  // true면 localhost:3000 사용
+        private const string LOCAL_SERVER_URL = "http://localhost:3000";
         #endregion
 
         #region State
@@ -43,8 +46,8 @@ namespace HiddenGrowth.Network
 
         #region Properties
         public bool IsConnected => isConnected;
-        public string BaseUrl => baseUrl;
-        public string ApiUrl => $"{baseUrl}/api/{apiVersion}";
+        public string BaseUrl => useLocalServer ? LOCAL_SERVER_URL : baseUrl;
+        public string ApiUrl => $"{BaseUrl}/api/{apiVersion}";
         public bool HasAuthToken => !string.IsNullOrEmpty(authToken);
         #endregion
 
