@@ -1,26 +1,67 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+// Parse DATABASE_URL if provided (Railway, Heroku, etc.)
+function parseDatabaseUrl(): { host: string; port: number; name: string; user: string; password: string } | null {
+  const url = process.env.DATABASE_URL;
+  if (!url) return null;
+
+  try {
+    const parsed = new URL(url);
+    return {
+      host: parsed.hostname,
+      port: parseInt(parsed.port || '5432'),
+      name: parsed.pathname.slice(1), // Remove leading '/'
+      user: parsed.username,
+      password: parsed.password,
+    };
+  } catch {
+    console.error('Failed to parse DATABASE_URL');
+    return null;
+  }
+}
+
+// Parse REDIS_URL if provided (Railway, Heroku, etc.)
+function parseRedisUrl(): { host: string; port: number; password: string | undefined } | null {
+  const url = process.env.REDIS_URL;
+  if (!url) return null;
+
+  try {
+    const parsed = new URL(url);
+    return {
+      host: parsed.hostname,
+      port: parseInt(parsed.port || '6379'),
+      password: parsed.password || undefined,
+    };
+  } catch {
+    console.error('Failed to parse REDIS_URL');
+    return null;
+  }
+}
+
+const dbConfig = parseDatabaseUrl();
+const redisConfig = parseRedisUrl();
+
 export const config = {
   // Server
   nodeEnv: process.env.NODE_ENV || 'development',
   port: parseInt(process.env.PORT || '3000'),
   apiVersion: process.env.API_VERSION || 'v1',
 
-  // Database
+  // Database (DATABASE_URL takes priority)
   database: {
-    host: process.env.DB_HOST || 'localhost',
-    port: parseInt(process.env.DB_PORT || '5432'),
-    name: process.env.DB_NAME || 'hidden_growth',
-    user: process.env.DB_USER || 'postgres',
-    password: process.env.DB_PASSWORD || '',
+    host: dbConfig?.host || process.env.DB_HOST || 'localhost',
+    port: dbConfig?.port || parseInt(process.env.DB_PORT || '5432'),
+    name: dbConfig?.name || process.env.DB_NAME || 'hidden_growth',
+    user: dbConfig?.user || process.env.DB_USER || 'postgres',
+    password: dbConfig?.password || process.env.DB_PASSWORD || '',
   },
 
-  // Redis
+  // Redis (REDIS_URL takes priority)
   redis: {
-    host: process.env.REDIS_HOST || 'localhost',
-    port: parseInt(process.env.REDIS_PORT || '6379'),
-    password: process.env.REDIS_PASSWORD || undefined,
+    host: redisConfig?.host || process.env.REDIS_HOST || 'localhost',
+    port: redisConfig?.port || parseInt(process.env.REDIS_PORT || '6379'),
+    password: redisConfig?.password || process.env.REDIS_PASSWORD || undefined,
   },
 
   // JWT
